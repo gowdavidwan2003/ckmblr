@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 .claude/skills/*/scripts/*.py:*)",
+      "Bash(python3 ../../.claude/skills/*/scripts/*.py:*)",
+      "Bash(python3 -m pip install:*)",
+      "Bash(bash scripts/setup.sh)",
+      "Bash(python3 scripts/check_setup.py)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(ls:*)",
+      "Bash(open:*)",
+      "Read(//**)",
+      "WebFetch(domain:coffeeboard.gov.in)",
+      "WebFetch(domain:www.coffeeboard.gov.in)",
+      "WebFetch(domain:kirehalli.com)",
+      "WebFetch(domain:ico.org)",
+      "WebFetch(domain:www.ico.org)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./secrets/**)"
+    ]
+  }
+}

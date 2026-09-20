@@ -1,0 +1,14 @@
+# built output — regenerate from work/ rather than committing
+editions/*/out/
+*.pdf.tmp
+/tmp/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# os
+.DS_Store
+Thumbs.db

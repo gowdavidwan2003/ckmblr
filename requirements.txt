@@ -1,0 +1,4 @@
+weasyprint
+pillow
+numpy
+opencv-python-headless
