@@ -1,0 +1,52 @@
+{
+  "edition_date": "2026-09-21",
+  "fetched_at": "2026-09-21T08:21:08.994980+00:00",
+  "markets": {
+    "robusta": {
+      "symbol": "ICEEUR:RC1!",
+      "close": 3387,
+      "change_pct": -0.26501766784452296,
+      "change_abs": -9,
+      "open": 3390,
+      "high": 3391,
+      "low": 3374,
+      "unit": "USD per tonne",
+      "contract": "Robusta Coffee Futures",
+      "as_of": "2026-09-21T08:21:06+00:00",
+      "source": "TradingView scanner (ICEEUR:RC1!)"
+    },
+    "arabica": {
+      "symbol": "KC=F",
+      "close": 294.55,
+      "change_abs": 4.0,
+      "change_pct": 1.38,
+      "unit": "US cents per lb",
+      "contract": "Coffee Dec 26",
+      "as_of": "2026-09-18",
+      "source": "Yahoo Finance daily bar (KC=F)",
+      "cross_check": {
+        "symbol": "ICEUS:KC1!",
+        "close": 280.5,
+        "change_pct": 1.4466546112115732,
+        "change_abs": 4,
+        "open": 279,
+        "high": 281,
+        "low": 275.05,
+        "unit": "US cents per lb",
+        "contract": "Coffee C Futures",
+        "as_of": "2026-09-21T08:21:05+00:00",
+        "source": "TradingView scanner (ICEUS:KC1!)"
+      },
+      "disagreement": "Yahoo 294.55 vs TradingView 280.5 (4.8% apart) -- likely different contract months, or the delayed quote is stale. Check before this goes on a card."
+    },
+    "pepper": {
+      "report_date": "2026-09-19",
+      "grades": {},
+      "unit": "rupees per quintal (100 kg)",
+      "spot_note": null,
+      "pdf": "ipsta-pepper-2026-09-19.pdf",
+      "source": "IPSTA daily market report, http://ipstaindia.com/source/dmr/5.pdf"
+    }
+  },
+  "errors": {}
+}
