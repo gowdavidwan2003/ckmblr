@@ -39,7 +39,16 @@ Kannada line; swap it for the English one when the copy is English.
 
 ## QR
 
-`assets/channel-qr.png` inside each skill points at the WhatsApp group. If the
-group link ever changes, replace the QR in **both** skills — they carry separate
+`assets/channel-qr.png` inside each skill points at the WhatsApp group:
+
+```
+https://chat.whatsapp.com/IZm2dYu4XijDn7ZlAbSzy6?mode=gi_t
+```
+
+This is a group *invite* link. Until 21 September 2026 the QR carried a
+WhatsApp *channel* link instead, which went somewhere else entirely — if you
+find an old card in circulation, that is why its QR leads to the wrong place.
+
+If the group link ever changes, replace the QR in **both** skills — they carry separate
 copies. The build script checks the QR still decodes after a simulated upload
 recompress; if it reports a failure, enlarge it rather than shipping it.
