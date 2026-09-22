@@ -1,0 +1,57 @@
+{
+  "edition_date": "2026-09-22",
+  "fetched_at": "2026-09-22T00:33:52.567626+00:00",
+  "markets": {
+    "robusta": {
+      "symbol": "ICEEUR:RC1!",
+      "close": 3337,
+      "change_pct": -1.7373380447585394,
+      "change_abs": -59,
+      "open": 3390,
+      "high": 3391,
+      "low": 3307,
+      "unit": "USD per tonne",
+      "contract": "Robusta Coffee Futures",
+      "as_of": "2026-09-21T19:22:40+00:00",
+      "source": "TradingView scanner (ICEEUR:RC1!)"
+    },
+    "arabica": {
+      "symbol": "KC=F",
+      "close": 274.5,
+      "change_abs": -20.05,
+      "change_pct": -6.81,
+      "unit": "US cents per lb",
+      "contract": "Coffee Dec 26",
+      "as_of": "2026-09-21",
+      "source": "Yahoo Finance daily bar (KC=F)",
+      "cross_check": {
+        "symbol": "ICEUS:KC1!",
+        "close": 276.4,
+        "change_pct": -1.4616755793226461,
+        "change_abs": -4.100000000000023,
+        "open": 279.7,
+        "high": 283.5,
+        "low": 274.25,
+        "unit": "US cents per lb",
+        "contract": "Coffee C Futures",
+        "as_of": "2026-09-21T17:30:00+00:00",
+        "source": "TradingView scanner (ICEUS:KC1!)"
+      }
+    },
+    "pepper": {
+      "report_date": "2026-09-21",
+      "grades": {
+        "garbled": {"open": 72000, "high": 72000, "low": 72000, "close": 72000},
+        "ungarbled": {"open": 70000, "high": 70000, "low": 70000, "close": 70000},
+        "500_gl": {"open": 69000, "high": 69000, "low": 69000, "close": 69000}
+      },
+      "todays_trade_tonnes": 20.5,
+      "unit": "rupees per quintal (100 kg)",
+      "spot_note": "Daily Market Rate With Spot: MINUS ONE HUNDRED",
+      "extraction_note": "pdftotext unavailable on this machine; grades transcribed by hand from the IPSTA PDF table",
+      "pdf": "ipsta-pepper-2026-09-21.pdf",
+      "source": "IPSTA daily market report, http://ipstaindia.com/source/dmr/6.pdf"
+    }
+  },
+  "errors": {}
+}
