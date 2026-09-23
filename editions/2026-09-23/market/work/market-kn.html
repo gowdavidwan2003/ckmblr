@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 1080px 1350px; margin: 0; }
+* { box-sizing: border-box; }
+body { font-family:'NotoKan', sans-serif; margin:0; color:#141414; }
+
+.card { width:1080px; height:1350px; page-break-after:always;
+        display:flex; flex-direction:column; background:#FFFFFF; overflow:hidden; }
+.card:last-child { page-break-after:auto; }
+.card.dark { background:#0F6E56; color:#FFFFFF; }
+
+/* ---- HEADER: slim, same on every card ---- */
+.hdr { padding:44px 72px 0 72px; display:flex; align-items:center; gap:18px; flex-shrink:0; }
+.logo { width:56px; height:56px; flex-shrink:0; }
+.hname { font-size:27px; font-weight:700; color:#0F6E56; letter-spacing:0.3px; }
+.hdate { margin-left:auto; font-size:24px; color:#8A8A8A; white-space:nowrap; }
+.dark .hname { color:#FFFFFF; }
+.dark .hdate { color:#9FE1CB; }
+
+/* ---- BODY ---- */
+.body { flex:1; padding:56px 72px 40px 72px; display:flex; flex-direction:column;
+        justify-content:center; overflow:hidden; }
+
+/* ---- FOOTER: hairline + one quiet line ---- */
+.ftr { padding:0 72px 44px 72px; display:flex; justify-content:space-between;
+       align-items:flex-end; flex-shrink:0; font-size:22px; color:#9A9A9A; }
+.ftr .ct { line-height:1.45; }
+.dark .ftr { color:#79C4AC; }
+
+/* ---- type ---- */
+h1.cover { font-size:96px; line-height:1.38; margin:0 0 40px 0; font-weight:700; color:#FFFFFF; }
+.covsub { font-size:38px; line-height:1.6; color:#C9EDE0; }
+.covtag { align-self:flex-start; font-size:26px; color:#9FE1CB; letter-spacing:2px;
+          text-transform:uppercase; margin-bottom:34px; }
+h2 { font-size:56px; color:#0F6E56; margin:0 0 30px 0; line-height:1.4; font-weight:700; }
+p  { font-size:34px; line-height:1.62; margin:0 0 30px 0; }
+p:last-child { margin-bottom:0; }
+b { font-weight:700; }
+.muted { color:#6E6E6E; }
+
+/* stacked label/value rows — replaces boxes */
+.row { padding:26px 0; border-top:2px solid #E8E8E8; }
+.row:last-of-type { border-bottom:2px solid #E8E8E8; }
+.row .lbl { font-size:25px; color:#0F6E56; font-weight:700; letter-spacing:0.6px; margin-bottom:10px; }
+.row p { font-size:33px; margin:0; line-height:1.55; }
+
+.bignum { font-size:124px; font-weight:700; color:#0F6E56; line-height:1.25; margin:0 0 8px 0; }
+.bigcap { font-size:31px; color:#6E6E6E; margin-bottom:40px; }
+
+table { width:100%; border-collapse:collapse; }
+th { font-size:23px; color:#8A8A8A; font-weight:400; text-align:left;
+     padding:0 0 16px 0; border-bottom:2px solid #E8E8E8; letter-spacing:0.6px; }
+th.r, td.r { text-align:right; }
+td { font-size:36px; padding:26px 0; border-bottom:2px solid #F0F0F0; }
+td.g { font-weight:700; }
+td.v { font-weight:700; white-space:nowrap; }
+td.d { font-size:30px; }
+.dn { color:#B4231F; font-weight:700; }
+.up { color:#0F6E56; font-weight:700; }
+.flat { color:#A0A0A0; }
+.note { font-size:27px; color:#6E6E6E; line-height:1.55; margin-top:30px; }
+
+.item { margin-bottom:40px; }
+.item:last-child { margin-bottom:0; }
+.item .ih { font-size:40px; font-weight:700; color:#0F6E56; margin-bottom:14px; line-height:1.4; }
+.item p { font-size:29px; margin:0 0 8px 0; }
+.item .src { font-size:22px; color:#9A9A9A; }
+
+.quick { margin:0 0 0 0; padding-left:44px; }
+.quick li { font-size:28px; line-height:1.55; margin-bottom:22px; }
+.quick li:last-child { margin-bottom:0; }
+
+/* closing card */
+.cta { text-align:center; }
+.cta img { width:330px; height:330px; display:block; margin:0 auto 36px auto;
+           background:#FFFFFF; padding:18px; border-radius:10px; }
+.cta .ch { font-size:56px; font-weight:700; margin-bottom:20px; line-height:1.4; color:#FFFFFF; }
+.cta .cp { font-size:32px; color:#C9EDE0; line-height:1.55; margin-bottom:40px; }
+.cta .slot { font-size:30px; color:#FFFFFF; line-height:1.7; padding:28px 0;
+             border-top:2px solid #3E8E76; border-bottom:2px solid #3E8E76; }
+.disc { font-size:23px; color:#79C4AC; line-height:1.55; margin-top:36px; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">23 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಫ್ಯೂಚರ್ಸ್ ಮಾರ್ಕೆಟ್ ದರ</h2>
+    <table>
+      <tr><th>ಮಾರ್ಕೆಟ್</th><th class="r">ದರ</th><th class="r">ಬದಲಾವಣೆ</th></tr>
+      <tr><td class="g">ರೊಬಸ್ಟಾ (ICE ಲಂಡನ್)</td><td class="r v">$3,260 / ಟನ್</td><td class="r d dn">▼2.31%</td></tr>
+      <tr><td class="g">ಅರೇಬಿಕಾ (ICE ನ್ಯೂಯಾರ್ಕ್ 'C')</td><td class="r v">271.75¢ / ಪೌಂಡ್</td><td class="r d dn">▼1.68%</td></tr>
+    </table>
+    <div class="note">ಇವೆರಡೂ 22.09.2026ರ (ಮಂಗಳವಾರ) ಸೆಷನ್ ಕ್ಲೋಸ್ — ಬೆಳಿಗ್ಗೆ ಪ್ರಕಟ ಆಗ್ತಿರೋದ್ರಿಂದ ಇವು ನಿನ್ನೆ ರಾತ್ರಿಯ ದರ.<br>
+    ರೊಬಸ್ಟಾ: ಟ್ರೇಡಿಂಗ್‌ವ್ಯೂ ಸ್ಕ್ಯಾನರ್ ದರ (ICEEUR:RC1!), 22.09.2026 ರಾತ್ರಿ 19:22 UTC ಟೈಮ್‌ಸ್ಟ್ಯಾಂಪ್ — ಅಧಿಕೃತ ಸೆಟಲ್ ಅಲ್ಲ.<br>
+    ಅರೇಬಿಕಾ: ಯಾಹೂ ಫೈನಾನ್ಸ್ ಡೈಲಿ ಸೆಟಲ್ (KC=F), 22.09.2026 ಕ್ಲೋಸ್. ಇದೇ ಸಮಯದ ಟ್ರೇಡಿಂಗ್‌ವ್ಯೂ ಸ್ಕ್ಯಾನರ್ ದರ 272.30¢ ತೋರಿಸ್ತಿತ್ತು — ಸುಮಾರು 0.2% ಮಾತ್ರ ವ್ಯತ್ಯಾಸ, ಎರಡೂ ಬಹುತೇಕ ಒಪ್ಪುತ್ತೆ.<br>
+    ವಿಯೆಟ್ನಾಂ ಕಡೆಯ ವರದಿಯೊಂದು ಇದೇ ಸಂಖ್ಯೆಗಳನ್ನ ಪಕ್ಕಾ ಖಚಿತ ಮಾಡಿದೆ — ಮೂಲ: doanhnghiephoinhap.vn ಮಾರ್ಕೆಟ್ ರಿಪೋರ್ಟ್ (23.09.2026)</div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">1 / 4</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">23 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಕರಿಮೆಣಸು (IPSTA)</h2>
+    <table>
+      <tr><th>ಗ್ರೇಡ್ · 22.09.2026 ವರದಿ</th><th class="r">ಕ್ಲೋಸ್ (₹/ಕ್ವಿಂಟಲ್)</th><th class="r">ಬದಲಾವಣೆ</th></tr>
+      <tr><td class="g">ಗಾರ್ಬಲ್ಡ್</td><td class="r v">71,900</td><td class="r d dn">▼₹100</td></tr>
+      <tr><td class="g">ಅನ್‌ಗಾರ್ಬಲ್ಡ್</td><td class="r v">69,900</td><td class="r d dn">▼₹100</td></tr>
+      <tr><td class="g">500 GL</td><td class="r v">68,900</td><td class="r d dn">▼₹100</td></tr>
+    </table>
+    <div class="note">ಓಪನ್, ಹೈ, ಲೋ, ಕ್ಲೋಸ್ ಎಲ್ಲಾ ಇದೇ ದರ — ಇವತ್ತು ಟ್ರೇಡ್ ಆದಾಗ ಬೆಲೆ ಅಲುಗಾಡಿಲ್ಲ. ಇವತ್ತಿನ ಟ್ರೇಡ್ 45.5 ಟನ್. ಸ್ಪಾಟ್ ದರ ಕಾಂಟ್ರಾಕ್ಟ್‌ಗಿಂತ ₹100 ಕಮ್ಮಿ ಅಂತ ವರದಿ ಹೇಳುತ್ತೆ.<br>
+    ನಿನ್ನೆಯ (21.09.2026) ವರದಿಗೆ ಹೋಲಿಸಿದ್ರೆ ಮೂರೂ ಗ್ರೇಡ್‌ಗೂ ₹100 ಇಳಿಕೆ.<br>
+    ಮೂಲ: India Pepper and Spice Trade Association (IPSTA), Daily Market Report, 22.09.2026</div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">2 / 4</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">23 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಮಾರ್ಕೆಟ್ ಮೇಲೆ ಪ್ರಭಾವ</h2>
+    <div class="item"><div class="ih">ಬ್ರೆಜಿಲ್‌ನಿಂದ ಸಪ್ಲೈ ಜಾಸ್ತಿ — ಬೆಲೆ ಮೇಲೆ ಒತ್ತಡ</div>
+    <p>ಬ್ರೆಜಿಲ್‌ನಿಂದ ಕಾಫಿ ಸಪ್ಲೈ ಜಾಸ್ತಿ ಆಗ್ತಿರೋದೇ ನಿನ್ನೆ ರಾತ್ರಿಯ ಇಳಿಕೆಗೆ ಮುಖ್ಯ ಕಾರಣ ಅಂತ ವರದಿ ಹೇಳುತ್ತೆ. ಬ್ರೆಜಿಲ್ ಎಕ್ಸ್‌ಪೋರ್ಟರ್‌ಗಳು ಕೈಯಲ್ಲಿರೋ ಸ್ಟಾಕ್ ಮಾರ್ಕೆಟ್‌ಗೆ ಬಿಡ್ತಿರೋದ್ರಿಂದ ಒತ್ತಡ ಇನ್ನೂ ಜಾಸ್ತಿ ಆಗಿದೆ.</p>
+    <div class="src">ಮೂಲ: doanhnghiephoinhap.vn ಮಾರ್ಕೆಟ್ ರಿಪೋರ್ಟ್ (23.09.2026)</div></div>
+    <div class="item"><div class="ih">ಮುಂದಿನ ಸೀಸನ್‌ಗೆ ಎಲ್ ನಿನೊ ರಿಸ್ಕ್ — ಒಂದೇ ವರದಿಯ ಮಾತು</div>
+    <p>ಇದೇ ವರದಿ ಬ್ರೆಜಿಲ್, ವಿಯೆಟ್ನಾಂ, ಇಂಡೋನೇಷ್ಯಾ — ಮೂರೂ ಕಡೆ ಮುಂದಿನ ಫಸಲಿಗೆ ಎಲ್ ನಿನೊ ಪ್ಯಾಟರ್ನ್ ರಿಸ್ಕ್ ಆಗಬಹುದು ಅಂತ ಹೇಳುತ್ತೆ. ಇದು ಇನ್ನೂ ಒಂದೇ ಮೂಲದ ಮಾತು — ಬೇರೆ ಕಡೆ ಇನ್ನೂ ಕನ್ಫರ್ಮ್ ಆಗಿಲ್ಲ.</p>
+    <div class="src">ಮೂಲ: doanhnghiephoinhap.vn ಮಾರ್ಕೆಟ್ ರಿಪೋರ್ಟ್ (23.09.2026) — ಒಂದೇ ಮೂಲ, ಇನ್ನೂ ಕ್ರಾಸ್-ಚೆಕ್ ಆಗಿಲ್ಲ</div></div>
+    <ul class="quick">
+      <li>ವಿಯೆಟ್ನಾಂ ಪೆಪ್ಪರ್ ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಸೆಪ್ಟೆಂಬರ್ ಮೊದಲ 15 ದಿನದಲ್ಲಿ 10,915 ಟನ್‌ಗೆ ಏರಿದೆ — ಆಗಸ್ಟ್ ಮೊದಲ 15 ದಿನಕ್ಕಿಂತ 3.8% ಜಾಸ್ತಿ. US ಮತ್ತು ಚೀನಾ ಡಿಮ್ಯಾಂಡ್ ಜಾಸ್ತಿ ಆಗಿದ್ದೇ ಕಾರಣ ಅಂತ ವರದಿ — ಮೂಲ: SGGP English / vietnam.vn ಪೆಪ್ಪರ್ ರಿಪೋರ್ಟ್ (ಸೆಪ್ಟೆಂಬರ್ ಮಧ್ಯ 2026)</li>
+    </ul>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">3 / 4</div>
+  </div>
+</section>
+<section class="card dark">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">23 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <div class="cta">
+      <img src="data:image/png;base64,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">
+      <div class="ch">ದಿನಾ ದರ ಬೇಕಾ?</div>
+      <div class="cp">ಮಲೆನಾಡು ದರ WhatsApp ಚಾನೆಲ್‌ಗೆ ಸೇರಿ — ಪ್ರತಿ ದಿನ ಕರ್ನಾಟಕದ ದರ ನೇರವಾಗಿ ಸಿಗುತ್ತೆ.</div>
+      <div class="slot">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು<br>ಫೋನ್ 7975045560</div>
+      <div class="disc">ದರಗಳು ICE, Yahoo Finance ಮತ್ತು IPSTA ವರದಿಗಳಿಂದ — ಪ್ರತಿ ಸಾಲಿಗೂ ಮೂಲ ಕೊಟ್ಟಿದ್ದು. ಮಾಹಿತಿಗಾಗಿ ಮಾತ್ರ — ಮಾರಾಟದ ಸಲಹೆ ಅಲ್ಲ.</div>
+    </div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">4 / 4</div>
+  </div>
+</section>
+</body>
+</html>
