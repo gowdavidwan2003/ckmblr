@@ -54,10 +54,12 @@ table { width:100%; border-collapse:collapse; }
 th { font-size:23px; color:#8A8A8A; font-weight:400; text-align:left;
      padding:0 0 16px 0; border-bottom:2px solid #E8E8E8; letter-spacing:0.6px; }
 th.r, td.r { text-align:right; }
+th + th, td + td { padding-left:30px; }
 td { font-size:36px; padding:26px 0; border-bottom:2px solid #F0F0F0; }
 td.g { font-weight:700; }
 td.v { font-weight:700; white-space:nowrap; }
 td.d { font-size:30px; }
+td.d .abs { display:block; font-size:25px; font-weight:400; margin-top:6px; }
 .dn { color:#B4231F; font-weight:700; }
 .up { color:#0F6E56; font-weight:700; }
 .flat { color:#A0A0A0; }
@@ -100,8 +102,8 @@ td.d { font-size:30px; }
     <h2>Futures market close</h2>
     <table>
       <tr><th>Market</th><th class="r">Price</th><th class="r">Change</th></tr>
-      <tr><td class="g">Robusta (ICE London)</td><td class="r v">$3,337 / tonne</td><td class="r d dn">▼1.74%</td></tr>
-      <tr><td class="g">Arabica (ICE New York 'C')</td><td class="r v">274.50c / lb</td><td class="r d dn">▼6.81%</td></tr>
+      <tr><td class="g">Robusta (ICE London)</td><td class="r v">$3,337 / tonne</td><td class="r d dn">▼$59<span class="abs">1.74%</span></td></tr>
+      <tr><td class="g">Arabica (ICE New York 'C')</td><td class="r v">274.50c / lb</td><td class="r d dn">▼20.05c<span class="abs">6.81%</span></td></tr>
     </table>
     <div class="note">Both are the 21.09.2026 (Monday) session close — since this posts in the morning, these are last night's prices.<br>
     Robusta: TradingView scanner price (ICEEUR:RC1!), timestamped 21.09.2026 night (19:22 UTC) — not an official settle.<br>
