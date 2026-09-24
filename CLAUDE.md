@@ -79,6 +79,18 @@ without a GTK runtime and a poppler build, so it falls back to headless Chrome
 or Edge and to Ghostscript. Same templates, same cards; `build_cards.py` prints
 the pair it used on every run.
 
+## Retention
+
+Dated data is kept for the current month plus the three before it. On the last
+day of each month a cloud routine runs `scripts/prune_old_months.py --apply`,
+which removes the month three back (January at the end of April) from git
+**history** with git filter-repo and force-pushes main. There is no undo.
+
+After every month-end, a local clone still holds the old history. Before any
+other git work on the laptop, commit nothing and run
+`git fetch origin && git reset --hard origin/main` — a pull or push from the
+stale clone puts the deleted month back on GitHub.
+
 ## Contact slot
 
 Filled in and live on every card: `ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560` /
