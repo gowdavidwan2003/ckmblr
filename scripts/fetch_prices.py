@@ -6,13 +6,22 @@ and stooq both sit behind a bot wall, so the numbers come from the endpoints
 that serve those pages their data:
 
   Robusta  ICE Europe RC1!   TradingView scanner, USD per tonne
-  Arabica  ICE US     KC=F   Yahoo daily bar, US cents per lb
+  Arabica  ICE US     KC1!   TradingView scanner, US cents per lb
   Pepper   IPSTA FMC daily market report PDF, rupees per quintal
 
-Arabica takes Yahoo because that is a settled daily bar; the TradingView quote
-for KC1! is a delayed last price that can sit days stale, and it rides along as
-a cross-check instead. When the two disagree by more than 2% the entry carries a
-"disagreement" field -- check both before the number goes on a card.
+Pepper carries a day-on-day change per grade, computed against the newest
+archived report older than the one just fetched. With no earlier report on
+hand it carries a "change_note" instead and no change is computed -- the
+report's own open/high/low/close being flat is an intraday fact and says
+nothing about yesterday.
+
+Arabica takes the TradingView scanner quote for KC1!, so both futures come off
+the same endpoint and the same session. That quote is a delayed last price
+rather than a settled bar and it can sit days stale, so the Yahoo daily bar for
+KC=F rides along as a cross-check. When the two disagree by more than 2% the
+entry carries a "disagreement" field -- check that, and check "as_of" for
+staleness, before the number goes on a card. If the scanner misses arabica
+entirely, Yahoo is used in its place.
 
 Run it at 06:00 IST and every market is shut: ICE London settles ~21:30 IST and
 ICE US ~01:00 IST, the IPSTA report goes up the previous evening. So what comes
@@ -49,6 +58,12 @@ TRADINGVIEW = "https://scanner.tradingview.com/futures/scan"
 TV_COLUMNS = ["close", "change", "change_abs", "open", "high", "low",
               "currency", "description", "update_time"]
 TV_SYMBOLS = {"ICEEUR:RC1!": "robusta", "ICEUS:KC1!": "arabica"}
+
+# Settle times in UTC. ICE US Coffee C settles 13:30 ET = 17:30 UTC -- the
+# scanner's settlement prints land on exactly that stamp. ICE London robusta
+# settles ~16:30 UTC. A quote timestamped before its own session's settle is
+# an intraday print, not a close.
+SETTLE_UTC = {"robusta": dt.time(16, 30), "arabica": dt.time(17, 30)}
 
 YAHOO = "https://query1.finance.yahoo.com/v8/finance/chart/KC=F?range=10d&interval=1d"
 
@@ -87,19 +102,32 @@ def fetch_futures():
             continue
         cells = dict(zip(TV_COLUMNS, row["d"]))
         stamp = cells.get("update_time")
-        out[name] = {
+        quote_at = (dt.datetime.fromtimestamp(stamp, dt.timezone.utc)
+                    if stamp else None)
+        # The scanner returns full float precision; these go straight onto a
+        # card, so round them here rather than leaving it to whoever reads the
+        # JSON.
+        entry = {
             "symbol": row["s"],
-            "close": cells["close"],
-            "change_pct": cells["change"],
-            "change_abs": cells["change_abs"],
+            "close": round(cells["close"], 2),
+            "change_pct": round(cells["change"], 2),
+            "change_abs": round(cells["change_abs"], 2),
             "open": cells["open"], "high": cells["high"], "low": cells["low"],
             "unit": ("USD per tonne" if cells["currency"] == "USD"
                      else "US cents per lb"),
             "contract": cells["description"],
-            "as_of": (dt.datetime.fromtimestamp(stamp, dt.timezone.utc).isoformat()
-                      if stamp else None),
+            "as_of": quote_at.isoformat() if quote_at else None,
             "source": "TradingView scanner (%s)" % row["s"],
         }
+        settle = SETTLE_UTC.get(name)
+        if quote_at and settle and quote_at.time() < settle:
+            entry["pre_settle"] = (
+                "Timestamped %s UTC on %s, before that session's ~%s UTC settle "
+                "-- an intraday print, not a close. Do not put it on a card as "
+                "a closing price."
+                % (quote_at.strftime("%H:%M"), quote_at.date().isoformat(),
+                   settle.strftime("%H:%M")))
+        out[name] = entry
     return out
 
 
@@ -123,6 +151,33 @@ def fetch_arabica_yahoo():
         "as_of": dt.datetime.fromtimestamp(stamp, dt.timezone.utc).date().isoformat(),
         "source": "Yahoo Finance daily bar (KC=F)",
     }
+
+
+def grade_key(name):
+    """Fold a grade label to one comparable key.
+
+    The same grade is spelled differently run to run -- "500_gl" when the table
+    was typed in by hand, "GL" when the PDF parser picked up the label line,
+    "500 GL" in the report itself. Without this, a change can never be matched
+    across two reports.
+    """
+    key = re.sub(r"[^A-Z0-9]", "", name.upper())
+    return key.lstrip("0123456789") or key
+
+
+def previous_pepper(report_date):
+    """Grades from the newest archived report older than this one, or None."""
+    best = None
+    for path in sorted((ROOT / "sources").glob("*/prices/prices.json")):
+        try:
+            entry = json.loads(path.read_text(encoding="utf-8"))["markets"]["pepper"]
+            when = dt.date.fromisoformat(entry["report_date"])
+        except (OSError, ValueError, KeyError):
+            continue
+        if when < report_date and entry.get("grades"):
+            if best is None or when > best[0]:
+                best = (when, entry["grades"])
+    return best
 
 
 def fetch_pepper(out_dir):
@@ -173,7 +228,7 @@ def fetch_pepper(out_dir):
             pending = None
 
     spot = SPOT_NOTE.search(text)
-    return {
+    pepper = {
         "report_date": report_date.isoformat(),
         "grades": grades,
         "unit": "rupees per quintal (100 kg)",
@@ -181,6 +236,27 @@ def fetch_pepper(out_dir):
         "pdf": path.name,
         "source": "IPSTA daily market report, %s" % link,
     }
+
+    # Day-on-day change needs two reports. With one, say so and compute nothing
+    # -- the OHLC being flat is an intraday fact, not a day-on-day one, and the
+    # card must not read it as "unchanged since yesterday".
+    earlier = previous_pepper(report_date)
+    if not earlier:
+        pepper["change_note"] = ("no earlier IPSTA report on hand -- day-on-day "
+                                 "change not computed")
+        return pepper
+
+    when, before = earlier
+    pepper["compared_with"] = when.isoformat()
+    lookup = {grade_key(k): v for k, v in before.items()}
+    for name, row in grades.items():
+        prior = lookup.get(grade_key(name))
+        if prior is None:
+            row["change_note"] = "grade absent from the %s report" % when.isoformat()
+            continue
+        row["prev_close"] = prior["close"]
+        row["change_abs"] = row["close"] - prior["close"]
+    return pepper
 
 
 def main():
@@ -205,23 +281,22 @@ def main():
     except Exception as exc:                       # noqa: BLE001 - reported, not raised
         prices["errors"]["futures"] = str(exc)
 
-    delayed = prices["markets"].pop("arabica", None)
+    scanner = prices["markets"].get("arabica")
     try:
-        arabica = fetch_arabica_yahoo()
-        if delayed:
-            arabica["cross_check"] = delayed
-            gap = abs(arabica["close"] - delayed["close"]) / arabica["close"] * 100
+        yahoo = fetch_arabica_yahoo()
+        if scanner:
+            scanner["cross_check"] = yahoo
+            gap = abs(scanner["close"] - yahoo["close"]) / scanner["close"] * 100
             if gap > 2:
-                arabica["disagreement"] = (
-                    "Yahoo %s vs TradingView %s (%.1f%% apart) -- likely different "
-                    "contract months, or the delayed quote is stale. Check before "
+                scanner["disagreement"] = (
+                    "TradingView %s vs Yahoo %s (%.1f%% apart) -- likely different "
+                    "contract months, or the scanner quote is stale. Check before "
                     "this goes on a card."
-                    % (arabica["close"], delayed["close"], gap))
-        prices["markets"]["arabica"] = arabica
+                    % (scanner["close"], yahoo["close"], gap))
+        else:
+            prices["markets"]["arabica"] = yahoo
     except Exception as exc:                       # noqa: BLE001
         prices["errors"]["arabica_yahoo"] = str(exc)
-        if delayed:
-            prices["markets"]["arabica"] = delayed
 
     try:
         prices["markets"]["pepper"] = fetch_pepper(out_dir)
@@ -238,13 +313,23 @@ def main():
             print("%-8s %10s  %s  (%+.2f%%, %s)  [%s]"
                   % (name, row["close"], row["unit"], row.get("change_pct") or 0,
                      row.get("as_of"), row["source"]))
+            if row.get("pre_settle"):
+                print("         ! %s" % row["pre_settle"])
             if row.get("disagreement"):
                 print("         ! %s" % row["disagreement"])
     if "pepper" in got:
         pep = got["pepper"]
-        grades = ", ".join("%s %s" % (k, v["close"]) for k, v in pep["grades"].items())
-        print("pepper   %s  %s  (report %s)"
-              % (grades or "see PDF", pep["unit"], pep["report_date"]))
+        grades = ", ".join(
+            "%s %s%s" % (k, v["close"],
+                         "" if v.get("change_abs") is None
+                         else " (%+d)" % v["change_abs"])
+            for k, v in pep["grades"].items())
+        print("pepper   %s  %s  (report %s%s)"
+              % (grades or "see PDF", pep["unit"], pep["report_date"],
+                 "" if not pep.get("compared_with")
+                 else ", vs %s" % pep["compared_with"]))
+        if pep.get("change_note"):
+            print("         ! %s" % pep["change_note"])
     for where, why in prices["errors"].items():
         print("failed: %s: %s" % (where, why), file=sys.stderr)
 
