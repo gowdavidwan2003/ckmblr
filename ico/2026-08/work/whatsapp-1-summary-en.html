@@ -1,0 +1,82 @@
+<!-- Structural template. Filled with August 2026 as a worked example.
+     Replace the copy, keep the structure. The @font-face rule is injected by
+     scripts/build_images.py — do not add one here.
+     QR size is load-bearing: see references/brand.md before shrinking it. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 210mm 340mm; margin: 0; }
+body { font-family:'NotoKan', sans-serif; font-size:10pt; line-height:1.7; color:#1c1c1c; margin:0; }
+.masthead { background:#0F6E56; padding:13mm 13mm 11mm 13mm; display:flex; align-items:center; gap:5mm; }
+.logo { width:22mm; height:22mm; flex-shrink:0; }
+.mname { color:#E1F5EE; font-size:22pt; font-weight:700; line-height:1.15; }
+.msub { color:#9FE1CB; font-size:10.5pt; margin-top:1.5mm; }
+.mcontact { color:#E1F5EE; font-size:10pt; text-align:right; white-space:nowrap; }
+.mcontact span { color:#9FE1CB; font-size:8.5pt; display:block; }
+.wrap { padding:9mm 13mm 8mm 13mm; }
+.forces { border:1.6px solid #C97B2E; background:#FDF6EF; border-radius:5px; padding:5mm 5mm 4mm 5mm; margin:0 0 5mm 0; }
+.vtitle { font-size:12pt; font-weight:700; color:#8F4A12; margin-bottom:2mm; }
+.forces p { margin:0; font-size:10.5pt; line-height:1.8; }
+.lead { background:#EEF5F2; border-left:3px solid #0F6E56; padding:3.5mm 4mm; margin:0 0 5mm 0; }
+h2 { font-size:12pt; color:#0F6E56; margin:6mm 0 2mm 0; }
+ul { margin:0; padding-left:6mm; }
+li { margin-bottom:1.6mm; }
+b { font-weight:700; }
+.footband { background:#0F6E56; padding:6mm 13mm; display:flex; justify-content:space-between; align-items:center; gap:6mm; }
+.fname { color:#E1F5EE; font-size:12pt; font-weight:700; }
+.fnum { color:#E1F5EE; font-size:11pt; text-align:right; }
+.fnote { background:#0B5744; color:#9FE1CB; font-size:8.5pt; padding:3.5mm 13mm 4.5mm 13mm; line-height:1.6; }
+
+.mpage { color:#9FE1CB; font-size:10pt; border:1px solid #3E8E76; border-radius:20px; padding:1.5mm 4mm; white-space:nowrap; }
+.more { margin-top:5mm; text-align:center; font-size:10pt; color:#0F6E56; font-weight:700; }
+.footband { align-items:center; }
+.joincard { background:#FFFFFF; border-radius:4px; padding:3mm; display:flex; align-items:center; gap:3.5mm; }
+.qr { width:46mm; height:46mm; display:block; }
+.jointxt { font-size:9pt; color:#0B5744; line-height:1.5; max-width:52mm; }
+.jointxt b { font-size:10pt; color:#0F6E56; }
+h2:first-of-type { margin-top:0; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+    <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+      <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+    </g>
+  </svg>
+  <div style="flex:1;">
+    <div class="mname">Malenadu Dara</div>
+    <div class="msub">Monthly coffee report · August 2026</div>
+  </div>
+  <div class="mpage">1 / 2</div>
+</div>
+<div class="wrap">
+
+<div class="forces">
+  <div class="vtitle">Two forces working on the price this month</div>
+  <p><b>Pushing up:</b> certified Arabica stocks in New York are at their lowest since 1999, and NOAA puts the chance of a very strong El Niño this northern winter above 90%. <b>Pushing down:</b> surplus forecasts for next year (Marex 10.5, Rabobank 8.9 million bags) and a record Brazilian crop. <b>What to watch:</b> how Brazil flowers in September–October — next year's crop depends on it.</p>
+</div>
+
+<div class="lead">
+El Niño fears lifted prices mid-month; rain in Brazil pulled them back in the last week. So the August average ended almost exactly where July did.
+</div>
+
+<div class="more">Full figures in the next image →</div>
+</div>
+<div class="footband">
+  <div>
+    <div class="fname">Malenadu Dara</div>
+    <div style="color:#9FE1CB; font-size:10pt; margin-top:1mm;">August 2026</div>
+    <div style="color:#C9EDE0; font-size:9.5pt; margin-top:2mm; line-height:1.5;">Vidwan Gowda · Aldur, Chikmagalur<br>Phone 7975045560</div>
+  </div>
+  <div class="joincard">
+    <img class="qr" src="channel-qr.png">
+    <div class="jointxt"><b>Malenadu Dara</b><br>WhatsApp channel — scan to get the report every month.</div>
+  </div>
+</div>
+<div class="fnote">A summary of figures published by the ICO. Not a forecast of where prices go, and not selling advice.<br>Source: International Coffee Organization — Coffee Market Report, August 2026.</div>
+</body></html>
