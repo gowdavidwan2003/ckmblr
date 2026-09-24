@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Fetch the ICO Coffee Market Report for the previous month into ico/<YYYY-MM>/.
+"""Fetch the ICO Coffee Market Report for the previous month into sources/<YYYY-MM>/.
+
+The monthly brief built from it goes in editions/<YYYY-MM>/ (work/ and out/).
 
 ICO posts month M's report during month M+1, on no fixed day (5th to 30th
 over 2024-26). The routine checks on the 25th and, if it is not out yet,
@@ -11,8 +13,8 @@ Usage:
     python3 scripts/fetch_ico.py --last-day-only  # no-op unless today (UTC) is month-end
 
 Exit codes (the routine branches on these):
-    0  report downloaded to ico/<YYYY-MM>/source/ -> build the cards
-    3  cards already built for that month (ico/<YYYY-MM>/out/ has PNGs) -> nothing to do
+    0  report downloaded to sources/<YYYY-MM>/ -> build the cards
+    3  cards already built for that month (editions/<YYYY-MM>/out/ has PNGs) -> nothing to do
     4  ICO has not posted the report yet -> try again at the next slot
     5  --last-day-only and today is not the last day of the month -> nothing to do
 """
@@ -50,9 +52,9 @@ def main(argv):
         year, month = last.year, last.month
 
     tag = f"{year}-{month:02d}"
-    folder = ROOT / "ico" / tag
-    if any((folder / "out").glob("*.png")):
-        print(f"{tag}: cards already built in {folder / 'out'}")
+    built = ROOT / "editions" / tag / "out"
+    if any(built.glob("*.png")):
+        print(f"{tag}: cards already built in {built.relative_to(ROOT)}")
         return 3
 
     url = report_url(year, month)
@@ -70,7 +72,7 @@ def main(argv):
         print(f"{tag}: {url} did not return a PDF, treating as not posted")
         return 4
 
-    dest = folder / "source" / url.rsplit("/", 1)[1]
+    dest = ROOT / "sources" / tag / url.rsplit("/", 1)[1]
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_bytes(data)
     print(f"{tag}: downloaded {len(data):,} bytes to {dest.relative_to(ROOT)}")
