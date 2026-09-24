@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 1080px 1350px; margin: 0; }
+* { box-sizing: border-box; }
+body { font-family:'NotoKan', sans-serif; margin:0; color:#141414; }
+
+.card { width:1080px; height:1350px; page-break-after:always;
+        display:flex; flex-direction:column; background:#FFFFFF; overflow:hidden; }
+.card:last-child { page-break-after:auto; }
+.card.dark { background:#0F6E56; color:#FFFFFF; }
+
+/* ---- HEADER: slim, same on every card ---- */
+.hdr { padding:44px 72px 0 72px; display:flex; align-items:center; gap:18px; flex-shrink:0; }
+.logo { width:56px; height:56px; flex-shrink:0; }
+.hname { font-size:27px; font-weight:700; color:#0F6E56; letter-spacing:0.3px; }
+.hdate { margin-left:auto; font-size:24px; color:#8A8A8A; white-space:nowrap; }
+.dark .hname { color:#FFFFFF; }
+.dark .hdate { color:#9FE1CB; }
+
+/* ---- BODY ---- */
+.body { flex:1; padding:56px 72px 40px 72px; display:flex; flex-direction:column;
+        justify-content:center; overflow:hidden; }
+
+/* ---- FOOTER: hairline + one quiet line ---- */
+.ftr { padding:0 72px 44px 72px; display:flex; justify-content:space-between;
+       align-items:flex-end; flex-shrink:0; font-size:22px; color:#9A9A9A; }
+.ftr .ct { line-height:1.45; }
+.dark .ftr { color:#79C4AC; }
+
+/* ---- type ---- */
+h1.cover { font-size:96px; line-height:1.38; margin:0 0 40px 0; font-weight:700; color:#FFFFFF; }
+.covsub { font-size:38px; line-height:1.6; color:#C9EDE0; }
+.covtag { align-self:flex-start; font-size:26px; color:#9FE1CB; letter-spacing:2px;
+          text-transform:uppercase; margin-bottom:34px; }
+h2 { font-size:56px; color:#0F6E56; margin:0 0 44px 0; line-height:1.4; font-weight:700; }
+p  { font-size:34px; line-height:1.62; margin:0 0 30px 0; }
+p:last-child { margin-bottom:0; }
+b { font-weight:700; }
+.muted { color:#6E6E6E; }
+
+/* stacked label/value rows — replaces boxes */
+.row { padding:26px 0; border-top:2px solid #E8E8E8; }
+.row:last-of-type { border-bottom:2px solid #E8E8E8; }
+.row .lbl { font-size:25px; color:#0F6E56; font-weight:700; letter-spacing:0.6px; margin-bottom:10px; }
+.row p { font-size:33px; margin:0; line-height:1.55; }
+
+.bignum { font-size:124px; font-weight:700; color:#0F6E56; line-height:1.25; margin:0 0 8px 0; }
+.bigcap { font-size:31px; color:#6E6E6E; margin-bottom:40px; }
+
+table { width:100%; border-collapse:collapse; }
+th { font-size:23px; color:#8A8A8A; font-weight:400; text-align:left;
+     padding:0 0 16px 0; border-bottom:2px solid #E8E8E8; letter-spacing:0.6px; }
+th.r, td.r { text-align:right; }
+td { font-size:36px; padding:26px 0; border-bottom:2px solid #F0F0F0; }
+td.g { font-weight:700; }
+td.v { font-weight:700; white-space:nowrap; }
+td.d { font-size:30px; }
+.dn { color:#B4231F; font-weight:700; }
+.up { color:#0F6E56; font-weight:700; }
+.flat { color:#A0A0A0; }
+.note { font-size:28px; color:#6E6E6E; line-height:1.55; margin-top:34px; }
+
+.item { margin-bottom:46px; }
+.item:last-child { margin-bottom:0; }
+.item .ih { font-size:42px; font-weight:700; color:#0F6E56; margin-bottom:16px; line-height:1.4; }
+.item p { font-size:31px; margin:0 0 10px 0; }
+.item .src { font-size:23px; color:#9A9A9A; }
+
+/* closing card */
+.cta { text-align:center; }
+.cta img { width:330px; height:330px; display:block; margin:0 auto 36px auto;
+           background:#FFFFFF; padding:18px; border-radius:10px; }
+.cta .ch { font-size:56px; font-weight:700; margin-bottom:20px; line-height:1.4; color:#FFFFFF; }
+.cta .cp { font-size:32px; color:#C9EDE0; line-height:1.55; margin-bottom:40px; }
+.cta .slot { font-size:30px; color:#FFFFFF; line-height:1.7; padding:28px 0;
+             border-top:2px solid #3E8E76; border-bottom:2px solid #3E8E76; }
+.disc { font-size:23px; color:#79C4AC; line-height:1.55; margin-top:36px; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">24 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಕರ್ನಾಟಕದ ದರ</h2>
+    <table>
+      <tr><th>₹ / 50 ಕೆಜಿ ಚೀಲ · 23.09.2026</th><th class="r">ದರ</th><th class="r">ಬದಲಾವಣೆ</th></tr>
+      <tr><td class="g">ಅರೇಬಿಕಾ ಪಾರ್ಚ್‌ಮೆಂಟ್</td><td class="r v">23,500–24,600</td><td class="r d up">▲100</td></tr>
+      <tr><td class="g">ಅರೇಬಿಕಾ ಚೆರಿ</td><td class="r v">13,000–14,500</td><td class="r d dn">▼400</td></tr>
+      <tr><td class="g">ರೊಬಸ್ಟಾ ಪಾರ್ಚ್‌ಮೆಂಟ್</td><td class="r v">17,800–18,300</td><td class="r d dn">▼200</td></tr>
+      <tr><td class="g">ರೊಬಸ್ಟಾ ಚೆರಿ</td><td class="r v">9,800–10,600</td><td class="r d dn">▼100</td></tr>
+    </table>
+    <div class="note">ಕರ್ನಾಟಕದ ದರ ನಿನ್ನೆಯ ವರದಿಗೆ (22.09.2026) ಹೋಲಿಸಿದ್ರೆ ರೊಬಸ್ಟಾ ಮತ್ತು ಅರೇಬಿಕಾ ಚೆರಿ ಸ್ವಲ್ಪ ಇಳಿದಿದೆ, ಅರೇಬಿಕಾ ಪಾರ್ಚ್‌ಮೆಂಟ್ ಸ್ವಲ್ಪ ಏರಿದೆ. ವಿದೇಶಿ ಮಾರ್ಕೆಟ್ (23.09.2026 ಕ್ಲೋಸ್): ನ್ಯೂಯಾರ್ಕ್ ಅರೇಬಿಕಾ (ಡಿಸೆಂಬರ್) 275.90 ಸೆಂಟ್/ಪೌಂಡ್ ▲1.32% · ಲಂಡನ್ ರೊಬಸ್ಟಾ (ನವೆಂಬರ್) $3,317/ಟನ್ ▲1.75% · ಡಾಲರ್ ₹95.87</div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">1 / 4</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">24 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಇವತ್ತಿನ ಸುದ್ದಿ</h2>
+    <div class="item"><div class="ih">ಅರೇಬಿಕಾ-ರೊಬಸ್ಟಾ 3 ತಿಂಗಳ ಕನಿಷ್ಠದಿಂದ ವಾಪಸ್</div>
+    <p>ಮೂರು ವಾರದಿಂದ "ಕಾಫಿ ಜಾಸ್ತಿ ಸಿಗುತ್ತೆ" ಅನ್ನೋ ಲೆಕ್ಕಾಚಾರದಲ್ಲಿ ಮಾರ್ಕೆಟ್ ಜಾಸ್ತಿ ಇಳಿದು 3 ತಿಂಗಳ ಕನಿಷ್ಠಕ್ಕೆ ಬಂದಿತ್ತು. ಬುಧವಾರ ಟ್ರೇಡರ್ಸ್ ಶಾರ್ಟ್ ಪೊಸಿಷನ್ ಕವರ್ ಮಾಡಿದ್ದಕ್ಕೆ ಬೆಲೆ ವಾಪಸ್ ಏರಿದೆ. ಡಿಸೆಂಬರ್ ಅರೇಬಿಕಾ 275.90 ಸೆಂಟ್/ಪೌಂಡಿಗೆ ▲1.32%, ನವೆಂಬರ್ ರೊಬಸ್ಟಾ $3,317/ಟನ್‌ಗೆ ▲1.75% ಏರಿದೆ.</p>
+    <div class="src">ಮೂಲ: Coffee Board of India, Daily Coffee Market Report, 24.09.2026</div></div>
+    <div class="item"><div class="ih">ಬ್ರೆಜಿಲ್‌ನಲ್ಲಿ ದಾಖಲೆ ಫಸಲಿನ ಅಂದಾಜು</div>
+    <p>USDAದ ಜೂನ್ 2026ರ ವರದಿ ಪ್ರಕಾರ ಬ್ರೆಜಿಲ್‌ನ 2026/27ರ ಫಸಲು 71.9 ಮಿಲಿಯನ್ ಬ್ಯಾಗ್‌ಗೆ ಮುಟ್ಟುತ್ತೆ ಅಂತ ಅಂದಾಜು — ಹಿಂದಿನ ವರ್ಷಕ್ಕಿಂತ 8.9 ಮಿಲಿಯನ್ ಬ್ಯಾಗ್ ಜಾಸ್ತಿ, ದಾಖಲೆ ಫಸಲು. ಇದೇ ಲೆಕ್ಕಾಚಾರ ಮೂರು ವಾರದಿಂದ ಮಾರ್ಕೆಟ್ ಕುಸಿಯೋಕೆ ಕಾರಣ ಆಗಿತ್ತು.</p>
+    <div class="src">ಮೂಲ: USDA Foreign Agricultural Service, Brazil Coffee Annual ವರದಿ, ಜೂನ್ 2026</div></div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">2 / 4</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">24 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಸಂಖ್ಯೆ</h2>
+    <div class="bignum">3,57,585 ಟನ್</div>
+    <div class="bigcap">ಜನವರಿ 1 – ಸೆಪ್ಟೆಂಬರ್ 23 ಭಾರತದ ಕಾಫಿ ಎಕ್ಸ್‌ಪೋರ್ಟ್ — ಕಳೆದ ವರ್ಷ ಇದೇ ಅವಧಿಯಲ್ಲಿ 2,90,023 ಟನ್ ಇತ್ತು, ಸುಮಾರು 23% ಜಾಸ್ತಿ. ರೊಬಸ್ಟಾ ಚೆರಿ ಒಂದರಲ್ಲೇ 1,51,433 ಟನ್.</div>
+    <div class="note">ಮೂಲ: Coffee Board of India, Daily Coffee Market Report, 24.09.2026</div>
+    <div class="item" style="margin-top:56px;"><div class="ih">ICO ಇಂಡಿಕೇಟರ್ ಬೆಲೆನೂ ಕಮ್ಮಿ</div>
+    <p>ICO ಗ್ರೂಪ್ ಇಂಡಿಕೇಟರ್ ಬೆಲೆ (22.09.2026ಕ್ಕೆ): ಅದರ್ ಮೈಲ್ಡ್ಸ್ ಅರೇಬಿಕಾ 313.03 ಸೆಂಟ್/ಪೌಂಡ್‌ಗೆ ಇಳಿದಿದೆ, ಹಿಂದಿನ ವರದಿಯಲ್ಲಿ 316.83 ಇತ್ತು. ರೊಬಸ್ಟಾ 160.96 ಸೆಂಟ್‌ಗೆ ಇಳಿದಿದೆ — ಹಿಂದೆ 163.88. ಡಾಲರ್ ಎಕ್ಸ್‌ಚೇಂಜ್ ದರ ₹95.87ಕ್ಕೆ ಏರಿದೆ, ನಿನ್ನೆ ₹95.60 ಇತ್ತು.</p>
+    <div class="src">ಮೂಲ: Coffee Board of India — Daily Coffee Market Report, 24.09.2026 (ICO ಗ್ರೂಪ್ ಇಂಡಿಕೇಟರ್ ಬೆಲೆ)</div></div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">3 / 4</div>
+  </div>
+</section>
+<section class="card dark">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">24 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <div class="cta">
+      <img src="channel-qr.png">
+      <div class="ch">ದಿನಾ ದರ ಬೇಕಾ?</div>
+      <div class="cp">ಮಲೆನಾಡು ದರ WhatsApp ಚಾನೆಲ್‌ಗೆ ಸೇರಿ — ಪ್ರತಿ ದಿನ ಕರ್ನಾಟಕದ ದರ ನೇರವಾಗಿ ಸಿಗುತ್ತೆ.</div>
+      <div class="slot">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು<br>ಫೋನ್ 7975045560</div>
+      <div class="disc">ದರಗಳು Coffee Board of India ಪ್ರಕಟಿಸಿದ Daily Coffee Market Report ನಿಂದ. ಮಾಹಿತಿಗಾಗಿ ಮಾತ್ರ — ಮಾರಾಟದ ಸಲಹೆ ಅಲ್ಲ.</div>
+    </div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">4 / 4</div>
+  </div>
+</section>
+</body>
+</html>
