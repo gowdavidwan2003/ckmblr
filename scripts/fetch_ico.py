@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""Fetch the ICO Coffee Market Report for the previous month into sources/<YYYY-MM>/.
+"""Fetch the ICO Coffee Market Report for the previous month.
 
-The monthly brief built from it goes in editions/<YYYY-MM>/ (work/ and out/).
+Everything is filed under the date of the run (UTC), beside that day's daily sets:
+    sources/<run date>/ico/cmr-MMYY-e.pdf     the report
+    editions/<run date>/ico/{work,out}/       the brief built from it
 
 ICO posts month M's report during month M+1, on no fixed day (5th to 30th
 over 2024-26). The routine checks on the 25th and, if it is not out yet,
@@ -13,8 +15,8 @@ Usage:
     python3 scripts/fetch_ico.py --last-day-only  # no-op unless today (UTC) is month-end
 
 Exit codes (the routine branches on these):
-    0  report downloaded to sources/<YYYY-MM>/ -> build the cards
-    3  cards already built for that month (editions/<YYYY-MM>/out/ has PNGs) -> nothing to do
+    0  report downloaded to sources/<run date>/ico/ -> build the cards into editions/<run date>/ico/
+    3  that report month is already built (some editions/<date>/ico/out/ has PNGs) -> nothing to do
     4  ICO has not posted the report yet -> try again at the next slot
     5  --last-day-only and today is not the last day of the month -> nothing to do
 """
@@ -52,12 +54,16 @@ def main(argv):
         year, month = last.year, last.month
 
     tag = f"{year}-{month:02d}"
-    built = ROOT / "editions" / tag / "out"
-    if any(built.glob("*.png")):
-        print(f"{tag}: cards already built in {built.relative_to(ROOT)}")
-        return 3
-
     url = report_url(year, month)
+    name = url.rsplit("/", 1)[1]
+
+    # Folders are named by run date, so find this report month by its PDF name.
+    for pdf in sorted((ROOT / "sources").glob(f"*/ico/{name}")):
+        built = ROOT / "editions" / pdf.parent.parent.name / "ico" / "out"
+        if any(built.glob("*.png")):
+            print(f"{tag}: cards already built in {built.relative_to(ROOT).as_posix()}")
+            return 3
+
     try:
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r:
             data = r.read()
@@ -72,10 +78,11 @@ def main(argv):
         print(f"{tag}: {url} did not return a PDF, treating as not posted")
         return 4
 
-    dest = ROOT / "sources" / tag / url.rsplit("/", 1)[1]
+    dest = ROOT / "sources" / today.isoformat() / "ico" / name
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_bytes(data)
-    print(f"{tag}: downloaded {len(data):,} bytes to {dest.relative_to(ROOT)}")
+    print(f"{tag}: downloaded {len(data):,} bytes to {dest.relative_to(ROOT).as_posix()}")
+    print(f"build into: editions/{today.isoformat()}/ico/")
     print(f"ICO posted it: {modified}")
     return 0
 
