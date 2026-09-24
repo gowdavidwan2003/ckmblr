@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 210mm 460mm; margin: 0; }
+body { font-family:'NotoKan', sans-serif; font-size:10pt; line-height:1.7; color:#1c1c1c; margin:0; }
+
+/* ---------- FIXED CHROME ---------- */
+.masthead { background:#0F6E56; padding:13mm 13mm 11mm 13mm; display:flex; align-items:center; gap:5mm; }
+.logo { width:22mm; height:22mm; flex-shrink:0; }
+.mname { color:#E1F5EE; font-size:22pt; font-weight:700; line-height:1.15; }
+.msub { color:#9FE1CB; font-size:10.5pt; margin-top:1.5mm; }
+.mdate { color:#E1F5EE; font-size:11pt; font-weight:700; border:1px solid #3E8E76; border-radius:20px;
+         padding:2mm 5mm; white-space:nowrap; text-align:center; }
+.mdate span { display:block; color:#9FE1CB; font-size:8.5pt; font-weight:400; }
+.footband { background:#0F6E56; padding:6mm 13mm; display:flex; justify-content:space-between; align-items:center; gap:6mm; }
+.fname { color:#E1F5EE; font-size:12pt; font-weight:700; }
+.fdate { color:#9FE1CB; font-size:10pt; margin-top:1mm; }
+.fcontact { color:#C9EDE0; font-size:9.5pt; margin-top:2mm; line-height:1.5; }
+.joincard { background:#FFFFFF; border-radius:4px; padding:3mm; display:flex; align-items:center; gap:3.5mm; }
+.qr { width:38mm; height:38mm; display:block; }
+.jointxt { font-size:9pt; color:#0B5744; line-height:1.5; max-width:52mm; }
+.jointxt b { font-size:10pt; color:#0F6E56; }
+.fnote { background:#0B5744; color:#9FE1CB; font-size:8.5pt; padding:3.5mm 13mm 4.5mm 13mm; line-height:1.6; }
+
+/* ---------- FLEXIBLE CONTENT ---------- */
+.wrap { padding:9mm 13mm 8mm 13mm; }
+.lead { background:#EEF5F2; border-left:3px solid #0F6E56; padding:3.5mm 4mm; margin:0 0 6mm 0; }
+.item { border-left:3px solid #C7DED6; padding-left:5mm; margin-bottom:6mm; }
+.ihead { font-size:12pt; font-weight:700; color:#0F6E56; margin-bottom:1.5mm; line-height:1.35; }
+.item p { margin:0 0 1.5mm 0; }
+.imeta { font-size:8.5pt; color:#6B6B6B; }
+.big { border:1.6px solid #C97B2E; background:#FDF6EF; border-radius:5px; padding:5mm; margin:0 0 6mm 0; }
+.bignum { font-size:20pt; font-weight:700; color:#8F4A12; line-height:1.2; }
+.bigtxt { font-size:10.5pt; margin-top:1.5mm; }
+.quick { background:#F6F6F4; border-radius:5px; padding:4mm 5mm; margin:0 0 6mm 0; }
+.quick .qh { font-size:10.5pt; font-weight:700; color:#0F6E56; margin-bottom:2mm; }
+.quick ul { margin:0; padding-left:5mm; }
+.quick li { margin-bottom:1.5mm; }
+.more { text-align:center; font-size:10pt; color:#0F6E56; font-weight:700; margin-top:2mm; }
+</style>
+</head>
+<body>
+
+<!-- FIXED -->
+<div class="masthead">
+  <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+    <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+      <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+    </g>
+  </svg>
+  <div style="flex:1;">
+    <div class="mname">Malenadu Dara</div>
+    <div class="msub">Daily coffee news</div>
+  </div>
+  <div class="mdate"><span>Date</span>23 September 2026</div>
+</div>
+
+<!-- FLEXIBLE: replace everything inside .wrap -->
+<div class="wrap">
+<div class="lead">Today: the Kasturirangan resolution, the state's counsel in the Supreme Court, and the drought list reaching 177 taluks.</div>
+<div class="big">
+  <div class="bignum">1,449 villages</div>
+  <div class="bigtxt">Under the Centre's 7th draft notification, 1,449 villages and 20,668 sq km across 10 Karnataka districts fall inside the Ecologically Sensitive Area (ESA).</div>
+</div>
+<div class="item">
+  <div class="ihead">Legislature: “Not in its present form”</div>
+  <p>On 22 September both Houses unanimously passed a resolution rejecting the 27 July draft in its present form. The state says satellite maps do not separate forest from farms, plantations and homes.</p>
+  <p>It asks that only notified forest go into the ESA, with farms, plantations and homes kept out; a plot-level survey by a committee led by a retired judge; and one year from the Centre to do it. The final decision rests with the Centre.</p>
+  <div class="imeta">Source: The Week, 22.09.2026 · ETV Bharat, 22.09.2026</div>
+</div>
+<div class="item">
+  <div class="ihead">Senior counsel to be appointed: CM</div>
+  <p>Chief Minister D K Shivakumar told the Assembly the state will appoint a senior counsel to present its position in the Supreme Court on the Kasturirangan notification.</p>
+  <p>He said the NGT has directed the Centre to decide on the final notification, and that the state is not rejecting the report but asking for a scientific review.</p>
+  <div class="imeta">Source: The Daily Guardian, 22.09.2026</div>
+</div>
+<div class="item">
+  <div class="ihead">Coffee at 3-month lows</div>
+  <p>On Tuesday (22.09) December arabica closed down 4.10 c/lb (1.48%) and November robusta down $77/t (2.31%) — a second straight fall. The report puts it down to expectations of ample global supply.</p>
+  <div class="imeta">Source: Barchart, 22.09.2026</div>
+</div>
+<div class="big">
+  <div class="bignum">177 taluks</div>
+  <div class="bigtxt">53 more taluks added to the drought list, taking the total to 177 — about 73% of the state's area. The government says it may reach 200.</div>
+</div>
+<div class="item">
+  <div class="ihead">Malnad rain 38% short</div>
+  <p>Deputy CM G Parameshwara told the Council on 22 September that the state has had 642 mm of rain against a normal of about 852 mm — 36% short. Malnad is 38% short, the coast 28%.</p>
+  <p>Losses are estimated at about ₹18,000 crore. The state has asked the Centre for ₹3,500 crore in immediate help.</p>
+  <div class="imeta">Source: The Week, 22.09.2026</div>
+</div>
+</div>
+
+<!-- FIXED -->
+<div class="footband">
+  <div>
+    <div class="fname">Malenadu Dara</div>
+    <div class="fdate">23 September 2026</div>
+    <div class="fcontact">Vidwan Gowda · Aldur, Chikmagalur<br>Phone 7975045560</div>
+  </div>
+  <div class="joincard">
+    <img class="qr" src="channel-qr.png">
+    <div class="jointxt"><b>Malenadu Dara</b><br>WhatsApp channel — scan to get the daily news.</div>
+  </div>
+</div>
+<div class="fnote">A summary of reports from several newspapers. Each item's source is given below it. Information only — not advice.</div>
+
+</body>
+</html>

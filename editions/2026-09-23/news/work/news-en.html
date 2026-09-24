@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 1080px 1350px; margin: 0; }
+* { box-sizing: border-box; }
+body { font-family:'NotoKan', sans-serif; margin:0; color:#141414; }
+
+.card { width:1080px; height:1350px; page-break-after:always;
+        display:flex; flex-direction:column; background:#FFFFFF; overflow:hidden; }
+.card:last-child { page-break-after:auto; }
+.card.dark { background:#0F6E56; color:#FFFFFF; }
+
+/* ---- HEADER: slim, same on every card ---- */
+.hdr { padding:44px 72px 0 72px; display:flex; align-items:center; gap:18px; flex-shrink:0; }
+.logo { width:56px; height:56px; flex-shrink:0; }
+.hname { font-size:27px; font-weight:700; color:#0F6E56; letter-spacing:0.3px; }
+.hdate { margin-left:auto; font-size:24px; color:#8A8A8A; white-space:nowrap; }
+.dark .hname { color:#FFFFFF; }
+.dark .hdate { color:#9FE1CB; }
+
+/* ---- BODY ---- */
+.body { flex:1; padding:56px 72px 40px 72px; display:flex; flex-direction:column;
+        justify-content:center; overflow:hidden; }
+
+/* ---- FOOTER: hairline + one quiet line ---- */
+.ftr { padding:0 72px 44px 72px; display:flex; justify-content:space-between;
+       align-items:flex-end; flex-shrink:0; font-size:22px; color:#9A9A9A; }
+.ftr .ct { line-height:1.45; }
+.dark .ftr { color:#79C4AC; }
+
+/* ---- type ---- */
+h1.cover { font-size:96px; line-height:1.38; margin:0 0 40px 0; font-weight:700; color:#FFFFFF; }
+.covsub { font-size:38px; line-height:1.6; color:#C9EDE0; }
+.covtag { align-self:flex-start; font-size:26px; color:#9FE1CB; letter-spacing:2px;
+          text-transform:uppercase; margin-bottom:34px; }
+h2 { font-size:56px; color:#0F6E56; margin:0 0 44px 0; line-height:1.4; font-weight:700; }
+p  { font-size:34px; line-height:1.62; margin:0 0 30px 0; }
+p:last-child { margin-bottom:0; }
+b { font-weight:700; }
+.muted { color:#6E6E6E; }
+
+/* stacked label/value rows — replaces boxes */
+.row { padding:26px 0; border-top:2px solid #E8E8E8; }
+.row:last-of-type { border-bottom:2px solid #E8E8E8; }
+.row .lbl { font-size:25px; color:#0F6E56; font-weight:700; letter-spacing:0.6px; margin-bottom:10px; }
+.row p { font-size:33px; margin:0; line-height:1.55; }
+
+.bignum { font-size:124px; font-weight:700; color:#0F6E56; line-height:1.25; margin:0 0 8px 0; }
+.bigcap { font-size:31px; color:#6E6E6E; margin-bottom:40px; }
+
+table { width:100%; border-collapse:collapse; }
+th { font-size:23px; color:#8A8A8A; font-weight:400; text-align:left;
+     padding:0 0 16px 0; border-bottom:2px solid #E8E8E8; letter-spacing:0.6px; }
+th.r, td.r { text-align:right; }
+td { font-size:36px; padding:26px 0; border-bottom:2px solid #F0F0F0; }
+td.g { font-weight:700; }
+td.v { font-weight:700; white-space:nowrap; }
+td.d { font-size:30px; }
+.dn { color:#B4231F; font-weight:700; }
+.up { color:#0F6E56; font-weight:700; }
+.flat { color:#A0A0A0; }
+.note { font-size:28px; color:#6E6E6E; line-height:1.55; margin-top:34px; }
+
+.item { margin-bottom:46px; }
+.item:last-child { margin-bottom:0; }
+.item .ih { font-size:42px; font-weight:700; color:#0F6E56; margin-bottom:16px; line-height:1.4; }
+.item p { font-size:31px; margin:0 0 10px 0; }
+.item .src { font-size:23px; color:#9A9A9A; }
+
+/* closing card */
+.cta { text-align:center; }
+.cta img { width:330px; height:330px; display:block; margin:0 auto 36px auto;
+           background:#FFFFFF; padding:18px; border-radius:10px; }
+.cta .ch { font-size:56px; font-weight:700; margin-bottom:20px; line-height:1.4; color:#FFFFFF; }
+.cta .cp { font-size:32px; color:#C9EDE0; line-height:1.55; margin-bottom:40px; }
+.cta .slot { font-size:30px; color:#FFFFFF; line-height:1.7; padding:28px 0;
+             border-top:2px solid #3E8E76; border-bottom:2px solid #3E8E76; }
+.disc { font-size:23px; color:#79C4AC; line-height:1.55; margin-top:36px; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">Malenadu Dara</div>
+    <div class="hdate">23 September 2026</div>
+  </div>
+  <div class="body">
+    <h2>Kasturirangan report</h2>
+    <div class="bignum">1,449 villages</div>
+    <div class="bigcap">Under the Centre's 7th draft notification, 1,449 villages and 20,668 sq km across 10 Karnataka districts fall inside the Ecologically Sensitive Area (ESA).</div>
+    <div class="item"><div class="ih">Legislature: “Not in its present form”</div>
+    <p>On 22 September both Houses unanimously passed a resolution rejecting the 27 July draft in its present form. The state says satellite maps do not separate forest from farms, plantations and homes.</p>
+    <p>It asks that only notified forest go into the ESA, with farms, plantations and homes kept out; a plot-level survey by a committee led by a retired judge; and one year from the Centre to do it. The final decision rests with the Centre.</p>
+    <div class="src">Source: The Week, 22.09.2026 · ETV Bharat, 22.09.2026</div></div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">Vidwan Gowda · Aldur, Chikmagalur · 7975045560</div>
+    <div class="pg">1 / 4</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">Malenadu Dara</div>
+    <div class="hdate">23 September 2026</div>
+  </div>
+  <div class="body">
+    <h2>State's counsel in the Supreme Court</h2>
+    <div class="item"><div class="ih">Senior counsel to be appointed: CM</div>
+    <p>Chief Minister D K Shivakumar told the Assembly the state will appoint a senior counsel to present its position in the Supreme Court on the Kasturirangan notification.</p>
+    <p>He said the NGT has directed the Centre to decide on the final notification, and that the state is not rejecting the report but asking for a scientific review.</p>
+    <div class="src">Source: The Daily Guardian, 22.09.2026</div></div>
+    <div class="item"><div class="ih">Coffee at 3-month lows</div>
+    <p>On Tuesday (22.09) December arabica closed down 4.10 c/lb (1.48%) and November robusta down $77/t (2.31%) — a second straight fall. The report puts it down to expectations of ample global supply.</p>
+    <div class="src">Source: Barchart, 22.09.2026</div></div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">Vidwan Gowda · Aldur, Chikmagalur · 7975045560</div>
+    <div class="pg">2 / 4</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">Malenadu Dara</div>
+    <div class="hdate">23 September 2026</div>
+  </div>
+  <div class="body">
+    <h2>Drought in the state</h2>
+    <div class="bignum">177 taluks</div>
+    <div class="bigcap">53 more taluks added to the drought list, taking the total to 177 — about 73% of the state's area. The government says it may reach 200.</div>
+    <div class="item"><div class="ih">Malnad rain 38% short</div>
+    <p>Deputy CM G Parameshwara told the Council on 22 September that the state has had 642 mm of rain against a normal of about 852 mm — 36% short. Malnad is 38% short, the coast 28%.</p>
+    <p>Losses are estimated at about ₹18,000 crore. The state has asked the Centre for ₹3,500 crore in immediate help.</p>
+    <div class="src">Source: The Week, 22.09.2026</div></div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">Vidwan Gowda · Aldur, Chikmagalur · 7975045560</div>
+    <div class="pg">3 / 4</div>
+  </div>
+</section>
+<section class="card dark">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">Malenadu Dara</div>
+    <div class="hdate">23 September 2026</div>
+  </div>
+  <div class="body">
+    <div class="cta">
+      <img src="channel-qr.png">
+      <div class="ch">Want the news daily?</div>
+      <div class="cp">Join the Malenadu Dara WhatsApp channel — Karnataka coffee rates and news every day.</div>
+      <div class="slot">Vidwan Gowda · Aldur, Chikmagalur<br>Phone 7975045560</div>
+      <div class="disc">A summary of reports from several newspapers. Each item's source is given below it. Information only — not advice.</div>
+    </div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">Vidwan Gowda · Aldur, Chikmagalur · 7975045560</div>
+    <div class="pg">4 / 4</div>
+  </div>
+</section>
+</body>
+</html>
