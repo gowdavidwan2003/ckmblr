@@ -47,20 +47,23 @@ everything in this repo, daily and monthly alike.
 ```
 sources/           raw inputs, one folder per date — Coffee Board PDFs, ICO reports
 editions/          one folder per edition: YYYY-MM-DD (daily), YYYY-MM (monthly)
-  work/            edited copies of the card HTML
-  out/             the built PNGs that get posted
+  today/           daily: the full post (rates + news + export)
+  market/          daily: market close cards
+  news/            daily: news-only cards
+    work/          in each set: edited copies of the card HTML
+    out/           in each set: the built PNGs that get posted
 .claude/skills/    the two skills, each self-contained (assets, scripts, references)
 docs/              distribution and contact details
 ```
 
-Work on **copies** in `editions/<date>/work/`. Never edit the templates in
+Work on **copies** in `editions/<date>/<set>/work/`. Never edit the templates in
 `.claude/skills/*/assets/` for a single edition — those are the masters.
 
 ## Build
 
 ```bash
-cd editions/2026-09-20
-python3 ../../.claude/skills/malenadu-dara-daily/scripts/build_cards.py out/ work/today-kn.html work/today-en.html
+cd editions/2026-09-20/today
+python3 ../../../.claude/skills/malenadu-dara-daily/scripts/build_cards.py out/ work/today-kn.html work/today-en.html
 ```
 
 `build_cards.py` → carousel cards (Instagram, Facebook).
