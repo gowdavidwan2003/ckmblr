@@ -87,7 +87,7 @@ which removes the month three back (January at the end of April) from git
 **history** with git filter-repo and force-pushes main. There is no undo.
 
 After every month-end, a local clone still holds the old history. Before any
-other git work on the laptop, commit nothing and run
+other git work on the laptop, copy aside any uncommitted edits and run
 `git fetch origin && git reset --hard origin/main` — a pull or push from the
 stale clone puts the deleted month back on GitHub.
 
