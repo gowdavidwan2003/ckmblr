@@ -37,6 +37,15 @@ rm qr.png
 The four tall templates are not generated — edit those by hand. They carry the
 Kannada line; swap it for the English one when the copy is English.
 
+## Social handles
+
+- Instagram: `@malenadu.dara` (News & media website; linked to the Facebook Page)
+- Facebook Page: Malenadu Dara · ಮಲೆನಾಡು ದರ, `facebook.com/malenadu.dara` (username claimed 25 Sep 2026; until saved, the Page is `facebook.com/profile.php?id=61594987491057`)
+
+Printed as a third line in the closing-card slot (`KN_SLOT` / `EN_SLOT`) and in
+the foot band of the four tall templates. Page cover and pinned intro carousel
+live in `docs/social/`.
+
 ## QR
 
 `assets/channel-qr.png` inside each skill points at the WhatsApp group:

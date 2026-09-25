@@ -1,0 +1,39 @@
+<!-- Malenadu Dara — Facebook Page cover, 1640x624.
+     Facebook crops the sides on phones (about the centre 1040px stays visible)
+     and the Page's profile photo sits over the bottom-left on desktop, so all
+     text stays in the centre band. The hills are Malenadu scenery, not a
+     price line. Render with:
+       msedge --headless --screenshot=facebook-cover.png --window-size=1640,624 facebook-cover.html -->
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family:'NotoKan'; src:url('../../.claude/skills/malenadu-dara-daily/assets/NotoSansKannada.ttf'); font-weight:100 900; }
+html, body { margin:0; width:1640px; height:624px; overflow:hidden; }
+body { background:#0F6E56; font-family:'NotoKan', sans-serif; position:relative; }
+svg.hills { position:absolute; left:0; bottom:0; width:1640px; height:624px; }
+.text { position:absolute; left:0; right:0; top:118px; text-align:center; }
+.kn { color:#E1F5EE; font-size:112px; font-weight:700; line-height:1.1; }
+.en { color:#9FE1CB; font-size:34px; font-weight:600; letter-spacing:10px; margin-top:6px; }
+.rule { width:120px; height:3px; background:#BA7517; margin:26px auto 22px auto; border-radius:2px; }
+.sub { color:#E1F5EE; font-size:30px; font-weight:500; }
+.sub2 { color:#9FE1CB; font-size:22px; margin-top:10px; }
+</style>
+</head>
+<body>
+<svg class="hills" viewBox="0 0 1640 624" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 470 C 180 400, 300 430, 460 390 S 760 340, 900 400 S 1200 350, 1360 380 S 1560 330, 1640 360 L1640 624 L0 624 Z" fill="#0D6450"/>
+  <path d="M0 530 C 160 480, 320 520, 520 480 S 860 450, 1040 500 S 1360 460, 1640 490 L1640 624 L0 624 Z" fill="#0B5744"/>
+  <path d="M0 590 C 240 560, 480 585, 760 565 S 1260 560, 1640 575 L1640 624 L0 624 Z" fill="#094A3A"/>
+  <circle cx="1440" cy="250" r="26" fill="#BA7517" opacity="0.9"/>
+</svg>
+<div class="text">
+  <div class="kn">ಮಲೆನಾಡು ದರ</div>
+  <div class="en">MALENADU DARA</div>
+  <div class="rule"></div>
+  <div class="sub">ದಿನಾ ಕರ್ನಾಟಕ ಕಾಫಿ ರೇಟ್ + ಸುದ್ದಿ · Daily coffee rates &amp; news</div>
+  <div class="sub2">ಮಾಹಿತಿ ಮಾತ್ರ, ಸಲಹೆ ಅಲ್ಲ · Info, not advice</div>
+</div>
+</body>
+</html>

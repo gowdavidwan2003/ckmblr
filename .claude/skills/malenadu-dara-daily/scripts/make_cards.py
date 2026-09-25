@@ -127,8 +127,8 @@ def doc(cards):
 # ---------------------------------------------------------------- content
 KN_CONTACT = 'ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560'
 EN_CONTACT = 'Vidwan Gowda · Aldur, Chikmagalur · 7975045560'
-KN_SLOT = 'ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು<br>ಫೋನ್ 7975045560'
-EN_SLOT = 'Vidwan Gowda · Aldur, Chikmagalur<br>Phone 7975045560'
+KN_SLOT = 'ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು<br>ಫೋನ್ 7975045560<br>ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್ · ಫೇಸ್‌ಬುಕ್ @malenadu.dara'
+EN_SLOT = 'Vidwan Gowda · Aldur, Chikmagalur<br>Phone 7975045560<br>Instagram · Facebook @malenadu.dara'
 
 def qrcard(title, para, slot, disc):
     # CONTACT SLOT: the slot string (name / town / phone) shows as a
