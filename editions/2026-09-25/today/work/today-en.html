@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 1080px 1350px; margin: 0; }
+* { box-sizing: border-box; }
+body { font-family:'NotoKan', sans-serif; margin:0; color:#141414; }
+
+.card { width:1080px; height:1350px; page-break-after:always;
+        display:flex; flex-direction:column; background:#FFFFFF; overflow:hidden; }
+.card:last-child { page-break-after:auto; }
+.card.dark { background:#0F6E56; color:#FFFFFF; }
+
+/* ---- HEADER: slim, same on every card ---- */
+.hdr { padding:44px 72px 0 72px; display:flex; align-items:center; gap:18px; flex-shrink:0; }
+.logo { width:56px; height:56px; flex-shrink:0; }
+.hname { font-size:27px; font-weight:700; color:#0F6E56; letter-spacing:0.3px; }
+.hdate { margin-left:auto; font-size:24px; color:#8A8A8A; white-space:nowrap; }
+.dark .hname { color:#FFFFFF; }
+.dark .hdate { color:#9FE1CB; }
+
+/* ---- BODY ---- */
+.body { flex:1; padding:56px 72px 40px 72px; display:flex; flex-direction:column;
+        justify-content:center; overflow:hidden; }
+
+/* ---- FOOTER: hairline + one quiet line ---- */
+.ftr { padding:0 72px 44px 72px; display:flex; justify-content:space-between;
+       align-items:flex-end; flex-shrink:0; font-size:22px; color:#9A9A9A; }
+.ftr .ct { line-height:1.45; }
+.dark .ftr { color:#79C4AC; }
+
+/* ---- type ---- */
+h1.cover { font-size:96px; line-height:1.38; margin:0 0 40px 0; font-weight:700; color:#FFFFFF; }
+.covsub { font-size:38px; line-height:1.6; color:#C9EDE0; }
+.covtag { align-self:flex-start; font-size:26px; color:#9FE1CB; letter-spacing:2px;
+          text-transform:uppercase; margin-bottom:34px; }
+h2 { font-size:56px; color:#0F6E56; margin:0 0 44px 0; line-height:1.4; font-weight:700; }
+p  { font-size:34px; line-height:1.62; margin:0 0 30px 0; }
+p:last-child { margin-bottom:0; }
+b { font-weight:700; }
+.muted { color:#6E6E6E; }
+
+/* stacked label/value rows — replaces boxes */
+.row { padding:26px 0; border-top:2px solid #E8E8E8; }
+.row:last-of-type { border-bottom:2px solid #E8E8E8; }
+.row .lbl { font-size:25px; color:#0F6E56; font-weight:700; letter-spacing:0.6px; margin-bottom:10px; }
+.row p { font-size:33px; margin:0; line-height:1.55; }
+
+.bignum { font-size:124px; font-weight:700; color:#0F6E56; line-height:1.25; margin:0 0 8px 0; }
+.bigcap { font-size:31px; color:#6E6E6E; margin-bottom:40px; }
+
+table { width:100%; border-collapse:collapse; }
+th { font-size:23px; color:#8A8A8A; font-weight:400; text-align:left;
+     padding:0 0 16px 0; border-bottom:2px solid #E8E8E8; letter-spacing:0.6px; }
+th.r, td.r { text-align:right; }
+td { font-size:36px; padding:26px 0; border-bottom:2px solid #F0F0F0; }
+td.g { font-weight:700; }
+td.v { font-weight:700; white-space:nowrap; }
+td.d { font-size:30px; }
+.dn { color:#B4231F; font-weight:700; }
+.up { color:#0F6E56; font-weight:700; }
+.flat { color:#A0A0A0; }
+.note { font-size:28px; color:#6E6E6E; line-height:1.55; margin-top:34px; }
+
+.item { margin-bottom:46px; }
+.item:last-child { margin-bottom:0; }
+.item .ih { font-size:42px; font-weight:700; color:#0F6E56; margin-bottom:16px; line-height:1.4; }
+.item p { font-size:31px; margin:0 0 10px 0; }
+.item .src { font-size:23px; color:#9A9A9A; }
+
+/* closing card */
+.cta { text-align:center; }
+.cta img { width:330px; height:330px; display:block; margin:0 auto 36px auto;
+           background:#FFFFFF; padding:18px; border-radius:10px; }
+.cta .ch { font-size:56px; font-weight:700; margin-bottom:20px; line-height:1.4; color:#FFFFFF; }
+.cta .cp { font-size:32px; color:#C9EDE0; line-height:1.55; margin-bottom:40px; }
+.cta .slot { font-size:30px; color:#FFFFFF; line-height:1.7; padding:28px 0;
+             border-top:2px solid #3E8E76; border-bottom:2px solid #3E8E76; }
+.disc { font-size:23px; color:#79C4AC; line-height:1.55; margin-top:36px; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">Malenadu Dara</div>
+    <div class="hdate">25 September 2026</div>
+  </div>
+  <div class="body">
+    <h2>Karnataka rates</h2>
+    <table>
+      <tr><th>₹ per 50 kg bag · 24.09.2026</th><th class="r">Rate</th><th class="r">Change</th></tr>
+      <tr><td class="g">Arabica Parchment</td><td class="r v">23,500–24,000</td><td class="r d dn">▼300</td></tr>
+      <tr><td class="g">Arabica Cherry</td><td class="r v">13,000–14,500</td><td class="r d flat">No change</td></tr>
+      <tr><td class="g">Robusta Parchment</td><td class="r v">17,800–18,300</td><td class="r d flat">No change</td></tr>
+      <tr><td class="g">Robusta Cherry</td><td class="r v">9,800–10,600</td><td class="r d flat">No change</td></tr>
+    </table>
+    <div class="note">Karnataka rates against yesterday's report (23.09.2026): arabica parchment's upper band eased ₹600, the rest held steady. World market (24.09.2026 close): NY Arabica (Dec) 275.35 c/lb ▼0.20% · London Robusta (Nov) $3,272/t ▼0.81% · USD ₹95.94</div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">Vidwan Gowda · Aldur, Chikmagalur · 7975045560</div>
+    <div class="pg">1 / 5</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">Malenadu Dara</div>
+    <div class="hdate">25 September 2026</div>
+  </div>
+  <div class="body">
+    <h2>Today's news</h2>
+    <div class="item"><div class="ih">Wednesday's jump gave back a little ground Thursday</div>
+    <p>The market had fallen to three-month lows after three weeks of selling, then jumped on Wednesday as traders covered short positions. That bounce eased a little on Thursday — December arabica slipped to 275.35 c/lb ▼0.20%, November robusta to $3,272/tonne ▼0.81%. Both stayed above Wednesday's lows.</p>
+    <div class="src">Source: Coffee Board of India, Daily Coffee Market Report, 25.09.2026</div></div>
+    <div class="item"><div class="ih">ICO indicator price moves up</div>
+    <p>ICO Group Indicator price (as of 23.09.2026): Other Milds arabica rose to 317.05 c/lb, from 313.03 in the previous report. Robusta rose to 162.17 c/lb, from 160.96. The dollar firmed a touch too, to ₹95.94 from ₹95.87 yesterday.</p>
+    <div class="src">Source: Coffee Board of India — Daily Coffee Market Report, 25.09.2026 (ICO Group Indicator price)</div></div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">Vidwan Gowda · Aldur, Chikmagalur · 7975045560</div>
+    <div class="pg">2 / 5</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">Malenadu Dara</div>
+    <div class="hdate">25 September 2026</div>
+  </div>
+  <div class="body">
+    <h2>Export number</h2>
+    <div class="bignum">3,59,858 t</div>
+    <div class="bigcap">India's coffee exports, January 1 – September 24 — up from 2,91,321 tonnes in the same period last year, about 23.5% higher. Robusta cherry alone accounted for 1,52,191 tonnes.</div>
+    <div class="note">Source: Coffee Board of India, Daily Coffee Market Report, 25.09.2026</div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">Vidwan Gowda · Aldur, Chikmagalur · 7975045560</div>
+    <div class="pg">3 / 5</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">Malenadu Dara</div>
+    <div class="hdate">25 September 2026</div>
+  </div>
+  <div class="body">
+    <h2>Vietnam news</h2>
+    <div class="item"><div class="ih">Exports running strong, but a surplus looms</div>
+    <p>Vietnam shipped close to 1.7 million tonnes of coffee in the first eight months of 2026, earning over $6 billion — volume up more than 10% on the year, even as export value fell 11.2% on lower average prices, per the Vietnam Coffee Cocoa Association (Vicofa). USDA sees this season's crop from the big producing countries large enough to leave a global surplus of around 10 million bags, which pulls the other way on price.</p>
+    <div class="src">Source: CoffeeGeography, "Vietnamese Coffee Exports Poised for Strong Year-End Finish," citing Vicofa and USDA, September 7, 2026</div></div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">Vidwan Gowda · Aldur, Chikmagalur · 7975045560</div>
+    <div class="pg">4 / 5</div>
+  </div>
+</section>
+<section class="card dark">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">Malenadu Dara</div>
+    <div class="hdate">25 September 2026</div>
+  </div>
+  <div class="body">
+    <div class="cta">
+      <img src="channel-qr.png">
+      <div class="ch">Want the daily rate?</div>
+      <div class="cp">Join the Malenadu Dara WhatsApp channel — Karnataka prices every working day, straight to your phone.</div>
+      <div class="slot">Vidwan Gowda · Aldur, Chikmagalur<br>Phone 7975045560</div>
+      <div class="disc">Prices from the Coffee Board of India Daily Coffee Market Report. Information only, not selling advice.</div>
+    </div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">Vidwan Gowda · Aldur, Chikmagalur · 7975045560</div>
+    <div class="pg">5 / 5</div>
+  </div>
+</section>
+</body>
+</html>
