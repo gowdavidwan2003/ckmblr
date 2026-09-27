@@ -1,0 +1,125 @@
+<!-- Malenadu Dara — daily coffee news card.
+
+     FIXED: the masthead band, the date chip, the footer band, the QR card and
+     the disclaimer strip. Do not restyle or reorder these. They are the brand,
+     and they are what makes a forwarded image traceable.
+
+     FLEXIBLE: everything inside <div class="wrap">. Daily news has no fixed
+     shape — some days are one big story, some days are six small ones. Use
+     whichever blocks below fit the day and delete the rest. Do NOT force the
+     news into a fixed set of sections.
+
+     Blocks available (all optional, any order, any number):
+       .lead      one-sentence framing of the day, if there is a through-line
+       .item      a news item: .ihead headline, body text, .imeta source line
+       .big       a callout for one standout number or fact
+       .quick     a compact list of small items that don't need a paragraph
+       .more      a closing pointer line
+
+     The @font-face rule is injected by scripts/build_images.py — do not add one.
+     QR size is load-bearing: see references/brand.md before shrinking it.
+     The example content below is from the ICO August 2026 report, kept only to
+     show the structure. Replace all of it. -->
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 210mm 460mm; margin: 0; }
+body { font-family:'NotoKan', sans-serif; font-size:10pt; line-height:1.7; color:#1c1c1c; margin:0; }
+
+/* ---------- FIXED CHROME ---------- */
+.masthead { background:#0F6E56; padding:13mm 13mm 11mm 13mm; display:flex; align-items:center; gap:5mm; }
+.logo { width:22mm; height:22mm; flex-shrink:0; }
+.mname { color:#E1F5EE; font-size:22pt; font-weight:700; line-height:1.15; }
+.msub { color:#9FE1CB; font-size:10.5pt; margin-top:1.5mm; }
+.mdate { color:#E1F5EE; font-size:11pt; font-weight:700; border:1px solid #3E8E76; border-radius:20px;
+         padding:2mm 5mm; white-space:nowrap; text-align:center; }
+.mdate span { display:block; color:#9FE1CB; font-size:8.5pt; font-weight:400; }
+.footband { background:#0F6E56; padding:6mm 13mm; display:flex; justify-content:space-between; align-items:center; gap:6mm; }
+.fname { color:#E1F5EE; font-size:12pt; font-weight:700; }
+.fdate { color:#9FE1CB; font-size:10pt; margin-top:1mm; }
+.fcontact { color:#C9EDE0; font-size:9.5pt; margin-top:2mm; line-height:1.5; }
+.joincard { background:#FFFFFF; border-radius:4px; padding:3mm; display:flex; align-items:center; gap:3.5mm; }
+.qr { width:44mm; height:44mm; display:block; }
+.jointxt { font-size:9pt; color:#0B5744; line-height:1.5; max-width:52mm; }
+.jointxt b { font-size:10pt; color:#0F6E56; }
+.fnote { background:#0B5744; color:#9FE1CB; font-size:8.5pt; padding:3.5mm 13mm 4.5mm 13mm; line-height:1.6; }
+
+/* ---------- FLEXIBLE CONTENT ---------- */
+.wrap { padding:9mm 13mm 8mm 13mm; }
+.lead { background:#EEF5F2; border-left:3px solid #0F6E56; padding:3.5mm 4mm; margin:0 0 6mm 0; }
+.item { border-left:3px solid #C7DED6; padding-left:5mm; margin-bottom:6mm; }
+.ihead { font-size:12pt; font-weight:700; color:#0F6E56; margin-bottom:1.5mm; line-height:1.35; }
+.item p { margin:0 0 1.5mm 0; }
+.imeta { font-size:8.5pt; color:#6B6B6B; }
+.big { border:1.6px solid #C97B2E; background:#FDF6EF; border-radius:5px; padding:5mm; margin:0 0 6mm 0; }
+.bignum { font-size:20pt; font-weight:700; color:#8F4A12; line-height:1.2; }
+.bigtxt { font-size:10.5pt; margin-top:1.5mm; }
+.quick { background:#F6F6F4; border-radius:5px; padding:4mm 5mm; margin:0 0 6mm 0; }
+.quick .qh { font-size:10.5pt; font-weight:700; color:#0F6E56; margin-bottom:2mm; }
+.quick ul { margin:0; padding-left:5mm; }
+.quick li { margin-bottom:1.5mm; }
+.more { text-align:center; font-size:10pt; color:#0F6E56; font-weight:700; margin-top:2mm; }
+</style>
+</head>
+<body>
+
+<!-- FIXED -->
+<div class="masthead">
+  <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+    <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+      <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+    </g>
+  </svg>
+  <div style="flex:1;">
+    <div class="mname">ಮಲೆನಾಡು ದರ</div>
+    <div class="msub">ದಿನದ ಕಾಫಿ ಸುದ್ದಿ</div>
+  </div>
+  <div class="mdate"><span>ದಿನಾಂಕ</span>27 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+</div>
+
+<!-- FLEXIBLE: replace everything inside .wrap -->
+<div class="wrap">
+
+<div class="lead">
+ಇವತ್ತಿನ ಮುಖ್ಯ ಸುದ್ದಿ: ಮಲೆನಾಡಲ್ಲಿ ಸೆಪ್ಟೆಂಬರ್ 29ರಿಂದ ಜೋರು ಮಳೆ ಬರೋ ಅಂದಾಜು, ಮತ್ತು ಬ್ರೆಜಿಲ್‌ನ 2026ರ ಕಾಫಿ ಬೆಳೆ ಇಲ್ಲಿವರೆಗಿನ ಗರಿಷ್ಠ.
+</div>
+
+<div class="item">
+  <div class="ihead">ಸೆಪ್ಟೆಂಬರ್ 29ರಿಂದ ಮಲೆನಾಡಲ್ಲಿ ಜೋರು ಮಳೆ</div>
+  <p>ಕರಾವಳಿ ಮತ್ತು ಮಲೆನಾಡು ಜಿಲ್ಲೆಗಳಲ್ಲಿ — ಚಿಕ್ಕಮಗಳೂರು, ಕೊಡಗು, ಹಾಸನ, ಶಿವಮೊಗ್ಗ ಸೇರಿ — ಸೆಪ್ಟೆಂಬರ್ 29ರಿಂದ ಜೋರು ಮಳೆ ಬರೋ ಚಾನ್ಸ್ ಇದೆ ಅಂತ IMD, KSNDMC ಹೇಳಿವೆ. ಸೆಪ್ಟೆಂಬರ್ 26-28ರ ವರೆಗೆ ಸಣ್ಣ-ಪುಟ್ಟ ಮಳೆ, ಗಾಳಿ, ಗುಡುಗು ಮಾತ್ರ — ಜೋರು ಮಳೆ ಎಚ್ಚರಿಕೆ ಇನ್ನೂ ಇಲ್ಲ. ಒಳನಾಡಲ್ಲಿ ಅಕ್ಟೋಬರ್ 1ರಿಂದ ಮಳೆ ಹೆಚ್ಚಾಗುತ್ತೆ ಅಂತ ಅಂದಾಜು.</p>
+  <div class="imeta">ಮೂಲ: Goodreturns (ಮಧುಲಿಕಾ ಪಾಂಡೆ), 26.09.2026</div>
+</div>
+
+<div class="big">
+  <div class="bignum">67.6 ಮಿಲಿಯನ್ ಚೀಲ</div>
+  <div class="bigtxt">ಬ್ರೆಜಿಲ್‌ನ 2026ರ ಕಾಫಿ ಬೆಳೆ — ಇಲ್ಲಿವರೆಗಿನ ಗರಿಷ್ಠ. ಕಳೆದ ವರ್ಷಕ್ಕಿಂತ 19.6% ಜಾಸ್ತಿ.</div>
+</div>
+
+<div class="item">
+  <div class="ihead">ಅರೇಬಿಕಾ ಜಾಸ್ತಿ, ರೊಬಸ್ಟಾ ಕಮ್ಮಿ</div>
+  <p>ಬ್ರೆಜಿಲ್‌ನ ಸರ್ಕಾರಿ ಸಂಸ್ಥೆ Conab ಸೆಪ್ಟೆಂಬರ್ 24ಕ್ಕೆ ಕೊಟ್ಟ ಮೂರನೇ ಅಂದಾಜಿನ ಪ್ರಕಾರ, ಅರೇಬಿಕಾ 48.2 ಮಿಲಿಯನ್ ಚೀಲ (34.8% ಜಾಸ್ತಿ), ಆದ್ರೆ ರೊಬಸ್ಟಾ 19.4 ಮಿಲಿಯನ್ ಚೀಲಕ್ಕೆ ಇಳಿದಿದೆ (6.6% ಕಮ್ಮಿ). ಜಗತ್ತಿನ ಮಾರ್ಕೆಟ್‌ನಲ್ಲಿ ಅರೇಬಿಕಾ ಸ್ಟಾಕ್ ಜಾಸ್ತಿ ಆಗೋ ಒತ್ತಡ, ರೊಬಸ್ಟಾ ಕಡೆ ಆ ಒತ್ತಡ ಅಷ್ಟಿಲ್ಲ.</p>
+  <div class="imeta">ಮೂಲ: Food Business Middle East & Africa (Conab ಮಾಹಿತಿ), 26.09.2026</div>
+</div>
+
+</div>
+
+<!-- FIXED -->
+<div class="footband">
+  <div>
+    <div class="fname">ಮಲೆನಾಡು ದರ</div>
+    <div class="fdate">27 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+    <div class="fcontact">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು<br>ಫೋನ್ 7975045560<br>ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್ · ಫೇಸ್‌ಬುಕ್ @malenadu.dara</div>
+  </div>
+  <div class="joincard">
+    <img class="qr" src="channel-qr.png">
+    <div class="jointxt"><b>ಮಲೆನಾಡು ದರ</b><br>WhatsApp ಚಾನೆಲ್ — ಸ್ಕ್ಯಾನ್ ಮಾಡಿ, ದಿನಾ ಸುದ್ದಿ ಸಿಗುತ್ತೆ.</div>
+  </div>
+</div>
+<div class="fnote">ಬೇರೆ ಬೇರೆ ಪತ್ರಿಕೆ ವರದಿಗಳ ಸಾರಾಂಶ. ಪ್ರತಿ ಸುದ್ದಿಯ ಮೂಲ ಅದರ ಕೆಳಗೆ ಕೊಟ್ಟಿದೆ. ಮಾಹಿತಿಗಾಗಿ ಮಾತ್ರ — ಸಲಹೆ ಅಲ್ಲ.</div>
+
+</body>
+</html>
