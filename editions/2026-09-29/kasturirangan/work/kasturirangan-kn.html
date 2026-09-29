@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 1080px 1350px; margin: 0; }
+* { box-sizing: border-box; }
+body { font-family:'NotoKan', sans-serif; margin:0; color:#141414; }
+
+.card { width:1080px; height:1350px; page-break-after:always;
+        display:flex; flex-direction:column; background:#FFFFFF; overflow:hidden; }
+.card:last-child { page-break-after:auto; }
+.card.dark { background:#0F6E56; color:#FFFFFF; }
+
+/* ---- HEADER: slim, same on every card ---- */
+.hdr { padding:44px 72px 0 72px; display:flex; align-items:center; gap:18px; flex-shrink:0; }
+.logo { width:56px; height:56px; flex-shrink:0; }
+.hname { font-size:27px; font-weight:700; color:#0F6E56; letter-spacing:0.3px; }
+.hdate { margin-left:auto; font-size:24px; color:#8A8A8A; white-space:nowrap; }
+.dark .hname { color:#FFFFFF; }
+.dark .hdate { color:#9FE1CB; }
+
+/* ---- BODY ---- */
+.body { flex:1; padding:56px 72px 40px 72px; display:flex; flex-direction:column;
+        justify-content:center; overflow:hidden; }
+
+/* ---- FOOTER: hairline + one quiet line ---- */
+.ftr { padding:0 72px 44px 72px; display:flex; justify-content:space-between;
+       align-items:flex-end; flex-shrink:0; font-size:22px; color:#9A9A9A; }
+.ftr .ct { line-height:1.45; }
+.dark .ftr { color:#79C4AC; }
+
+/* ---- type ---- */
+h1.cover { font-size:96px; line-height:1.38; margin:0 0 40px 0; font-weight:700; color:#FFFFFF; }
+.covsub { font-size:38px; line-height:1.6; color:#C9EDE0; }
+.covtag { align-self:flex-start; font-size:26px; color:#9FE1CB; letter-spacing:2px;
+          text-transform:uppercase; margin-bottom:34px; }
+h2 { font-size:56px; color:#0F6E56; margin:0 0 44px 0; line-height:1.4; font-weight:700; }
+p  { font-size:34px; line-height:1.62; margin:0 0 30px 0; }
+p:last-child { margin-bottom:0; }
+b { font-weight:700; }
+.muted { color:#6E6E6E; }
+
+/* stacked label/value rows — replaces boxes */
+.row { padding:26px 0; border-top:2px solid #E8E8E8; }
+.row:last-of-type { border-bottom:2px solid #E8E8E8; }
+.row .lbl { font-size:25px; color:#0F6E56; font-weight:700; letter-spacing:0.6px; margin-bottom:10px; }
+.row p { font-size:33px; margin:0; line-height:1.55; }
+
+.bignum { font-size:124px; font-weight:700; color:#0F6E56; line-height:1.25; margin:0 0 8px 0; }
+.bigcap { font-size:31px; color:#6E6E6E; margin-bottom:40px; }
+
+table { width:100%; border-collapse:collapse; }
+th { font-size:23px; color:#8A8A8A; font-weight:400; text-align:left;
+     padding:0 0 16px 0; border-bottom:2px solid #E8E8E8; letter-spacing:0.6px; }
+th.r, td.r { text-align:right; }
+td { font-size:36px; padding:26px 0; border-bottom:2px solid #F0F0F0; }
+td.g { font-weight:700; }
+td.v { font-weight:700; white-space:nowrap; }
+td.d { font-size:30px; }
+.dn { color:#B4231F; font-weight:700; }
+.up { color:#0F6E56; font-weight:700; }
+.flat { color:#A0A0A0; }
+.note { font-size:28px; color:#6E6E6E; line-height:1.55; margin-top:34px; }
+
+.item { margin-bottom:46px; }
+.item:last-child { margin-bottom:0; }
+.item .ih { font-size:42px; font-weight:700; color:#0F6E56; margin-bottom:16px; line-height:1.4; }
+.item p { font-size:31px; margin:0 0 10px 0; }
+.item .src { font-size:23px; color:#9A9A9A; }
+
+/* closing card */
+.cta { text-align:center; }
+.cta img { width:330px; height:330px; display:block; margin:0 auto 36px auto;
+           background:#FFFFFF; padding:18px; border-radius:10px; }
+.cta .ch { font-size:56px; font-weight:700; margin-bottom:20px; line-height:1.4; color:#FFFFFF; }
+.cta .cp { font-size:32px; color:#C9EDE0; line-height:1.55; margin-bottom:40px; }
+.cta .slot { font-size:30px; color:#FFFFFF; line-height:1.7; padding:28px 0;
+             border-top:2px solid #3E8E76; border-bottom:2px solid #3E8E76; }
+.disc { font-size:23px; color:#79C4AC; line-height:1.55; margin-top:36px; }
+
+.src { font-size:22px; color:#9A9A9A; margin-top:30px; line-height:1.5; }
+.dark .src { color:#79C4AC; }
+.row .lbl.warn { color:#8F4A12; }
+table.tight td { padding:17px 0; font-size:33px; }
+table.tight th { padding-bottom:12px; }
+tr.tot td { border-top:3px solid #0F6E56; font-weight:700; }
+h2.sm { font-size:48px; margin-bottom:26px; }
+.lead { font-size:26px; color:#6E6E6E; line-height:1.5; margin:0 0 22px 0; }
+.tk { margin:0 0 20px 0; }
+.tk .tn { font-size:27px; font-weight:700; color:#0F6E56; margin-bottom:6px;
+          border-bottom:2px solid #E8E8E8; padding-bottom:5px; }
+.tk .tn span { font-weight:400; color:#8A8A8A; font-size:23px; }
+.tk .vs { font-family:'NotoKan', 'Segoe UI', Arial, sans-serif; font-size:22px;
+          line-height:1.5; color:#262626; }
+.tk .vs i { font-style:normal; color:#9A9A9A; }
+.stack .row p { font-size:31px; }
+.big .tk .vs { font-size:26px; }
+</style>
+</head>
+<body>
+<section class="card dark">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <div class="covtag">ವಿಶೇಷ ವರದಿ</div>
+    <h1 class="cover">ಕಸ್ತೂರಿರಂಗನ್<br>ವರದಿಯಲ್ಲಿ<br>ಏನಿದೆ?</h1>
+    <div class="covsub">2013ರ ವರದಿಯ ಎರಡೂ ಸಂಪುಟ ಓದಿ ಮಾಡಿದ ಸಾರಾಂಶ. ಕರ್ನಾಟಕದ ಲೆಕ್ಕ, ಯಾವುದು ಬ್ಯಾನ್, ತೋಟದ ಬಗ್ಗೆ ಏನು ಹೇಳುತ್ತೆ, ಮತ್ತು ಕಾಫಿ ಜಿಲ್ಲೆಗಳ ಹಳ್ಳಿ ಪಟ್ಟಿ.</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">1 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಒಂದೇ ನೋಟದಲ್ಲಿ</h2>
+    <div class="stack">
+    <div class="row"><div class="lbl">ತೋಟದವರಿಗೆ ಸಮಾಧಾನದ ಅಂಶ</div>
+    <p>ತೋಟ, ಗದ್ದೆ, ಊರು — ಇವನ್ನ ESA ಗಡಿಯಿಂದ ಹೊರಗಿಟ್ಟಿದೀವಿ ಅಂತ ವರದಿ ಹೇಳುತ್ತೆ. ಬ್ಯಾನ್ ಲಿಸ್ಟ್‌ನಲ್ಲಿ ವ್ಯವಸಾಯ ಇಲ್ಲ. ಕೊಡಗಿನ ಕಾಫಿ ತೋಟಗಳನ್ನ ಹೊಗಳಿದೆ.</p></div>
+    <div class="row"><div class="lbl warn">ತೋಟದವರಿಗೆ ಆತಂಕದ ಅಂಶ</div>
+    <p>ಗಡಿ ಹಾಕಿರೋದು ಹಳ್ಳಿ ಲೆಕ್ಕದಲ್ಲಿ. ಹಳ್ಳಿಯ 20% ಜಾಗ ಸೂಕ್ಷ್ಮ ಅಂತ ಗುರುತಾದ್ರೆ ಇಡೀ ಹಳ್ಳಿ ಪಟ್ಟಿಗೆ. ಕಾಡಿನ ನೆರಳಲ್ಲಿರೋ ಏಲಕ್ಕಿ ಥರದ ತೋಟ ಸ್ಯಾಟಲೈಟ್‌ನಲ್ಲಿ ಬೇರೆ ಕಾಣಲ್ಲ ಅಂತ ವರದಿನೇ ಒಪ್ಕೊಂಡಿದೆ.</p></div>
+    <div class="row"><div class="lbl">ಮುಂದೆ ಗಮನಿಸಬೇಕಾದ್ದು</div>
+    <p>ಕೇಂದ್ರದ ಫೈನಲ್ ನೋಟಿಫಿಕೇಶನ್. ರೂಲ್ಸ್ ಅನ್ವಯ ಆಗೋದು ಅದರ ಪ್ರಕಾರ — ಈ 2013ರ ವರದಿ ಪ್ರಕಾರ ಅಲ್ಲ.</p></div>
+    </div>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 1, ಪುಟ 96, 99, 113</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">2 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಈ ವರದಿ ಅಂದ್ರೆ ಏನು?</h2>
+    <p>ಡಾ. ಕೆ. ಕಸ್ತೂರಿರಂಗನ್ ಅಧ್ಯಕ್ಷತೆಯ ಹೈ ಲೆವೆಲ್ ವರ್ಕಿಂಗ್ ಗ್ರೂಪ್ <b>15 ಏಪ್ರಿಲ್ 2013</b>ಕ್ಕೆ ಕೇಂದ್ರ ಪರಿಸರ ಸಚಿವಾಲಯಕ್ಕೆ ಕೊಟ್ಟ ವರದಿ.</p>
+    <p>ಅದಕ್ಕೂ ಮುಂಚೆ ಗಾಡ್ಗೀಳ್ ವರದಿ ಇಡೀ ಪಶ್ಚಿಮ ಘಟ್ಟನ ಸೂಕ್ಷ್ಮ ಪ್ರದೇಶ ಅಂದಿತ್ತು. ಅದಕ್ಕೆ ಬಂದ ವಿರೋಧ ನೋಡಿ ಈ ಗ್ರೂಪ್ ಮಾಡಿದ್ರು.</p>
+    <table class="tight">
+      <tr><td class="g">ಪಶ್ಚಿಮ ಘಟ್ಟ ಒಟ್ಟು</td><td class="r v">1,64,280 ಚ.ಕಿ.ಮೀ</td></tr>
+      <tr><td class="g">ರಾಜ್ಯ · ತಾಲೂಕು</td><td class="r v">6 · 188</td></tr>
+      <tr><td class="g">ಊರು, ತೋಟ, ಗದ್ದೆ</td><td class="r v">ಸುಮಾರು 60%</td></tr>
+      <tr><td class="g">ಕಾಡು / ಸಹಜ ಜಾಗ</td><td class="r v">41%</td></tr>
+      <tr class="tot"><td class="g">ESA (ಸೂಕ್ಷ್ಮ ಪ್ರದೇಶ)</td><td class="r v">37% · 4,156 ಹಳ್ಳಿ</td></tr>
+    </table>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 1, ಪುಟ xii–xiii, 44, 88</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">3 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2 class="sm">ಕರ್ನಾಟಕದ ಲೆಕ್ಕ</h2>
+    <div class="bignum">1,576 ಹಳ್ಳಿ</div>
+    <div class="bigcap">10 ಜಿಲ್ಲೆಯ 33 ತಾಲೂಕು. 20,668 ಚ.ಕಿ.ಮೀ ESA — ರಾಜ್ಯದ ಘಟ್ಟ ತಾಲೂಕುಗಳ 46.5%.</div>
+    <table class="tight">
+      <tr><th>ಜಿಲ್ಲೆ</th><th class="r">ESA ಹಳ್ಳಿ</th></tr>
+      <tr><td class="g">ಉತ್ತರ ಕನ್ನಡ</td><td class="r v">626</td></tr>
+      <tr><td class="g">ಶಿವಮೊಗ್ಗ</td><td class="r v">484</td></tr>
+      <tr><td class="g">ಚಿಕ್ಕಮಗಳೂರು</td><td class="r v">147</td></tr>
+      <tr><td class="g">ಕೊಡಗು</td><td class="r v">55</td></tr>
+      <tr><td class="g">ಹಾಸನ</td><td class="r v">35</td></tr>
+      <tr><td class="g">ಉಳಿದ 5 ಜಿಲ್ಲೆ</td><td class="r v">229</td></tr>
+    </table>
+    <div class="note">ಉಳಿದವು: ಬೆಳಗಾವಿ 63, ಮೈಸೂರು 62, ದ.ಕನ್ನಡ 46, ಉಡುಪಿ 37, ಚಾಮರಾಜನಗರ 21. ಹಾಸನದಲ್ಲಿ ಸಕಲೇಶಪುರ 34, ಆಲೂರು 1.</div>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 1, ಟೇಬಲ್ 6–7 · ಸಂಪುಟ 2, ಅಪೆಂಡಿಕ್ಸ್ 3</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">4 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ESAನಲ್ಲಿ ಯಾವುದು ಬ್ಯಾನ್</h2>
+    <div class="stack">
+    <div class="row"><div class="lbl">ಗಣಿ, ಕ್ವಾರಿ, ಮರಳು</div>
+    <p>ಪೂರ್ತಿ ಬ್ಯಾನ್. ಈಗಿರೋ ಗಣಿ 5 ವರ್ಷದಲ್ಲಿ ಅಥವಾ ಲೀಸ್ ಮುಗಿದಾಗ — ಯಾವುದು ಮೊದಲೋ ಆಗ — ನಿಲ್ಲಬೇಕು.</p></div>
+    <div class="row"><div class="lbl">ಥರ್ಮಲ್ ಪವರ್ ಪ್ಲಾಂಟ್</div>
+    <p>ಬ್ಯಾನ್.</p></div>
+    <div class="row"><div class="lbl">'ರೆಡ್' ಕೆಟಗರಿ ಫ್ಯಾಕ್ಟರಿ</div>
+    <p>ಜಾಸ್ತಿ ಮಾಲಿನ್ಯದ ಫ್ಯಾಕ್ಟರಿ ಬ್ಯಾನ್. 'ಆರೆಂಜ್' ಲಿಸ್ಟ್‌ನಲ್ಲಿ ಫುಡ್ ಪ್ರೊಸೆಸಿಂಗ್ ಇರೋದ್ರಿಂದ ಅದಕ್ಕೆ ಪೂರ್ತಿ ಬ್ಯಾನ್ ಇಲ್ಲ.</p></div>
+    <div class="row"><div class="lbl">ದೊಡ್ಡ ಕಟ್ಟಡ, ಟೌನ್‌ಶಿಪ್</div>
+    <p>20,000 ಚ.ಮೀ ಮತ್ತು ಅದಕ್ಕಿಂತ ದೊಡ್ಡ ಕಟ್ಟಡ, ಟೌನ್‌ಶಿಪ್ ಬ್ಯಾನ್.</p></div>
+    </div>
+    <div class="note">ತೋಟ, ವ್ಯವಸಾಯ ಈ ಬ್ಯಾನ್ ಲಿಸ್ಟ್‌ನಲ್ಲಿ ಇಲ್ಲ.</div>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 1, ಶಿಫಾರಸು 5–9 (ಪುಟ xiv)</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">5 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಬ್ಯಾನ್ ಅಲ್ಲ,<br>ಆದ್ರೆ ಕಟ್ಟುನಿಟ್ಟು</h2>
+    <div class="stack">
+    <div class="row"><div class="lbl">ಹೈಡ್ರೋ ಪವರ್</div>
+    <p>ಬೇಸಿಗೆಯಲ್ಲೂ ನದಿಯ 30% ನೀರು ಹರೀಬೇಕು. ಎರಡು ಪ್ರಾಜೆಕ್ಟ್ ಮಧ್ಯೆ 3 ಕಿ.ಮೀ ಅಂತರ. ನದಿ ಪಾತ್ರದ 50%ಗಿಂತ ಜಾಸ್ತಿ ಬಾಧೆ ಆಗಬಾರದು.</p></div>
+    <div class="row"><div class="lbl">ಬೇರೆ ದೊಡ್ಡ ಪ್ರಾಜೆಕ್ಟ್</div>
+    <p>ಕೇಂದ್ರದ 'A' ಕೆಟಗರಿ ಪರಿಸರ ಕ್ಲಿಯರೆನ್ಸ್ ಬೇಕು. ವಿಂಡ್‌ಮಿಲ್ ಕೂಡ ಕ್ಲಿಯರೆನ್ಸ್ ಅಡಿಗೆ ಬರಬೇಕು.</p></div>
+    <div class="row"><div class="lbl">ಗ್ರಾಮ ಸಭೆ</div>
+    <p>ESA ಹಳ್ಳಿಯಲ್ಲಿ ಯಾವುದೇ ಹೊಸ ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಗ್ರಾಮ ಸಭೆಯ ಒಪ್ಪಿಗೆ, NOC ಬೇಕು.</p></div>
+    <div class="row"><div class="lbl">ESA ಗಡಿಯಿಂದ 10 ಕಿ.ಮೀ ಒಳಗೆ</div>
+    <p>ಪರಿಸರ ಕ್ಲಿಯರೆನ್ಸ್ ಬೇಕಾಗೋ ಪ್ರಾಜೆಕ್ಟ್‌ಗಳಿಗೆ EIA 2006 ರೂಲ್ಸ್ ಅನ್ವಯ.</p></div>
+    </div>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 1, ಶಿಫಾರಸು 6–15 (ಪುಟ xiv–xv)</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">6 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಕಾಫಿ ತೋಟದ ಬಗ್ಗೆ<br>ವರದಿ ಏನು ಹೇಳುತ್ತೆ</h2>
+    <p>ಗಾಡ್ಗೀಳ್ ವರದಿ ಜಾರಿ ಆದ್ರೆ ಮುಂದೆ ತೋಟಗಳ ಜಾಗದಲ್ಲಿ ಸಹಜ ಕಾಡು ಬೆಳೆಸಬೇಕಾಗುತ್ತೆ. <b>ಇದು ತೋಟದವರಿಗೆ ಒಪ್ಪೋಕೆ ಆಗಲ್ಲ</b> ಅಂತ ಈ ವರದಿ ಬರೆದಿದೆ.</p>
+    <p>ತೋಟ ತೆಗೆಯೋದು ಉತ್ತರ ಅಲ್ಲ; ಹಸಿರು ಪದ್ಧತಿಗೆ ಪ್ರೋತ್ಸಾಹ ಕೊಡಬೇಕು ಅಂತ ವರದಿಯ ನಿಲುವು. ಕೊಡಗಿನ ಕಾಫಿ ಏರಿಯಾದಲ್ಲಿ ಜೀವವೈವಿಧ್ಯ ಜಾಸ್ತಿ ಇದೆ ಅಂತನೂ ಹೇಳಿದೆ.</p>
+    <p>ಕಾರ್ಮಿಕರ ಕೊರತೆ, ದುಬಾರಿ ಸರ್ಟಿಫಿಕೇಶನ್ ಇಲ್ಲದೆ ಆರ್ಗ್ಯಾನಿಕ್ ಪ್ರೀಮಿಯಂ ಸಿಗಲ್ಲ — ಈ ಸಮಸ್ಯೆಗಳನ್ನೂ ವರದಿ ಹೆಸರಿಸಿದೆ.</p>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 1, ಪುಟ 99–102</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">7 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2 class="sm">ಸಮಿತಿಗೆ ಬೆಳೆಗಾರರು<br>ಏನು ಹೇಳಿದ್ರು</h2>
+    <div class="lead">ಇವು ಸಂಪುಟ 2ರಲ್ಲಿರೋ ಅಭಿಪ್ರಾಯಗಳು — ವರದಿಯ ತೀರ್ಮಾನ ಅಲ್ಲ.</div>
+    <div class="stack">
+    <div class="row"><div class="lbl">ಕೊಡಗು ಪ್ಲಾಂಟರ್ಸ್</div>
+    <p>ತೋಟಗಳನ್ನ ಸೂಕ್ಷ್ಮ ವಲಯದಿಂದ ಪೂರ್ತಿ ಹೊರಗಿಡಿ.</p></div>
+    <div class="row"><div class="lbl">ಪ್ಲಾಂಟೇಶನ್ ವಲಯದ ಅರ್ಜಿ</div>
+    <p>ದಕ್ಷಿಣದ 3 ರಾಜ್ಯದಲ್ಲಿ ಟೀ, ಕಾಫಿ, ರಬ್ಬರ್, ಸ್ಪೈಸಸ್‌ನಲ್ಲಿ 12.5 ಲಕ್ಷ ಬೆಳೆಗಾರರು, 14 ಲಕ್ಷ ಕಾರ್ಮಿಕರು. ಆರ್ಗ್ಯಾನಿಕ್ ಕಡ್ಡಾಯ ಆದ್ರೆ ಫಸಲು 30–40% ಇಳಿಯುತ್ತೆ ಅಂತ ವಾದ.</p></div>
+    <div class="row"><div class="lbl">ಕಾಫಿ ಬೋರ್ಡ್ (ವಾಣಿಜ್ಯ ಇಲಾಖೆ ಮೂಲಕ)</div>
+    <p>ನೆರಳಿನ ಕಾಫಿ ಪರಿಸರಕ್ಕೆ ಒಳ್ಳೇದು. ಔಷಧಿ ಪೂರ್ತಿ ನಿಲ್ಲಿಸಿದ್ರೆ ಕಾಫಿ ಬೆಳೆಯೋಕೆ ಆಗಲ್ಲ. ಸುಮಾರು 2,82,000 ಕಾಫಿ ಬೆಳೆಗಾರರ ಜೀವನ ಇದರ ಮೇಲೆ.</p></div>
+    </div>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 2, PDF ಪುಟ 167, 172, 371–373</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">8 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಹಣ, ಪ್ರೋತ್ಸಾಹ:<br>ವರದಿಯ ಶಿಫಾರಸು</h2>
+    <div class="stack">
+    <div class="row"><div class="lbl">ಆರ್ಗ್ಯಾನಿಕ್ ಮತ್ತು ಬ್ರ್ಯಾಂಡ್</div>
+    <p>ಆರ್ಗ್ಯಾನಿಕ್‌ಗೆ ಪ್ರೋತ್ಸಾಹ ಸ್ಕೀಮ್, ಪಶ್ಚಿಮ ಘಟ್ಟದ ಪ್ರೀಮಿಯಂ ಬ್ರ್ಯಾಂಡ್. ಕಾಫಿ ಬೋರ್ಡ್, ಸ್ಪೈಸಸ್ ಬೋರ್ಡ್, APEDA ಕೂತು ಅಡ್ಡಿ ಬಗೆಹರಿಸಲಿ.</p></div>
+    <div class="row"><div class="lbl">ಮರ ಸಾಗಾಟ ರೂಲ್ಸ್</div>
+    <p>ಖಾಸಗಿ ಜಮೀನಿನ ಮರ ಸಾಗಾಟದ (ಟಿಂಬರ್ ಟ್ರಾನ್ಸಿಟ್) ರೂಲ್ಸ್ ರಿವ್ಯೂ ಮಾಡಿ ಬದಲಾಯಿಸಿ.</p></div>
+    <div class="row"><div class="lbl">ಹಳ್ಳಿಗೆ ನೇರ ಹಣ</div>
+    <p>ESA ಹಳ್ಳಿಗಳಿಗೆ 'ಪ್ಲಸ್ ಪೇಮೆಂಟ್' ನೇರವಾಗಿ ಸಮುದಾಯಕ್ಕೆ. ಕಾಡು ಕೊಡೋ ನೀರು, ಗಾಳಿಗೆ ಹಣ (PES).</p></div>
+    <div class="row"><div class="lbl">ಘಟ್ಟ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಕ್ರಮ</div>
+    <p>₹1,000 ಕೋಟಿ, ಕೇಂದ್ರ–ರಾಜ್ಯ ಖರ್ಚು 90:10.</p></div>
+    </div>
+    <div class="note">ಇವು ಶಿಫಾರಸು ಮಾತ್ರ. ಎಷ್ಟು ಜಾರಿ ಆಗಿದೆ ಅಂತ ಈ ವರದಿಯಲ್ಲಿ ಇಲ್ಲ.</div>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 1, ಶಿಫಾರಸು 20–28 · ಪುಟ 112–113</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">9 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2 class="sm">ESA ಹಳ್ಳಿ ಪಟ್ಟಿ:<br>ಚಿಕ್ಕಮಗಳೂರು (1/2)</h2>
+    <div class="lead">2013ರ ವರದಿಯ ಪಟ್ಟಿ, ಸರ್ವೆ ಆಫ್ ಇಂಡಿಯಾ ಸ್ಪೆಲ್ಲಿಂಗ್‌ನಲ್ಲೇ. ಈಗಿನ ಡ್ರಾಫ್ಟ್ ಪಟ್ಟಿ ಬೇರೆ ಇರಬಹುದು.</div>
+    <div class="tk"><div class="tn">ಚಿಕ್ಕಮಗಳೂರು <span>· 27 ಹಳ್ಳಿ</span></div><div class="vs">Melagiri, Kesavinamane, Hipla, Heggarmathavani, Madla, Athigiri, Melinahuluvathi, Kesave, Suguduvani, Siragola, Kolagave, Jagara, Shiravase, Bidare, Malagaru, Dattathreyapeeta, Churchugudde Kaval, Boggase, Basapura, Kadavanthi, Beranagodu, Huigere, Basaravalli, Saragodu, Manaboor, Bikkarane · <i>+ 1 ಹೆಸರಿಲ್ಲದ ಜಾಗ</i></div></div>
+    <div class="tk"><div class="tn">ಕೊಪ್ಪ <span>· 32 ಹಳ್ಳಿ</span></div><div class="vs">Kelakuli, Gunavanthe, Hirekodige, Bolapura, Bhandigadi, Kesave, Kumbarkoppa, Devarahalli, Kagga, Honagaru, Talamakki Estate, Addada, Nuggi, Shankarapura, Heggaru, Kunchur, Marithotlu, Bilagadde, Udana, Machikoppa, Karimane, Belawadi, Lokanathapura, Dayamballi, Adigebylu, Heggaru, Huligaradi, Devagodu, Haralane, Megur, Kallugudde · <i>+ 1 ಹೆಸರಿಲ್ಲದ ಜಾಗ</i></div></div>
+    <div class="tk"><div class="tn">ಮೂಡಿಗೆರೆ <span>· 27 ಹಳ್ಳಿ</span></div><div class="vs">Thanudi, Hornadu, Kalakodu, Samse, Idkani, Kelagur, Kundur, Darshana, Aramane Thalagur, Heggodlu, Thatkola, Kenjige Estate, Durgadahalli, Madugundi, Attigere, Taruve, Barimale Estate, Kogile, Gutti, Mularahalli, Urubage, Hosakere, Byrapura, Mekanagadde, Byrapura Estate · <i>+ 2 ಹೆಸರಿಲ್ಲದ ಜಾಗ</i></div></div>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 2, ಅಪೆಂಡಿಕ್ಸ್ 3 (PDF ಪುಟ 8–9)</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">10 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2 class="sm">ESA ಹಳ್ಳಿ ಪಟ್ಟಿ:<br>ಚಿಕ್ಕಮಗಳೂರು (2/2), ಹಾಸನ</h2>
+    <div class="lead">2013ರ ವರದಿಯ ಪಟ್ಟಿ, ಸರ್ವೆ ಆಫ್ ಇಂಡಿಯಾ ಸ್ಪೆಲ್ಲಿಂಗ್‌ನಲ್ಲೇ. ಈಗಿನ ಡ್ರಾಫ್ಟ್ ಪಟ್ಟಿ ಬೇರೆ ಇರಬಹುದು.</div>
+    <div class="tk"><div class="tn">ನರಸಿಂಹರಾಜಪುರ <span>· 35 ಹಳ್ಳಿ</span></div><div class="vs">Konakere, Aramballi, Vittala, Bellur, Konodi, Nandigave, Aralikoppa, Sankse, Bale, Salur, Hebbe, Sarya, Haravari, Alehalli, Davana, Megaramakki, Halsur · <i>+ 18 ಹೆಸರಿಲ್ಲದ ಜಾಗ</i></div></div>
+    <div class="tk"><div class="tn">ಶೃಂಗೇರಿ <span>· 26 ಹಳ್ಳಿ</span></div><div class="vs">Neelandur, Kumbaragodu, Masige, Meega, Rushyashringapura (Markal), Masige, Yedadalli, Yadadalu, Balekadi, Nemmaru, Ginikal, Kuthagodu, Kere, Sunkadamakki, Muduba, Malanadu, Kere, Nemmar Estate, Gulaganjimane, Hadi, Mathuvalli Estate, Balagere, Sheerlu · <i>+ 3 ಹೆಸರಿಲ್ಲದ ಜಾಗ</i></div></div>
+    <div class="tk"><div class="tn">ಸಕಲೇಶಪುರ <span>· 34 ಹಳ್ಳಿ</span></div><div class="vs">Achanahalli, Maragunda, Agani, Hodachahalli, Kadumane, Devihalli, Kesaganahalli, Heggadde, Aluvalli, Kadagaravalli, Yadekumari, Hongadahalla, Balehalla, Hosahalli, Jedigadde, Battekumari, Yathahalla, Athihalli, Yaragalli, Maragathur, Arini, Vanagoor, Mankanahalli, Banagere · <i>+ 10 ಹೆಸರಿಲ್ಲದ ಜಾಗ</i></div></div>
+    <div class="tk"><div class="tn">ಆಲೂರು <span>· 1 ಹಳ್ಳಿ</span></div><div class="vs">Adibylu</div></div>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 2, ಅಪೆಂಡಿಕ್ಸ್ 3 (PDF ಪುಟ 9–12)</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">11 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <div class="big">
+    <h2 class="sm">ESA ಹಳ್ಳಿ ಪಟ್ಟಿ:<br>ಕೊಡಗು</h2>
+    <div class="lead">2013ರ ವರದಿಯ ಪಟ್ಟಿ, ಸರ್ವೆ ಆಫ್ ಇಂಡಿಯಾ ಸ್ಪೆಲ್ಲಿಂಗ್‌ನಲ್ಲೇ. ಈಗಿನ ಡ್ರಾಫ್ಟ್ ಪಟ್ಟಿ ಬೇರೆ ಇರಬಹುದು.</div>
+    <div class="tk"><div class="tn">ಮಡಿಕೇರಿ <span>· 23 ಹಳ್ಳಿ</span></div><div class="vs">Hammiyala, Monnangeri, Mukkodlu, Galibeedu, Sampaje, Melchembu, Karike, Bhagamandala, Bettathur, Made, Kundacheri, Kopatti, Thannimani, Cherangala, Kolagadalu, Sannapulikotu (No.2), Aiyangeri, Peroor, Naladi, Yevakapadi, Chelavara, Karada · <i>+ 1 ಹೆಸರಿಲ್ಲದ ಜಾಗ</i></div></div>
+    <div class="tk"><div class="tn">ಸೋಮವಾರಪೇಟೆ <span>· 11 ಹಳ್ಳಿ</span></div><div class="vs">Kumaralli, Surlabi, Malambi Forest, Nidtha, Yedavanadu Forest II, Jainkalbetta Forest, Yedavanadu Forest II, Anekad Forest, Attur Forest · <i>+ 2 ಹೆಸರಿಲ್ಲದ ಜಾಗ</i></div></div>
+    <div class="tk"><div class="tn">ವಿರಾಜಪೇಟೆ <span>· 21 ಹಳ್ಳಿ</span></div><div class="vs">Karadigodu, Maldare, Channayan Kote, Devamachi Forest, Arekeri Forest - I, Arekeri Forest - III, Kedamullur, Palangala, Arekeri Forest - II, Devanur, Heggala, Kuttandi, Badaga, Badagarakeri, Parakatageri, Nalkeri Forest, Theralu, Kurchi, Kutta, Manchalli & Forest · <i>+ 1 ಹೆಸರಿಲ್ಲದ ಜಾಗ</i></div></div>
+    </div>
+    <div class="note">ಶಿವಮೊಗ್ಗ (484), ಉತ್ತರ ಕನ್ನಡ (626) ಸೇರಿ ಉಳಿದ ಜಿಲ್ಲೆಗಳ ಪಟ್ಟಿ ಸಂಪುಟ 2ರ PDF ಪುಟ 7–29ರಲ್ಲಿದೆ.</div>
+    <div class="src">ಮೂಲ: HLWG ವರದಿ ಸಂಪುಟ 2, ಅಪೆಂಡಿಕ್ಸ್ 3 (PDF ಪುಟ 10–11)</div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">12 / 14</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಈಗ ವಿಷಯ<br>ಎಲ್ಲಿಗೆ ಬಂದಿದೆ</h2>
+    <div class="item"><div class="ih">ಕೇಂದ್ರದ 7ನೇ ಡ್ರಾಫ್ಟ್: 1,449 ಹಳ್ಳಿ</div>
+    <p>ಕರ್ನಾಟಕದ 1,449 ಹಳ್ಳಿ, 20,668 ಚ.ಕಿ.ಮೀ. 2013ರ ವರದಿಯಲ್ಲಿ 1,576 ಹಳ್ಳಿ ಇದ್ವು — ಅಂದ್ರೆ ಪಟ್ಟಿ ಬದಲಾಗಿದೆ.</p>
+    <div class="src">ಮೂಲ: The Week, 22.09.2026</div></div>
+    <div class="item"><div class="ih">ವಿಧಾನಸಭೆ, ಪರಿಷತ್ ಒಮ್ಮತದ ನಿರ್ಣಯ</div>
+    <p>ಸರ್ವೆ ನಂಬರ್ ಪ್ರಕಾರ ಹೊಸ ಸರ್ವೆಗೆ 1 ವರ್ಷ ಕೊಡಿ ಅಂತ ಕೇಂದ್ರಕ್ಕೆ ಕೇಳಿಕೆ.</p>
+    <div class="src">ಮೂಲ: ETV Bharat, 22.09.2026 · Newskarnataka, 24.09.2026</div></div>
+    <div class="item"><div class="ih">ಸಿಎಂ ಪತ್ರ: ಸರ್ವೆ ಆದ ಮೇಲೆ ನೋಟಿಫಿಕೇಶನ್</div>
+    <p>ಡ್ರಾಫ್ಟ್‌ನಲ್ಲಿ ತೋಟ, ಜಮೀನು, ಜನವಸತಿ ಸೇರ್ಕೊಂಡಿದೆ ಅಂತ ಕೇಂದ್ರ ಪರಿಸರ ಸಚಿವರಿಗೆ ಪತ್ರ.</p>
+    <div class="src">ಮೂಲ: The News Mill, 28.09.2026</div></div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">13 / 14</div>
+  </div>
+</section>
+<section class="card dark">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">29 ಸೆಪ್ಟೆಂಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <div class="cta">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAggAAAIICAIAAACEnoE0AAAMJ0lEQVR4nO3dsY7ryBFAUdGY//9lObLh60AKGr3VpM6JdoPRkJQ0F3xAFa/3+/0CgP/413//CwCEAYD/544BgBAGAEIYAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgBAGAEIYAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgBAGAEIYAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgBAGAEIYAIi/16jrul6P9n6/B0//829f9/X4F09/9vjXf/vu1589vNlP74//6djNHQMAIQwAhDAAEMIAQAgDACEMAIQwABDCAEAIAwAhDACctBLjq/G1AZ+N77T4fAC7V1Z8tfgKu1dKHP7p+mx8J8ThV+/ww7um377P3DEAEMIAQAgDACEMAIQwABDCAEAIAwAhDACEMAAQwgDArVZinL+U4tZnt7hz4vCx/mev3Fh/dw7/bG89vGf/3VjnjgGAEAYAQhgACGEAIIQBgBAGAEIYAAhhACCEAYBnTT7f2u7R4sXxy/Xp0MNna2fdfTJ58eDvPhv8bO4YAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIKzEuLfPewXGn3g+u5TixzeCLL47P371fpw7BgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgBAGAEIYAHjWSoxbz81/XRuw++wO39mwePV2X97ZnRNfLZ7+4k6LZ69LeTx3DACEMAAQwgBACAMAIQwAhDAAEMIAQAgDACEMANxq8nl2PPJ8i7O1W398fbb28Mnk2dNfv3q7T3/W4Yd3OHcMAIQwABDCAEAIAwAhDACEMAAQwgBACAMAIQwAhDAAcNJKDI/k/mx8a8JWd1+68NXW419/77ZuHBnfd8IKdwwAhDAAEMIAQAgDACEMAIQwABDCAEAIAwAhDADEdfcBwt3Dsb/8PPfDJ5PXD2/3h3/x8q68+D/w9s1evUXrB3+N/uXZzR0DACEMAIQwABDCAEAIAwAhDACEMAAQwgBACAMAIQwAxN/r0XYPvo9vBVhcubFodqnD+tkdvk9l5cX/Abf+dO1el/I+e53MV+4YAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIK7Zwfr1ufDdWxMWX3/30ohbW1wbsHvrwPrrzy4suftne+vh7T67u3PHAEAIAwAhDACEMAAQwgBACAMAIQwAhDAAEMIAQPy9Ru0eL1x//cXh25UXHx+/XD+82efd3/2B7IcPlq+8+D9g8QCuswe/d3PHAEAIAwAhDACEMAAQwgBACAMAIQwAhDAAEMIAQAgDAHEd/szrwx/5PT73v/X4dy8U+eruWwd2X96T3527X/xr81d7/N3/zB0DACEMAIQwABDCAEAIAwAhDACEMAAQwgBACAMAvzT5fP7rb3X4xRkfXt09u7v13R+fS3+29/QXf/YvszsGAEIYAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAQhgAOGklxvhGime//u4fv/vWgc/Gt8X8+OPsf/z0Z7ljACCEAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgPh7nW33XPuiwzdqLFr/7Ytv3+JShMXXv/tOhcWlEbM/fvd1L9fy689+990xABDCAEAIAwAhDACEMAAQwgBACAMAIQwAhDAAcNLk8+7xyHVbJyR3P9B89/DqbuMH8Nns8+jXvxqzs8F3H8y+Nn83Z7ljACCEAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgLhmJ7N3PzJ7fKPGZ3ffOnD46X+1eyfE7M6J3RY/HovfzR//8OzmjgGAEAYAQhgACGEAIIQBgBAGAEIYAAhhACCEAYCTJp/vPjw8/kDwrQcwPje+ezD71q9/99naw6/e++yLs5s7BgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgBAGAEIYAHjWSozD1wbsXrqw8tu/+np44xtBZu1+nP3szozxnRO3Xihy3XzlhjsGAEIYAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAQhgAiL/XqN2D6eM7Jw4ffD/88O5udqnD4s6J8c/27Daaa/lP0+Lrz3433TEAEMIAQAgDACEMAIQwABDCAEAIAwAhDACEMAAQ1+x83e7pza92P5H81od3+Fz07tnUdYvPi/9xi1dv64+/9r99Jp8BOIh/SgIghAGAEAYAQhgACGEAIIQBgBAGAEIYAAhhACD+XmfbPfj+7Cd6j1+9rae//uK7953MLiw5fB3LV1u/vLu/mO+z18l85Y4BgBAGAEIYAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAbrUS46vdSy+2Dr6vb9RY3Gmxe6vBym9fP7vd785ut15Ysvvq7d4I8ux35yt3DACEMAAQwgBACAMAIQwAhDAAEMIAQAgDACEMAJw0+Tz+QPPFV9g9fHv+dO7Jj7NfNP7efT6Aww9v/Kux+Nuvta0Bd+eOAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgBAGAOKaHUwfHysf3ytw+BPJF81uTdi91OGr3cd/8m8/fB3O+Jt7OHcMAIQwABDCAEAIAwAhDACEMAAQwgBACAMAIQwAnDT5vNvu+ca7PzD98wGsz6ZuPf713757tNjs7srFmZ3qfz/6D+NX7hgACGEAIIQBgBAGAEIYAAhhACCEAYAQBgBCGAAIYQDgpJUY40+rX7R7KcKi2Y0a6w5/nvvhG0EOvzjnH8CtP5yL3DEAEMIAQAgDACEMAIQwABDCAEAIAwAhDACEMAAQwgBA/L1ubnarweLg+/pGjcXD2z3Wf+t9JLtP//DLe/jKjd2vf307/d3f/VnuGAAIYQAghAGAEAYAQhgACGEAIIQBgBAGAEIYAIhrdgBv9+PUx6c3Z8cjDWbf2uxc+u7P9t29R3cu7OaOAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgBAGAH5pJcb6AcxuNTj89Be3JowvFFk8vMON78w4eaPG+Dfrffanyx0DACEMAIQwABDCAEAIAwAhDACEMAAQwgBACAMA8fe6ud3DsYtmZ2tnJ4fHPfvw1j88Wz9+4xd/cenA4usfPtj8lTsGAEIYAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAQhgAiGt2dHv9kdmH75w4/IHptx7cv/vF3+3wr/azvZfXycy+fe4YAAhhACCEAYAQBgBCGAAIYQAghAGAEAYAQhgACGEA4KSVGD9ufW3A1rfv8Qs5Fk9w/PgXPXudzO7ffj362+GOAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgPh7jXr8E8M/jy+uT1fODq/utnh2u2drdw9Oz57+7h9fNP7mvm/+5frMHQMAIQwAhDAAEMIAQAgDACEMAIQwABDCAEAIAwAhDACctBLjq8PnzsdXemzdajD+PPTF375758Ruiwcw++O7HX54d1+54Y4BgBAGAEIYAAhhACCEAYAQBgBCGAAIYQAghAGAuGbn63YPr6679QPT7z4devjj4GftfnN//PL++FfPHQMAIQwAhDAAEMIAQAgDACEMAIQwABDCAEAIAwAhDADEX/+Xs8xuHRgf6/98/OvrUnaf4LP3qez+dG1999ff+mvt9Mc/nJ+5YwAghAGAEAYAQhgACGEAIIQBgBAGAEIYAAhhACCEAYCwEuPJdm81mF3qsL5UYPfWhM8WX3/3m3v3z97WH39t3ncyzh0DACEMAIQwABDCAEAIAwAhDACEMAAQwgBACAMAz5p8PnyA8LPDH2c//rj5xcObHcz+anyyevEEZ796uz887zv/YVnnjgGAEAYAQhgACGEAIIQBgBAGAEIYAAhhACCEAYAQBgDimp38nn1e+T9g9+Wd3Wpw+OPm7273m3v4SozPh7f77H78w+mOAYAQBgBCGAAIYQAghAGAEAYAQhgACGEAIIQBgBAGAE5aiQHAadwxABDCAEAIAwAhDACEMAAQwgBACAMAIQwAhDAAEMIAQAgDACEMAIQwABDCAEAIAwAhDACEMAAQwgBACAMAIQwAhDAAEMIAQAgDACEMAIQwABDCAEAIAwAhDACEMAAQwgBACAMAIQwAhDAAEMIAQAgDACEMAIQwABDCAEAIAwAhDACEMADw+l//Bt2+9f5voKwPAAAAAElFTkSuQmCC">
+      <div class="ch">ದಿನಾ ದರ ಬೇಕಾ?</div>
+      <div class="cp">ಮಲೆನಾಡು ದರ WhatsApp ಚಾನೆಲ್‌ಗೆ ಸೇರಿ — ದಿನದ ದರ, ಸುದ್ದಿ, ತಿಂಗಳ ವರದಿ ನೇರವಾಗಿ ಸಿಗುತ್ತೆ.</div>
+      <div class="slot">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು<br>ಫೋನ್ 7975045560<br>ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್ · ಫೇಸ್‌ಬುಕ್ @malenadu.dara</div>
+      <div class="disc">ಕಸ್ತೂರಿರಂಗನ್ ವರದಿ (2013) ಸಂಪುಟ 1, 2ರ ಸಾರಾಂಶ ಮಾತ್ರ. ಕಾನೂನು ಸಲಹೆ ಅಲ್ಲ. ನಿಮ್ಮ ಜಮೀನಿಗೆ ಏನು ಅನ್ವಯ ಅನ್ನೋದು ಫೈನಲ್ ನೋಟಿಫಿಕೇಶನ್ ಮೇಲೆ ನಿಂತಿದೆ.</div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">14 / 14</div>
+  </div>
+</section>
+</body>
+</html>
