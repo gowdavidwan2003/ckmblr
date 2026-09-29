@@ -8,6 +8,43 @@
 
 Kannada goes out first, English second. Cards upload in filename order.
 
+## Publishing
+
+Cloud routines build the cards and push them. A scheduled task in the Claude
+desktop app on the laptop publishes them: `malenadu-dara-daily-publish`,
+stored in `~/.claude/scheduled-tasks/`. It runs at 08:00, 12:00, 14:00, 17:00
+and 19:00 IST.
+
+| Set | Built (IST) | Folder | Normally posted |
+|---|---|---|---|
+| News | daily 05:00 | `editions/<date>/news/` | 08:00 |
+| Market close | Tue–Sat 06:00 | `editions/<date>/market/` | 08:00 |
+| Coffee Board rates + news | weekdays, polled 11:00–16:30 | `editions/<date>/out/` | next sweep after it lands |
+| ICO monthly | 25th 17:30, month-end retry | `editions/<date>/ico/` | 19:00, or 08:00 next day |
+| Statistics change | 10th 16:00, only if changed | `editions/stats-<date>/` | 17:00 / 19:00 |
+
+Each run:
+- pulls with `git pull --ff-only`, and stops if that fails instead of
+  resetting;
+- checks every image;
+- posts Kannada before English, as one Facebook + Instagram cross-post through
+  Meta Business Suite in Brave;
+- sends the tall images to the WhatsApp group through WhatsApp Web.
+
+The WhatsApp caption is only the group invite link, so the link travels with
+every forward. Posted markers live in `~/.malenadu-dara/posted/`, one file per
+post, so nothing goes out twice.
+
+The advisory routine saves PDFs only, so nothing is posted. Special reports
+(for example `editions/2026-09-29/kasturirangan/`) are posted by hand.
+
+- WhatsApp group: **ಮಲೆನಾಡು ಮಾರುಕಟ್ಟೆ**, invite link as in the QR section
+  below. Disappearing messages were set to 90 days as of 30 Sep 2026.
+- Business Suite caps Instagram carousels at 10 photos. A longer set needs a
+  10-card cut for Instagram; Facebook takes the full set.
+- `scripts/publish_meta.py` is an alternative path through the Graph API with
+  a Page token. It isn't in use; the browser task is.
+
 ## Contact line
 
 - Name: Vidwan Gowda / ವಿದ್ವಾನ್ ಗೌಡ
