@@ -14,7 +14,7 @@ Facebook. Cards are 1080x1350 PNGs — images, never PDFs, unless asked.
 
 ## Non-negotiables
 
-These four are where the work goes wrong when it goes wrong. They apply to
+These five are where the work goes wrong when it goes wrong. They apply to
 everything in this repo, daily and monthly alike.
 
 1. **Spoken Kannada, not literary Kannada.** The default a model reaches for is
@@ -30,6 +30,15 @@ everything in this repo, daily and monthly alike.
 4. **Look at the rendered PNG before presenting.** Kannada shaping failures come
    out as empty boxes and are completely silent in the PDF step. Confirm every
    card reports 1080x1350 and that the QR survives recompress.
+5. **Every futures change shows the absolute move and the percent.** Robusta,
+   Arabica, pepper, wherever a market close or futures change appears, on
+   carousel and WhatsApp images, in both languages: the move in the row's own
+   unit on top ("▲45"), the percent under it ("+1.34%"). A percent-only change
+   cell is a defect; fix it before presenting. Both numbers come from
+   `change_abs` and `change_pct` in `sources/<date>/prices/prices.json`. If the
+   source has no absolute figure, print the percent and say on the card that
+   the absolute move wasn't reported. Never back-calculate one from a single
+   close. Markup and CSS are in the daily skill's SKILL.md.
 
 ## Dates and prices
 

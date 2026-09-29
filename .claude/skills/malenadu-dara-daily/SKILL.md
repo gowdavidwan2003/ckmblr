@@ -87,10 +87,12 @@ Note also that the Karnataka rates in a given report are dated the **previous**
 day. Put the price date on the price card and the publication date in the
 header; collapsing them is the easiest way to mislead someone.
 
-## Market close shows the move in units and in percent
+## Market close shows the move in units and in percent — strict rule
 
-On the market close cards (`market/`, and the futures rows anywhere else), the
-change cell carries **both** numbers: the absolute move in the row's own unit
+This is not optional. On the market close cards (`market/`, and the futures
+rows anywhere else, carousel and tall images, Kannada and English), the
+change cell **must** carry both numbers. A percent-only change cell is a
+defect: do not build, present or commit cards that have one. The numbers are: the absolute move in the row's own unit
 on top, the percent underneath. A grower reads "▲45 $/t" faster than "▲1.34%".
 
 ```html

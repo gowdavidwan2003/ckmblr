@@ -30,3 +30,7 @@ Steps:
    Kannada first, and say which files are the carousel and which is WhatsApp.
 
 No buy/sell call anywhere on the cards.
+
+Every futures/market change cell shows the absolute move and the percent
+(e.g. ▲45 over +1.34%), from `change_abs` and `change_pct`. Percent alone is a
+defect. Check for it in step 6 before presenting.
