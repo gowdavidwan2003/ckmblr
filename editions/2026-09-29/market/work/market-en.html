@@ -53,11 +53,12 @@ b { font-weight:700; }
 table { width:100%; border-collapse:collapse; }
 th { font-size:23px; color:#8A8A8A; font-weight:400; text-align:left;
      padding:0 0 16px 0; border-bottom:2px solid #E8E8E8; letter-spacing:0.6px; }
-th.r, td.r { text-align:right; }
+th.r, td.r { text-align:right; padding-left:28px; }
 td { font-size:36px; padding:26px 0; border-bottom:2px solid #F0F0F0; }
 td.g { font-weight:700; }
 td.v { font-weight:700; white-space:nowrap; }
-td.d { font-size:30px; }
+td.d { font-size:30px; white-space:nowrap; }
+td.d .pct { display:block; font-size:22px; font-weight:400; opacity:.85; }
 .dn { color:#B4231F; font-weight:700; }
 .up { color:#0F6E56; font-weight:700; }
 .flat { color:#A0A0A0; }
@@ -96,8 +97,8 @@ td.d { font-size:30px; }
     <h2>Overnight market close</h2>
     <table>
       <tr><th>Market · 28.09.2026 close</th><th class="r">Close</th><th class="r">Change</th></tr>
-      <tr><td class="g">Robusta — ICE London ($/t)</td><td class="r v">3,412</td><td class="r d up">▲1.34%</td></tr>
-      <tr><td class="g">Arabica — ICE New York (¢/lb)</td><td class="r v">288.75</td><td class="r d up">▲3.64%</td></tr>
+      <tr><td class="g">Robusta — ICE London ($/t)</td><td class="r v">3,412</td><td class="r d up">▲45<span class="pct">+1.34%</span></td></tr>
+      <tr><td class="g">Arabica — ICE New York (¢/lb)</td><td class="r v">288.75</td><td class="r d up">▲10.15<span class="pct">+3.64%</span></td></tr>
       <tr><td class="g">Pepper — IPSTA (₹/quintal)</td><td class="r v">No data</td><td class="r d flat">—</td></tr>
     </table>
     <div class="note">Robusta and Arabica are the 28.09.2026 session close — source: TradingView scanner (ICEEUR:RC1!, ICEUS:KC1!), arabica cross-checked against Yahoo Finance. USD near ₹95.9 (28.09.2026). India's IPSTA pepper report did not come back today — the page layout may have changed.</div>

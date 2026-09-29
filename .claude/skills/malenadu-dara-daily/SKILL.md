@@ -87,6 +87,27 @@ Note also that the Karnataka rates in a given report are dated the **previous**
 day. Put the price date on the price card and the publication date in the
 header; collapsing them is the easiest way to mislead someone.
 
+## Market close shows the move in units and in percent
+
+On the market close cards (`market/`, and the futures rows anywhere else), the
+change cell carries **both** numbers: the absolute move in the row's own unit
+on top, the percent underneath. A grower reads "▲45 $/t" faster than "▲1.34%".
+
+```html
+<td class="r d up">▲45<span class="pct">+1.34%</span></td>
+```
+
+with `td.d .pct { display:block; font-size:22px; font-weight:400; opacity:.85; }`
+in the card CSS (tall images: `td .pct { display:block; font-size:0.72em; … }`).
+The narrower cell needs a gutter or the Close and Change headings run together:
+`th.r, td.r { padding-left:24px; }` and `td.d { white-space:nowrap; }`. On the
+Kannada card also drop `td.g` to 31px so the market names stay on one line.
+Rerun the tall-image QR check. It is borderline on the Kannada tall image; if
+it fails, raise `.qr` to 44mm in that copy.
+Take both from `sources/<date>/prices/prices.json` — `change_abs` and
+`change_pct`. If `change_abs` is missing, print the percent alone; never
+back-calculate a move from a single close.
+
 ## No report on Sundays and holidays
 
 The Board publishes on working days only. On a blank day, carry the last
