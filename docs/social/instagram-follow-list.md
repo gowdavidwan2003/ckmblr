@@ -24,31 +24,31 @@ The list is followed in paced batches of about 20 a day, because a new account t
 - [x] chikkamagaluru_adventures — 154K
 - [x] travel_chikmagalur — 8.6K
 - [x] travel_malnad — 77K
-- [ ] sg_malenadu — 1M
+- [x] sg_malenadu — 1M
 - [x] nalmeya_malenadu — 32K
 - [x] malenadu_sobagu — 54K
 - [x] incredible_malenadu — 46K
-- [ ] beauty_of_malenadu_ — 19K
-- [ ] malenadu_nammuru — 14K
-- [ ] attractive_malenadu — 7.4K
-- [ ] malnad_planet — 53K
-- [ ] mrmalnad15 — 145K
-- [ ] dev_malnad — 17K
-- [ ] nammashivamogga — 44K
-- [ ] exploreshivamogga_ — 55K
-- [ ] namma_agumbe — 13K
-- [ ] thirthahalli_heaven — 5.7K
-- [ ] thirthahalli_clicks — 5.3K
-- [ ] abhishekthirthahallii — 23K
-- [ ] namma.koppa — 5.6K
-- [ ] akash_sringeri — 26K
-- [ ] sg_days — 11K
-- [ ] explore._.karnataka — 87K
-- [ ] evolvebackcoorg — 15K
-- [ ] amni.coorg — 14K
+- [x] beauty_of_malenadu_ — 19K
+- [x] malenadu_nammuru — 14K
+- [x] attractive_malenadu — 7.4K
+- [x] malnad_planet — 53K
+- [x] mrmalnad15 — 145K
+- [x] dev_malnad — 17K
+- [x] nammashivamogga — 44K
+- [x] exploreshivamogga_ — 55K
+- [x] namma_agumbe — 13K
+- [x] thirthahalli_heaven — 5.7K
+- [x] thirthahalli_clicks — 5.3K
+- [x] abhishekthirthahallii — 23K
+- [x] namma.koppa — 5.6K
+- [x] akash_sringeri — 26K
+- [x] sg_days — 11K
+- [x] explore._.karnataka — 87K
+- [x] evolvebackcoorg — 15K
+- [x] amni.coorg — 14K
 
 ## Indian coffee: roasters, cafés, creators
-- [ ] bluetokaicoffee — 148K
+- [x] bluetokaicoffee — 148K
 - [ ] thirdwavecoffeeindia — 161K
 - [ ] subkocoffee — 121K
 - [ ] sleepyowlcoffee — 91K
