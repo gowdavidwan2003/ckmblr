@@ -49,12 +49,12 @@ The list is followed in paced batches of about 20 a day, because a new account t
 
 ## Indian coffee: roasters, cafés, creators
 - [x] bluetokaicoffee — 148K
-- [ ] thirdwavecoffeeindia — 161K
-- [ ] subkocoffee — 121K
-- [ ] sleepyowlcoffee — 91K
-- [ ] arakucoffeein — 37K
-- [ ] corridorsevencoffee — 30K
-- [ ] kcroasters — 19K
+- [x] thirdwavecoffeeindia — 161K
+- [x] subkocoffee — 121K
+- [x] sleepyowlcoffee — 91K
+- [x] arakucoffeein — 37K
+- [x] corridorsevencoffee — 30K
+- [x] kcroasters — 19K
 - [ ] savorworksroasters — 17K
 - [ ] naivocoffeecompany — 7.1K
 - [ ] maverickandfarmer — 47K
