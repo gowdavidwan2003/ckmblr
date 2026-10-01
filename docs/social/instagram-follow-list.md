@@ -55,20 +55,20 @@ The list is followed in paced batches of about 20 a day, because a new account t
 - [x] arakucoffeein — 37K
 - [x] corridorsevencoffee — 30K
 - [x] kcroasters — 19K
-- [ ] savorworksroasters — 17K
-- [ ] naivocoffeecompany — 7.1K
-- [ ] maverickandfarmer — 47K
-- [ ] devanscoffee — 16K
-- [ ] curiouslifecoffee — 15K
-- [ ] nandancoffee — 16K
-- [ ] levistacoffee — 76K
-- [ ] baristacoffeecompany — 35K
-- [ ] starbucksindia — 710K
-- [ ] nescafeindia — 265K
-- [ ] audiphotography — 608K (coffee farmer and photographer)
-- [ ] deepmaanak — 153K (outdoor coffee vlogger)
-- [ ] smthingsbrewing — 30K
-- [ ] versha_the_barista — 21K
+- [x] savorworksroasters — 17K
+- [x] naivocoffeecompany — 7.1K
+- [x] maverickandfarmer — 47K
+- [x] devanscoffee — 16K
+- [x] curiouslifecoffee — 15K
+- [x] nandancoffee — 16K
+- [x] levistacoffee — 76K
+- [x] baristacoffeecompany — 35K
+- [x] starbucksindia — 710K
+- [x] nescafeindia — 265K
+- [x] audiphotography — 608K (coffee farmer and photographer)
+- [x] deepmaanak — 153K (outdoor coffee vlogger)
+- [x] smthingsbrewing — 30K
+- [x] versha_the_barista — 21K
 - [ ] coffeestaind — 18K
 - [ ] minicoffeestory — 19K
 - [ ] roastery.cultur — 17K
