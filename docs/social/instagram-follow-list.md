@@ -69,28 +69,28 @@ The list is followed in paced batches of about 20 a day, because a new account t
 - [x] deepmaanak — 153K (outdoor coffee vlogger)
 - [x] smthingsbrewing — 30K
 - [x] versha_the_barista — 21K
-- [ ] coffeestaind — 18K
-- [ ] minicoffeestory — 19K
-- [ ] roastery.cultur — 17K
-- [ ] bili.hu.coffee — 15K
-- [ ] latteholicofficial — 13K
-- [ ] cremure_ — 18K
-- [ ] brewedbyrahul — 10K
-- [ ] immcoffeefanatic — 9.5K
-- [ ] chikki_brews — 6.5K
-- [ ] caffealberoindia — 5.3K
-- [ ] cafes.of.india — 101K
-- [ ] artisanlab.in — 22K
-- [ ] prekshaa.kothariii — 13K
+- [x] coffeestaind — 18K
+- [x] minicoffeestory — 19K
+- [x] roastery.cultur — 17K
+- [x] bili.hu.coffee — 15K
+- [x] latteholicofficial — 13K
+- [x] cremure_ — 18K
+- [x] brewedbyrahul — 10K
+- [x] immcoffeefanatic — 9.5K
+- [x] chikki_brews — 6.5K
+- [x] caffealberoindia — 5.3K
+- [x] cafes.of.india — 101K
+- [x] artisanlab.in — 22K
+- [x] prekshaa.kothariii — 13K
 
 ## Global coffee industry and media
-- [ ] perfectdailygrind — 190K
-- [ ] sprudge — 131K
-- [ ] baristamagazine — 189K
-- [ ] specialtycoffeeassociation — 350K
-- [ ] dailycoffeenews — 29K
-- [ ] coffeereview — 9.2K
-- [ ] jimseven — 842K (James Hoffmann)
+- [x] perfectdailygrind — 190K
+- [x] sprudge — 131K
+- [x] baristamagazine — 189K
+- [x] specialtycoffeeassociation — 350K
+- [x] dailycoffeenews — 29K
+- [x] coffeereview — 9.2K
+- [x] jimseven — 842K (James Hoffmann)
 - [ ] baristahustle — 92K
 
 ## Indian agriculture
