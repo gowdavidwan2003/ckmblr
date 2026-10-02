@@ -1,0 +1,45 @@
+{
+  "edition_date": "2026-10-02",
+  "fetched_at": "2026-10-02T00:34:26.235541+00:00",
+  "markets": {
+    "robusta": {
+      "symbol": "ICEEUR:RC1!",
+      "close": 3448,
+      "change_pct": 0.09,
+      "change_abs": 3,
+      "open": 3450,
+      "high": 3461,
+      "low": 3339,
+      "unit": "USD per tonne",
+      "contract": "Robusta Coffee Futures",
+      "as_of": "2026-10-01T19:22:13+00:00",
+      "source": "TradingView scanner (ICEEUR:RC1!)"
+    },
+    "arabica": {
+      "symbol": "ICEUS:KC1!",
+      "close": 288.25,
+      "change_pct": -0.84,
+      "change_abs": -2.45,
+      "open": 288.5,
+      "high": 290.9,
+      "low": 283.3,
+      "unit": "US cents per lb",
+      "contract": "Coffee C Futures",
+      "as_of": "2026-10-01T17:38:32+00:00",
+      "source": "TradingView scanner (ICEUS:KC1!)",
+      "cross_check": {
+        "symbol": "KC=F",
+        "close": 289.25,
+        "change_abs": -1.45,
+        "change_pct": -0.5,
+        "unit": "US cents per lb",
+        "contract": "Coffee Dec 26",
+        "as_of": "2026-10-01",
+        "source": "Yahoo Finance daily bar (KC=F)"
+      }
+    }
+  },
+  "errors": {
+    "pepper": "no report rows on https://ipstaindia.com/market-data.php -- the page layout may have changed"
+  }
+}
