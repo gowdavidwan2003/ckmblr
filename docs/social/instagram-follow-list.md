@@ -2,7 +2,7 @@
 
 The theme is coffee, farming in Karnataka and Malenadu. The list holds 109 accounts. Each one had **over 5,000 followers**, checked on its own Instagram profile page on 30 Sep 2026, and the counts below come from those checks. Troll and meme pages were left out.
 
-The list is followed in paced batches of about 20 a day, because a new account that follows 100+ in one go gets action-blocked. `[x]` = followed.
+All 109 were followed in paced batches between 30 Sep and 3 Oct 2026, so the new account was never action-blocked. `[x]` = followed.
 
 ## Karnataka coffee and farming (followed first)
 - [x] coffeeboardofindia — 19K
@@ -91,36 +91,36 @@ The list is followed in paced batches of about 20 a day, because a new account t
 - [x] dailycoffeenews — 29K
 - [x] coffeereview — 9.2K
 - [x] jimseven — 842K (James Hoffmann)
-- [ ] baristahustle — 92K
+- [x] baristahustle — 92K
 
 ## Indian agriculture
-- [ ] kisanofindia — 213K
-- [ ] theagritalkshow — 500K
-- [ ] nisargamitra_farm — 258K
-- [ ] bighaatindia — 76K
-- [ ] _agrowise_ — 172K
-- [ ] agrimonk.in — 164K
-- [ ] thekisancollege — 116K
-- [ ] drpratibha_agriculture — 123K
-- [ ] worldagriorganics — 47K
-- [ ] deesan_organic_farms — 37K
-- [ ] agriculture.india.swadeshi — 48K
-- [ ] agrieventsindia — 16K
-- [ ] shashi.official — 179K
-- [ ] agri_farming__ — 204K
-- [ ] general_agriculture_ — 108K
-- [ ] modern_farming_leader — 105K
-- [ ] krushinews — 7.3K
-- [ ] rythu_badi — 720K
-- [ ] tricky_agriculture — 61K
-- [ ] agriaddict.in — 30K
-- [ ] anjaalie.moturi — 39K
-- [ ] onlineagrigrp — 27K
-- [ ] krishicareer247 — 57K
-- [ ] bheeshma_agriculture — 41K
-- [ ] agrozyn — 34K
-- [ ] kamala_honey_farm_tirunelveli — 315K
-- [ ] dairy.farmlife — 76K
-- [ ] thebetterindia — 3M
+- [x] kisanofindia — 213K
+- [x] theagritalkshow — 500K
+- [x] nisargamitra_farm — 258K
+- [x] bighaatindia — 76K
+- [x] _agrowise_ — 172K
+- [x] agrimonk.in — 164K
+- [x] thekisancollege — 116K
+- [x] drpratibha_agriculture — 123K
+- [x] worldagriorganics — 47K
+- [x] deesan_organic_farms — 37K
+- [x] agriculture.india.swadeshi — 48K
+- [x] agrieventsindia — 16K
+- [x] shashi.official — 179K
+- [x] agri_farming__ — 204K
+- [x] general_agriculture_ — 108K
+- [x] modern_farming_leader — 105K
+- [x] krushinews — 7.3K
+- [x] rythu_badi — 720K
+- [x] tricky_agriculture — 61K
+- [x] agriaddict.in — 30K
+- [x] anjaalie.moturi — 39K
+- [x] onlineagrigrp — 27K
+- [x] krishicareer247 — 57K
+- [x] bheeshma_agriculture — 41K
+- [x] agrozyn — 34K
+- [x] kamala_honey_farm_tirunelveli — 315K
+- [x] dairy.farmlife — 76K
+- [x] thebetterindia — 3M
 
 Checked and left out (under 5,000, or the handle wasn't found): flyingsquirrelcoffee, worldcoffeeresearch, coorgtourism, hoimalnad, malnad_hunter, _malenadu_samachara_, hudkoo_india, namma.hosanagara, down.to.earth, and others.
