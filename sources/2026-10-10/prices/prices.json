@@ -1,0 +1,77 @@
+{
+  "edition_date": "2026-10-10",
+  "fetched_at": "2026-10-10T00:34:15.047061+00:00",
+  "markets": {
+    "robusta": {
+      "symbol": "ICEEUR:RC1!",
+      "close": 3470,
+      "change_pct": 1.37,
+      "change_abs": 47,
+      "open": 3425,
+      "high": 3495,
+      "low": 3407,
+      "unit": "USD per tonne",
+      "contract": "Robusta Coffee Futures",
+      "as_of": "2026-10-09T19:22:07+00:00",
+      "source": "TradingView scanner (ICEEUR:RC1!)"
+    },
+    "arabica": {
+      "symbol": "ICEUS:KC1!",
+      "close": 286.95,
+      "change_pct": -0.73,
+      "change_abs": -2.1,
+      "open": 289.05,
+      "high": 291.8,
+      "low": 284.25,
+      "unit": "US cents per lb",
+      "contract": "Coffee C Futures",
+      "as_of": "2026-10-09T17:59:55+00:00",
+      "source": "TradingView scanner (ICEUS:KC1!)",
+      "cross_check": {
+        "symbol": "KC=F",
+        "close": 285.15,
+        "change_abs": -3.9,
+        "change_pct": -1.35,
+        "unit": "US cents per lb",
+        "contract": "Coffee Dec 26",
+        "as_of": "2026-10-09",
+        "source": "Yahoo Finance daily bar (KC=F)"
+      }
+    },
+    "pepper": {
+      "report_date": "2026-10-08",
+      "grades": {
+        "GARBLED": {
+          "open": 72500,
+          "high": 72500,
+          "low": 72500,
+          "close": 72500,
+          "prev_close": 72400,
+          "change_abs": 100
+        },
+        "UNGARBLED": {
+          "open": 70500,
+          "high": 70500,
+          "low": 70500,
+          "close": 70500,
+          "prev_close": 70400,
+          "change_abs": 100
+        },
+        "GL": {
+          "open": 69500,
+          "high": 69500,
+          "low": 69500,
+          "close": 69500,
+          "prev_close": 69400,
+          "change_abs": 100
+        }
+      },
+      "unit": "rupees per quintal (100 kg)",
+      "spot_note": "PLUS ONE HUNDRED",
+      "pdf": "ipsta-pepper-2026-10-08.pdf",
+      "source": "IPSTA daily market report, http://ipstaindia.com/source/dmr/6.pdf",
+      "compared_with": "2026-10-07"
+    }
+  },
+  "errors": {}
+}
