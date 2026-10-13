@@ -1,0 +1,77 @@
+{
+  "edition_date": "2026-10-13",
+  "fetched_at": "2026-10-13T00:34:21.097629+00:00",
+  "markets": {
+    "robusta": {
+      "symbol": "ICEEUR:RC1!",
+      "close": 3478,
+      "change_pct": 0.23,
+      "change_abs": 8,
+      "open": 3455,
+      "high": 3505,
+      "low": 3435,
+      "unit": "USD per tonne",
+      "contract": "Robusta Coffee Futures",
+      "as_of": "2026-10-12T19:22:15+00:00",
+      "source": "TradingView scanner (ICEEUR:RC1!)"
+    },
+    "arabica": {
+      "symbol": "ICEUS:KC1!",
+      "close": 290.6,
+      "change_pct": 1.27,
+      "change_abs": 3.65,
+      "open": 287.5,
+      "high": 290.95,
+      "low": 283.5,
+      "unit": "US cents per lb",
+      "contract": "Coffee C Futures",
+      "as_of": "2026-10-12T17:34:01+00:00",
+      "source": "TradingView scanner (ICEUS:KC1!)",
+      "cross_check": {
+        "symbol": "KC=F",
+        "close": 289.9,
+        "change_abs": 2.95,
+        "change_pct": 1.03,
+        "unit": "US cents per lb",
+        "contract": "Coffee Dec 26",
+        "as_of": "2026-10-12",
+        "source": "Yahoo Finance daily bar (KC=F)"
+      }
+    },
+    "pepper": {
+      "report_date": "2026-10-12",
+      "grades": {
+        "GARBLED": {
+          "open": 72900,
+          "high": 72900,
+          "low": 72900,
+          "close": 72900,
+          "prev_close": 72500,
+          "change_abs": 400
+        },
+        "UNGARBLED": {
+          "open": 70900,
+          "high": 70900,
+          "low": 70900,
+          "close": 70900,
+          "prev_close": 70500,
+          "change_abs": 400
+        },
+        "GL": {
+          "open": 69900,
+          "high": 69900,
+          "low": 69900,
+          "close": 69900,
+          "prev_close": 69500,
+          "change_abs": 400
+        }
+      },
+      "unit": "rupees per quintal (100 kg)",
+      "spot_note": "PLUS TWO HUNDRED",
+      "pdf": "ipsta-pepper-2026-10-12.pdf",
+      "source": "IPSTA daily market report, http://ipstaindia.com/source/dmr/6.pdf",
+      "compared_with": "2026-10-08"
+    }
+  },
+  "errors": {}
+}
