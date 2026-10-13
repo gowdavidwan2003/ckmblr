@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 210mm 440mm; margin: 0; }
+body { font-family:'NotoKan', sans-serif; font-size:10pt; line-height:1.7; color:#1c1c1c; margin:0; }
+
+.masthead { background:#0F6E56; padding:13mm 13mm 11mm 13mm; display:flex; align-items:center; gap:5mm; }
+.logo { width:22mm; height:22mm; flex-shrink:0; }
+.mname { color:#E1F5EE; font-size:22pt; font-weight:700; line-height:1.15; }
+.msub { color:#9FE1CB; font-size:10.5pt; margin-top:1.5mm; }
+.mdate { color:#E1F5EE; font-size:11pt; font-weight:700; border:1px solid #3E8E76; border-radius:20px;
+         padding:2mm 5mm; white-space:nowrap; text-align:center; }
+.mdate span { display:block; color:#9FE1CB; font-size:8.5pt; font-weight:400; }
+
+.wrap { padding:8mm 13mm 8mm 13mm; }
+
+/* price strip */
+.ptitle { font-size:12pt; font-weight:700; color:#0F6E56; margin:0 0 1mm 0; }
+.pdate { font-size:9pt; color:#6B6B6B; margin-bottom:3mm; }
+table.price { width:100%; border-collapse:collapse; margin-bottom:4mm; }
+table.price th { background:#0F6E56; color:#E1F5EE; font-size:9.5pt; font-weight:700;
+                 text-align:left; padding:2.5mm 3mm; }
+table.price th.r, table.price td.r { text-align:right; }
+table.price td { padding:2.8mm 3mm; border-bottom:0.4mm solid #E4EDE9; font-size:11pt; }
+table.price tr:last-child td { border-bottom:none; }
+table.price .grade { font-weight:700; color:#1c1c1c; }
+table.price .rate { font-weight:700; font-size:12pt; white-space:nowrap; }
+table.price .subhd td { font-size:9pt; color:#6B6B6B; font-weight:400; background:#F6F9F8; border-bottom:0.4mm solid #E4EDE9; }
+table.price .pr td { padding:2mm 3mm; }
+table.price .pr .grade { font-size:10.5pt; }
+table.price .pr .rate { font-size:11pt; }
+.dn { color:#B4231F; font-weight:700; white-space:nowrap; }
+.up { color:#0F6E56; font-weight:700; white-space:nowrap; }
+.flat { color:#7A7A7A; white-space:nowrap; }
+td .pct { display:block; font-size:0.72em; font-weight:400; opacity:.85; }
+
+.world { background:#EEF5F2; border-left:3px solid #0F6E56; padding:3.5mm 4mm; margin-bottom:6mm; font-size:10pt; }
+.world b { color:#0F6E56; }
+
+.item { border-left:3px solid #C7DED6; padding-left:5mm; margin-bottom:5mm; }
+.ihead { font-size:12pt; font-weight:700; color:#0F6E56; margin-bottom:1.5mm; line-height:1.35; }
+.item p { margin:0 0 1.5mm 0; }
+.imeta { font-size:8.5pt; color:#6B6B6B; }
+
+.footband { background:#0F6E56; padding:6mm 13mm; display:flex; justify-content:space-between; align-items:center; gap:6mm; }
+.fname { color:#E1F5EE; font-size:12pt; font-weight:700; }
+.fdate { color:#9FE1CB; font-size:10pt; margin-top:1mm; }
+.fcontact { color:#C9EDE0; font-size:9.5pt; margin-top:2mm; line-height:1.5; }
+.joincard { background:#FFFFFF; border-radius:4px; padding:3mm; display:flex; align-items:center; gap:3.5mm; }
+.qr { width:44mm; height:44mm; display:block; image-rendering:pixelated; }
+.jointxt { font-size:9pt; color:#0B5744; line-height:1.5; max-width:52mm; }
+.jointxt b { font-size:10pt; color:#0F6E56; }
+.fnote { background:#0B5744; color:#9FE1CB; font-size:8.5pt; padding:3.5mm 13mm 4.5mm 13mm; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+    <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+      <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+    </g>
+  </svg>
+  <div style="flex:1;">
+    <div class="mname">ಮಲೆನಾಡು ದರ</div>
+    <div class="msub">ರಾತ್ರಿ ಮಾರ್ಕೆಟ್ ಕ್ಲೋಸ್</div>
+  </div>
+  <div class="mdate"><span>ದಿನಾಂಕ</span>13 ಅಕ್ಟೋಬರ್ 2026</div>
+</div>
+
+<div class="wrap">
+
+<div class="ptitle">ಕಳೆದ ರಾತ್ರಿಯ ಮಾರ್ಕೆಟ್ ಕ್ಲೋಸ್</div>
+<div class="pdate">12.10.2026ರ ಸೆಷನ್ ಕ್ಲೋಸ್</div>
+
+<table class="price">
+  <tr><th>ಮಾರ್ಕೆಟ್</th><th class="r">ಕ್ಲೋಸ್</th><th class="r">ಬದಲಾವಣೆ</th></tr>
+  <tr><td class="grade">ರೊಬಸ್ಟಾ — ICE ಲಂಡನ್ ($/ಟನ್)</td><td class="r rate">3,478</td><td class="r up">▲ 8<span class="pct">+0.23%</span></td></tr>
+  <tr><td class="grade">ಅರೇಬಿಕಾ — ICE ನ್ಯೂಯಾರ್ಕ್ (¢/ಪೌಂಡ್)</td><td class="r rate">290.60</td><td class="r up">▲ 3.65<span class="pct">+1.27%</span></td></tr>
+  <tr class="subhd"><td colspan="3">ಕರಿಮೆಣಸು — IPSTA ವರದಿ 12.10.2026 (ಹೋಲಿಕೆ 08.10.2026ಕ್ಕೆ), ₹/ಕ್ವಿಂಟಲ್</td></tr>
+  <tr class="pr"><td class="grade">ಗಾರ್ಬಲ್ಡ್</td><td class="r rate">72,900</td><td class="r up">▲ 400<span class="pct">+0.55%</span></td></tr>
+  <tr class="pr"><td class="grade">ಅನ್‌ಗಾರ್ಬಲ್ಡ್</td><td class="r rate">70,900</td><td class="r up">▲ 400<span class="pct">+0.57%</span></td></tr>
+  <tr class="pr"><td class="grade">GL (500)</td><td class="r rate">69,900</td><td class="r up">▲ 400<span class="pct">+0.58%</span></td></tr>
+</table>
+
+<div class="world">
+<b>ಮೂಲ:</b> ರೊಬಸ್ಟಾ, ಅರೇಬಿಕಾ — TradingView ಸ್ಕ್ಯಾನರ್, 12.10.2026 ಕ್ಲೋಸ್. ಅರೇಬಿಕಾ Yahoo ಸೆಟಲ್ ಜೊತೆ ಖಚಿತಪಡಿಸಲಾಗಿದೆ — $289.90 (+1.03%), ಗ್ಯಾಪ್ 1%ಕ್ಕಿಂತ ಕಮ್ಮಿ ಇದ್ದಿದ್ದರಿಂದ ಎರಡೂ ಮೂಲ ಒಪ್ಪಿಗೆಯಲ್ಲಿವೆ. ಕರಿಮೆಣಸು IPSTA ಹೊಸ ವರದಿ 12.10.2026ರದ್ದು — ಹೋಲಿಕೆ 08.10.2026 ವರದಿ ಜೊತೆ, ಯಾಕಂದ್ರೆ ಮಧ್ಯೆ IPSTA ಹೊಸ ವರದಿ ಕೊಟ್ಟಿಲ್ಲ. ಪೆಪ್ಪರ್ % ಬದಲಾವಣೆ ಈ ಎರಡು ಕ್ಲೋಸ್‌ಗಳಿಂದ ಲೆಕ್ಕ ಹಾಕಿದ್ದು.
+</div>
+
+<div class="item">
+  <div class="ihead">ಜಾಗತಿಕ ಸರ್ಪ್ಲಸ್ ಸುದ್ದಿ, ಆದ್ರೆ ಕಳೆದ ರಾತ್ರಿ ಎರಡೂ ಜಾಸ್ತಿ</div>
+  <p>ICO ಸೆಪ್ಟೆಂಬರ್ ರಿಪೋರ್ಟ್ ಪ್ರಕಾರ ಕಾಫಿ ಕಾಂಪೊಸಿಟ್ ಪ್ರೈಸ್ ಆಗಸ್ಟ್‌ಗಿಂತ 8.7% ಕಮ್ಮಿ ಆಗಿ 262.18 ಸೆಂಟ್/ಪೌಂಡ್‌ಗೆ ಬಂದಿದೆ — ರೊಬಸ್ಟಾ ಇಂಡಿಕೇಟರ್ ಒಂದೇ 7.3% ಕಮ್ಮಿ. ಬ್ರೆಜಿಲ್ ಹಾರ್ವೆಸ್ಟ್ ದಾಖಲೆ ಮಟ್ಟಕ್ಕೆ ಹೋಗ್ತಿದೆ (CONAB ಅಂದಾಜು 6.76 ಕೋಟಿ ಚೀಲ), ಇದೇ ವರ್ಷ ಜಗತ್ತಿನ ಬೆಳೆ ಕುಡಿಯೋದಕ್ಕಿಂತ 30 ಲಕ್ಷ ಚೀಲ ಜಾಸ್ತಿ ಆಗಬೋದು ಅಂತ ICO ಹೇಳಿದೆ — ನಾಲ್ಕು ವರ್ಷದ ಕಮ್ಮಿ ಬಿದ್ದಿದ್ದ ನಂತರ ಮೊದಲ ಸರ್ಪ್ಲಸ್. ಇದೇ ಹಿನ್ನೆಲೆ ಮಧ್ಯೆ ರೊಬಸ್ಟಾ, ಅರೇಬಿಕಾ ಎರಡೂ ಕಳೆದ ರಾತ್ರಿ ಜಾಸ್ತಿ ಆಗಿವೆ — ಈ ತಿಂಗಳ ರಿಪೋರ್ಟ್ ಆ ಮೂವ್‌ಗೆ ಕಾರಣ ಅಂತ ಎಲ್ಲೂ ಹೇಳಿಲ್ಲ, ದೊಡ್ಡ ಟ್ರೆಂಡ್ ಹಿನ್ನೆಲೆ ಅಷ್ಟೇ.</p>
+  <div class="imeta">ಮೂಲ: ICO ಸೆಪ್ಟೆಂಬರ್ 2026 ಮಾರ್ಕೆಟ್ ರಿಪೋರ್ಟ್, Informist ಮುಖಾಂತರ Business Today ವರದಿ (12 ಅಕ್ಟೋಬರ್ 2026).</div>
+</div>
+
+<div class="item">
+  <div class="ihead">ಕರಿಮೆಣಸು ಹೊಸ ವರದಿ — ಹೋಲಿಕೆ 4 ದಿನ ಹಿಂದಿನದು</div>
+  <p>IPSTA 12 ಅಕ್ಟೋಬರ್ ವರದಿ ಪ್ರಕಾರ ಗಾರ್ಬಲ್ಡ್ ₹72,900, ಅನ್‌ಗಾರ್ಬಲ್ಡ್ ₹70,900, GL ₹69,900 — ಮೂರೂ ₹400 ಜಾಸ್ತಿ. ಈ ಹೋಲಿಕೆ 08 ಅಕ್ಟೋಬರ್ ವರದಿ ಜೊತೆ, ಯಾಕಂದ್ರೆ ಮಧ್ಯೆ IPSTA ಹೊಸ ವರದಿ ಕೊಟ್ಟಿಲ್ಲ. ವಿಯೆಟ್ನಾಂ ಈ ವರ್ಷದ ಮೊದಲ ಆರು ತಿಂಗಳಲ್ಲಿ 1,45,686 ಟನ್ ಕರಿಮೆಣಸು ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಮಾಡಿದೆ — ಕಳೆದ ವರ್ಷಕ್ಕಿಂತ ವ್ಯಾಲ್ಯೂನಲ್ಲಿ 10.6% ಜಾಸ್ತಿ. ಜಾಸ್ತಿ ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಡಿಮ್ಯಾಂಡ್ ಇದ್ದೂ ಗ್ಲೋಬಲ್ ಕ್ಯಾರಿಓವರ್ ಸ್ಟಾಕ್ ಕಮ್ಮಿ ಇರೋದ್ರಿಂದ ಫ್ಲೋರ್ ಇದೆ ಅಂತ ಟ್ರೇಡರ್‌ಗಳು ಹೇಳ್ತಾರೆ.</p>
+  <div class="imeta">ಮೂಲ: IPSTA ಡೈಲಿ ಮಾರ್ಕೆಟ್ ರಿಪೋರ್ಟ್ (12 ಅಕ್ಟೋಬರ್ 2026, ಕಳೆದ ವರದಿ 08 ಅಕ್ಟೋಬರ್); ವಿಯೆಟ್ನಾಂ ಪೆಪ್ಪರ್ ಆಂಡ್ ಸ್ಪೈಸ್ ಅಸೋಸಿಯೇಷನ್ (VPSA) H1 2026 ಅಂಕಿ, TradeInt ಮುಖಾಂತರ.</div>
+</div>
+
+</div>
+
+<div class="footband">
+  <div>
+    <div class="fname">ಮಲೆನಾಡು ದರ</div>
+    <div class="fdate">13 ಅಕ್ಟೋಬರ್ 2026</div>
+    <div class="fcontact">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು<br>ಫೋನ್ 7975045560<br>ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್ · ಫೇಸ್‌ಬುಕ್ @malenadu.dara</div>
+  </div>
+  <div class="joincard">
+    <img class="qr" src="channel-qr.png">
+    <div class="jointxt"><b>ಮಲೆನಾಡು ದರ</b><br>WhatsApp ಚಾನೆಲ್ — ಸ್ಕ್ಯಾನ್ ಮಾಡಿ, ದಿನಾ ದರ ಸಿಗುತ್ತೆ.</div>
+  </div>
+</div>
+<div class="fnote">ದರಗಳು ICE ಎಕ್ಸ್‌ಚೇಂಜ್ (TradingView, Yahoo Finance) ಮತ್ತು IPSTA ಮೂಲದಿಂದ. ಇದು ಮಾಹಿತಿಗಾಗಿ ಮಾತ್ರ — ಮಾರಾಟದ ಸಲಹೆ ಅಲ್ಲ. ಪ್ರತಿ ಸುದ್ದಿಯ ಮೂಲ ಅದರ ಕೆಳಗೆ ಕೊಟ್ಟಿದೆ.</div>
+
+</body>
+</html>
