@@ -1,0 +1,78 @@
+{
+  "edition_date": "2026-10-15",
+  "fetched_at": "2026-10-15T00:33:34.724404+00:00",
+  "markets": {
+    "robusta": {
+      "symbol": "ICEEUR:RC1!",
+      "close": 3483,
+      "change_pct": 0.69,
+      "change_abs": 24,
+      "open": 3454,
+      "high": 3526,
+      "low": 3429,
+      "unit": "USD per tonne",
+      "contract": "Robusta Coffee Futures",
+      "as_of": "2026-10-14T19:23:01+00:00",
+      "source": "TradingView scanner (ICEEUR:RC1!)"
+    },
+    "arabica": {
+      "symbol": "ICEUS:KC1!",
+      "close": 298.05,
+      "change_pct": 1.83,
+      "change_abs": 5.35,
+      "open": 292.6,
+      "high": 303.35,
+      "low": 292.6,
+      "unit": "US cents per lb",
+      "contract": "Coffee C Futures",
+      "as_of": "2026-10-14T17:29:58+00:00",
+      "source": "TradingView scanner (ICEUS:KC1!)",
+      "pre_settle": "Timestamped 17:29 UTC on 2026-10-14, before that session's ~17:30 UTC settle -- an intraday print, not a close. Do not put it on a card as a closing price.",
+      "cross_check": {
+        "symbol": "KC=F",
+        "close": 296.75,
+        "change_abs": 4.05,
+        "change_pct": 1.38,
+        "unit": "US cents per lb",
+        "contract": "Coffee Dec 26",
+        "as_of": "2026-10-14",
+        "source": "Yahoo Finance daily bar (KC=F)"
+      }
+    },
+    "pepper": {
+      "report_date": "2026-10-14",
+      "grades": {
+        "GARBLED": {
+          "open": 73100,
+          "high": 73100,
+          "low": 73100,
+          "close": 73100,
+          "prev_close": 73000,
+          "change_abs": 100
+        },
+        "UNGARBLED": {
+          "open": 71100,
+          "high": 71100,
+          "low": 71100,
+          "close": 71100,
+          "prev_close": 71000,
+          "change_abs": 100
+        },
+        "GL": {
+          "open": 70100,
+          "high": 70100,
+          "low": 70100,
+          "close": 70100,
+          "prev_close": 70000,
+          "change_abs": 100
+        }
+      },
+      "unit": "rupees per quintal (100 kg)",
+      "spot_note": "PLUS ONE HUNDRED",
+      "pdf": "ipsta-pepper-2026-10-14.pdf",
+      "source": "IPSTA daily market report, http://ipstaindia.com/source/dmr/6.pdf",
+      "compared_with": "2026-10-13"
+    }
+  },
+  "errors": {}
+}
