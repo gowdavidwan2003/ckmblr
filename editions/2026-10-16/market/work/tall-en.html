@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 210mm 440mm; margin: 0; }
+body { font-family:'NotoKan', sans-serif; font-size:10pt; line-height:1.7; color:#1c1c1c; margin:0; }
+
+.masthead { background:#0F6E56; padding:13mm 13mm 11mm 13mm; display:flex; align-items:center; gap:5mm; }
+.logo { width:22mm; height:22mm; flex-shrink:0; }
+.mname { color:#E1F5EE; font-size:22pt; font-weight:700; line-height:1.15; }
+.msub { color:#9FE1CB; font-size:10.5pt; margin-top:1.5mm; }
+.mdate { color:#E1F5EE; font-size:11pt; font-weight:700; border:1px solid #3E8E76; border-radius:20px;
+         padding:2mm 5mm; white-space:nowrap; text-align:center; }
+.mdate span { display:block; color:#9FE1CB; font-size:8.5pt; font-weight:400; }
+
+.wrap { padding:8mm 13mm 8mm 13mm; }
+
+/* price strip */
+.ptitle { font-size:12pt; font-weight:700; color:#0F6E56; margin:0 0 1mm 0; }
+.pdate { font-size:9pt; color:#6B6B6B; margin-bottom:3mm; }
+table.price { width:100%; border-collapse:collapse; margin-bottom:4mm; }
+table.price th { background:#0F6E56; color:#E1F5EE; font-size:9.5pt; font-weight:700;
+                 text-align:left; padding:2.5mm 3mm; }
+table.price th.r, table.price td.r { text-align:right; }
+table.price td { padding:2.8mm 3mm; border-bottom:0.4mm solid #E4EDE9; font-size:11pt; }
+table.price tr:last-child td { border-bottom:none; }
+table.price .grade { font-weight:700; color:#1c1c1c; }
+table.price .rate { font-weight:700; font-size:12pt; white-space:nowrap; }
+table.price .subhd td { font-size:9pt; color:#6B6B6B; font-weight:400; background:#F6F9F8; border-bottom:0.4mm solid #E4EDE9; }
+table.price .pr td { padding:2mm 3mm; }
+table.price .pr .grade { font-size:10.5pt; }
+table.price .pr .rate { font-size:11pt; }
+.dn { color:#B4231F; font-weight:700; white-space:nowrap; }
+.up { color:#0F6E56; font-weight:700; white-space:nowrap; }
+.flat { color:#7A7A7A; white-space:nowrap; }
+td .pct { display:block; font-size:0.72em; font-weight:400; opacity:.85; }
+
+.world { background:#EEF5F2; border-left:3px solid #0F6E56; padding:3.5mm 4mm; margin-bottom:6mm; font-size:10pt; }
+.world b { color:#0F6E56; }
+
+.item { border-left:3px solid #C7DED6; padding-left:5mm; margin-bottom:5mm; }
+.ihead { font-size:12pt; font-weight:700; color:#0F6E56; margin-bottom:1.5mm; line-height:1.35; }
+.item p { margin:0 0 1.5mm 0; }
+.imeta { font-size:8.5pt; color:#6B6B6B; }
+
+.footband { background:#0F6E56; padding:6mm 13mm; display:flex; justify-content:space-between; align-items:center; gap:6mm; }
+.fname { color:#E1F5EE; font-size:12pt; font-weight:700; }
+.fdate { color:#9FE1CB; font-size:10pt; margin-top:1mm; }
+.fcontact { color:#C9EDE0; font-size:9.5pt; margin-top:2mm; line-height:1.5; }
+.joincard { background:#FFFFFF; border-radius:4px; padding:3mm; display:flex; align-items:center; gap:3.5mm; }
+.qr { width:44mm; height:44mm; display:block; image-rendering:pixelated; }
+.jointxt { font-size:9pt; color:#0B5744; line-height:1.5; max-width:52mm; }
+.jointxt b { font-size:10pt; color:#0F6E56; }
+.fnote { background:#0B5744; color:#9FE1CB; font-size:8.5pt; padding:3.5mm 13mm 4.5mm 13mm; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+    <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+      <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+    </g>
+  </svg>
+  <div style="flex:1;">
+    <div class="mname">Malenadu Dara</div>
+    <div class="msub">Overnight market close</div>
+  </div>
+  <div class="mdate"><span>Date</span>16 October 2026</div>
+</div>
+
+<div class="wrap">
+
+<div class="ptitle">Last night's market close</div>
+<div class="pdate">15.10.2026 session close</div>
+
+<table class="price">
+  <tr><th>Market</th><th class="r">Close</th><th class="r">Change</th></tr>
+  <tr><td class="grade">Robusta — ICE London ($/t)</td><td class="r rate">3,375</td><td class="r dn">▼ 108<span class="pct">-3.10%</span></td></tr>
+  <tr><td class="grade">Arabica — ICE New York (¢/lb)</td><td class="r rate">298.70</td><td class="r up">▲ 0.65<span class="pct">+0.22%</span></td></tr>
+  <tr class="subhd"><td colspan="3">Pepper — IPSTA report 15.10.2026 (compared with 14.10.2026), ₹/quintal</td></tr>
+  <tr class="pr"><td class="grade">Garbled</td><td class="r rate">73,200</td><td class="r up">▲ 100<span class="pct">+0.14%</span></td></tr>
+  <tr class="pr"><td class="grade">Ungarbled</td><td class="r rate">71,200</td><td class="r up">▲ 100<span class="pct">+0.14%</span></td></tr>
+  <tr class="pr"><td class="grade">GL (500)</td><td class="r rate">70,200</td><td class="r up">▲ 100<span class="pct">+0.14%</span></td></tr>
+</table>
+
+<div class="world">
+<b>Source:</b> Robusta is the 15.10.2026 close (TradingView scanner). For Arabica, TradingView's scanner print (294.80, -1.09%) and Yahoo's settled daily bar for the same session disagreed on direction — Yahoo showed a small rise instead. This card uses the Yahoo settle: $298.70 (+0.22%); the TradingView print is not shown. Pepper's IPSTA report is dated 15.10.2026, compared against the 14.10.2026 report — the third straight session with an identical ₹100 rise across all three grades.
+</div>
+
+<div class="item">
+  <div class="ihead">Record Brazilian crop keeps pulling futures lower</div>
+  <p>The ICO's monthly market report for September showed its composite price index down 8.7% on the month, to 262.18 US cents per lb, with the robusta group index down 7.3% — CONAB's record estimate for Brazil's 2026 crop and a larger expected global surplus weighed on the market, Comunicaffe and Business Today reported on 12 October. Low certified arabica stocks were the one factor the ICO said is still offering some support. That report is September data, not last night's session, but it is the backdrop behind the continued softness in robusta and arabica futures through October.</p>
+  <div class="imeta">Source: International Coffee Organization monthly market report (September 2026 data), as reported by Comunicaffe and Business Today (12 October 2026).</div>
+</div>
+
+<div class="item">
+  <div class="ihead">Pepper — a third straight ₹100 rise</div>
+  <p>IPSTA's 15 October report puts garbled at ₹73,200, ungarbled at ₹71,200 and GL at ₹70,200 — each up ₹100 from the 14 October report. That makes three sessions running with the identical ₹100 move across all three grades, in the 13, 14 and 15 October reports. Vietnam's pepper exports in September came to 25,152 tonnes worth almost $164 million, though the nine-month average export price is running about 4.1% below a year earlier at roughly $6,508 a tonne, Vietnam Customs data shows — a reminder that the steady Indian rise is happening against softer prices from the other big origin.</p>
+  <div class="imeta">Source: IPSTA daily market report (15 October 2026, prior reports 13–14 October); Vietnam Customs trade data (September 2026).</div>
+</div>
+
+</div>
+
+<div class="footband">
+  <div>
+    <div class="fname">Malenadu Dara</div>
+    <div class="fdate">16 October 2026</div>
+    <div class="fcontact">Vidwan Gowda · Aldur, Chikmagalur<br>Phone 7975045560<br>Instagram · Facebook @malenadu.dara</div>
+  </div>
+  <div class="joincard">
+    <img class="qr" src="channel-qr.png">
+    <div class="jointxt"><b>Malenadu Dara</b><br>WhatsApp channel — scan for the daily rate.</div>
+  </div>
+</div>
+<div class="fnote">Prices from ICE exchange data (TradingView, Yahoo Finance) and IPSTA. Information only, not selling advice. Each item's source is given below it.</div>
+
+</body>
+</html>
