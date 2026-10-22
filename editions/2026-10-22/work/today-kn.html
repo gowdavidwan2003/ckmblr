@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 1080px 1350px; margin: 0; }
+* { box-sizing: border-box; }
+body { font-family:'NotoKan', sans-serif; margin:0; color:#141414; }
+
+.card { width:1080px; height:1350px; page-break-after:always;
+        display:flex; flex-direction:column; background:#FFFFFF; overflow:hidden; }
+.card:last-child { page-break-after:auto; }
+.card.dark { background:#0F6E56; color:#FFFFFF; }
+
+/* ---- HEADER: slim, same on every card ---- */
+.hdr { padding:44px 72px 0 72px; display:flex; align-items:center; gap:18px; flex-shrink:0; }
+.logo { width:56px; height:56px; flex-shrink:0; }
+.hname { font-size:27px; font-weight:700; color:#0F6E56; letter-spacing:0.3px; }
+.hdate { margin-left:auto; font-size:24px; color:#8A8A8A; white-space:nowrap; }
+.dark .hname { color:#FFFFFF; }
+.dark .hdate { color:#9FE1CB; }
+
+/* ---- BODY ---- */
+.body { flex:1; padding:56px 72px 40px 72px; display:flex; flex-direction:column;
+        justify-content:center; overflow:hidden; }
+
+/* ---- FOOTER: hairline + one quiet line ---- */
+.ftr { padding:0 72px 44px 72px; display:flex; justify-content:space-between;
+       align-items:flex-end; flex-shrink:0; font-size:22px; color:#9A9A9A; }
+.ftr .ct { line-height:1.45; }
+.dark .ftr { color:#79C4AC; }
+
+/* ---- type ---- */
+h1.cover { font-size:96px; line-height:1.38; margin:0 0 40px 0; font-weight:700; color:#FFFFFF; }
+.covsub { font-size:38px; line-height:1.6; color:#C9EDE0; }
+.covtag { align-self:flex-start; font-size:26px; color:#9FE1CB; letter-spacing:2px;
+          text-transform:uppercase; margin-bottom:34px; }
+h2 { font-size:56px; color:#0F6E56; margin:0 0 44px 0; line-height:1.4; font-weight:700; }
+p  { font-size:34px; line-height:1.62; margin:0 0 30px 0; }
+p:last-child { margin-bottom:0; }
+b { font-weight:700; }
+.muted { color:#6E6E6E; }
+
+/* stacked label/value rows — replaces boxes */
+.row { padding:26px 0; border-top:2px solid #E8E8E8; }
+.row:last-of-type { border-bottom:2px solid #E8E8E8; }
+.row .lbl { font-size:25px; color:#0F6E56; font-weight:700; letter-spacing:0.6px; margin-bottom:10px; }
+.row p { font-size:33px; margin:0; line-height:1.55; }
+
+.bignum { font-size:124px; font-weight:700; color:#0F6E56; line-height:1.25; margin:0 0 8px 0; }
+.bigcap { font-size:31px; color:#6E6E6E; margin-bottom:40px; }
+
+table { width:100%; border-collapse:collapse; }
+th { font-size:23px; color:#8A8A8A; font-weight:400; text-align:left;
+     padding:0 0 16px 0; border-bottom:2px solid #E8E8E8; letter-spacing:0.6px; }
+th.r, td.r { text-align:right; padding-left:24px; }
+td { font-size:36px; padding:26px 0; border-bottom:2px solid #F0F0F0; }
+td.g { font-weight:700; font-size:31px; }
+td.v { font-weight:700; white-space:nowrap; }
+td.d { font-size:28px; white-space:nowrap; }
+.dn { color:#B4231F; font-weight:700; }
+.up { color:#0F6E56; font-weight:700; }
+.flat { color:#A0A0A0; }
+.note { font-size:28px; color:#6E6E6E; line-height:1.55; margin-top:34px; }
+
+.item { margin-bottom:46px; }
+.item:last-child { margin-bottom:0; }
+.item .ih { font-size:42px; font-weight:700; color:#0F6E56; margin-bottom:16px; line-height:1.4; }
+.item p { font-size:31px; margin:0 0 10px 0; }
+.item .src { font-size:23px; color:#9A9A9A; }
+
+/* closing card */
+.cta { text-align:center; }
+.cta img { width:330px; height:330px; display:block; margin:0 auto 36px auto;
+           background:#FFFFFF; padding:18px; border-radius:10px; }
+.cta .ch { font-size:56px; font-weight:700; margin-bottom:20px; line-height:1.4; color:#FFFFFF; }
+.cta .cp { font-size:32px; color:#C9EDE0; line-height:1.55; margin-bottom:40px; }
+.cta .slot { font-size:30px; color:#FFFFFF; line-height:1.7; padding:28px 0;
+             border-top:2px solid #3E8E76; border-bottom:2px solid #3E8E76; }
+.disc { font-size:23px; color:#79C4AC; line-height:1.55; margin-top:36px; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">22 ಅಕ್ಟೋಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಕರ್ನಾಟಕದ ದರ</h2>
+    <table>
+      <tr><th>₹ / 50 ಕೆಜಿ ಚೀಲ · 21.10.2026</th><th class="r">ದರ</th><th class="r">ಕಳೆದ ಬದಲಾವಣೆ</th></tr>
+      <tr><td class="g">ಅರೇಬಿಕಾ ಪಾರ್ಚ್‌ಮೆಂಟ್</td><td class="r v">24,400–24,900</td><td class="r d up">▲400–600</td></tr>
+      <tr><td class="g">ಅರೇಬಿಕಾ ಚೆರಿ</td><td class="r v">12,350–13,800</td><td class="r d dn">▼0–50</td></tr>
+      <tr><td class="g">ರೊಬಸ್ಟಾ ಪಾರ್ಚ್‌ಮೆಂಟ್</td><td class="r v">18,000–18,500</td><td class="r d flat">—</td></tr>
+      <tr><td class="g">ರೊಬಸ್ಟಾ ಚೆರಿ</td><td class="r v">9,800–10,600</td><td class="r d dn">▼100</td></tr>
+    </table>
+    <div class="note">ಈ ಬದಲಾವಣೆ 14.10.2026ರ ವರದಿಗೆ ಹೋಲಿಸಿದ್ದು — ಮಧ್ಯದ ದಿನಗಳ ಬೋರ್ಡ್ ವರದಿ ನಮ್ಮಲ್ಲಿ ಇಲ್ಲ, ಹಾಗಾಗಿ ದಿನದಿಂದ ದಿನದ ಬದಲಾವಣೆ ಅಲ್ಲ. ಅರೇಬಿಕಾ ಪಾರ್ಚ್‌ಮೆಂಟ್‌ನ ಕೆಳಮಟ್ಟ ₹600, ಮೇಲ್ಮಟ್ಟ ₹400 ಏರಿದೆ. ಅರೇಬಿಕಾ ಚೆರಿಯ ಕೆಳಮಟ್ಟ ₹50 ಇಳಿದಿದೆ, ಮೇಲ್ಮಟ್ಟ ಹಾಗೇ ಇದೆ.<br>ವಿದೇಶಿ ಮಾರ್ಕೆಟ್ (21.10.2026 ಕ್ಲೋಸ್): ನ್ಯೂಯಾರ್ಕ್ ಅರೇಬಿಕಾ (ಡಿಸೆಂಬರ್) 316.15 ಸೆಂಟ್/ಪೌಂಡ್ — ▲4.85 (+1.56%) · ಲಂಡನ್ ರೊಬಸ್ಟಾ (ನವೆಂಬರ್) $3,352/ಟನ್ — ▼58 (-1.70%) · ಡಾಲರ್ ₹94.40</div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">1 / 3</div>
+  </div>
+</section>
+<section class="card">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">22 ಅಕ್ಟೋಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <h2>ಇವತ್ತಿನ ಸುದ್ದಿ</h2>
+    <div class="item"><div class="ih">ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಕಳೆದ ವರ್ಷಕ್ಕಿಂತ 23% ಜಾಸ್ತಿ</div>
+    <p>ಜನವರಿ 1ರಿಂದ ಅಕ್ಟೋಬರ್ 22ರವರೆಗೆ ಒಟ್ಟು 3,85,705 ಟನ್ ಕಾಫಿ ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಆಗಿದೆ (ಎಕ್ಸ್‌ಪೋರ್ಟ್ + ರಿ-ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಸೇರಿ). ಕಳೆದ ವರ್ಷ ಇದೇ ಅವಧಿಗೆ 3,13,278 ಟನ್ ಇತ್ತು — ಅಂದ್ರೆ 23% ಜಾಸ್ತಿ. ಇದ್ರಲ್ಲಿ ರೊಬಸ್ಟಾ ಚೆರಿ ಒಂದರಲ್ಲೇ 1,62,073 ಟನ್.</p>
+    <div class="src">ಮೂಲ: Coffee Board of India, Daily Coffee Market Report, 22.10.2026</div></div>
+    <div class="item"><div class="ih">ಬ್ರೆಜಿಲ್‌ನಲ್ಲಿ ಮಳೆ ವಾಪಸ್ ಬಂತು, ವಿಯೆಟ್ನಾಂನಲ್ಲೂ ಜೋರು</div>
+    <p>ಬ್ರೆಜಿಲ್‌ನ ಮಿನಾಸ್ ಗೆರೈಸ್‌ನಲ್ಲಿ ಅಕ್ಟೋಬರ್ 18ರ ವಾರ 44.7mm ಮಳೆ ಬಂತು — ಸರಾಸರಿಗಿಂತ 136% ಜಾಸ್ತಿ. ಇದಕ್ಕೂ ಮುಂಚಿನ ವಾರ ಕೇವಲ 20.2mm (ಸರಾಸರಿಯ 48%) ಮಾತ್ರ ಬಂದಿದ್ದು, ಹೂ ಬಿಡೋ ಸಮಯದಲ್ಲಿ ಬರ ಆಗೋ ಆತಂಕ ಇತ್ತು. ವಿಯೆಟ್ನಾಂನ ಸೆಂಟ್ರಲ್ ಹೈಲ್ಯಾಂಡ್ಸ್‌ನಲ್ಲೂ ಅಕ್ಟೋಬರ್ 20ರವರೆಗೆ ಸರಾಸರಿಗಿಂತ ಜಾಸ್ತಿ ಮಳೆ ಬರೋ ಅಂದಾಜು ಇದೆ — ಫಸಲಿಗೆ ಒಳ್ಳೇದು. ಇದರ ಜೊತೆ, ಬ್ರೆಜಿಲ್ ಸರಕುಗಳ ಮೇಲಿನ 50% ಅಮೆರಿಕನ್ ಟ್ಯಾರಿಫ್ ಬೇಗ ತೆಗೀಬಹುದು ಅನ್ನೋ ಮಾತೂ ಟ್ರೇಡ್‌ನಲ್ಲಿ ಇದೆ, ಇನ್ನೂ ಖಚಿತ ಆಗಿಲ್ಲ. ಈ ಮೂರೂ ಪೂರೈಕೆ ಜಾಸ್ತಿ ಆಗೋ ನಿರೀಕ್ಷೆ ಹುಟ್ಟಿಸಿ ಬೆಲೆ ಮೇಲೆ ಒತ್ತಡ ಹಾಕುತ್ತೆ.</p>
+    <div class="src">ಮೂಲ: Barchart / Nasdaq ಕಾಫಿ ಮಾರ್ಕೆಟ್ ವರದಿ, ಅಕ್ಟೋಬರ್ 2026</div></div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">2 / 3</div>
+  </div>
+</section>
+<section class="card dark">
+  <div class="hdr">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+  <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+    <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+  </g></svg>
+    <div class="hname">ಮಲೆನಾಡು ದರ</div>
+    <div class="hdate">22 ಅಕ್ಟೋಬರ್ 2026</div>
+  </div>
+  <div class="body">
+    <div class="cta">
+      <img src="channel-qr.png">
+      <div class="ch">ದಿನಾ ದರ ಬೇಕಾ?</div>
+      <div class="cp">ಮಲೆನಾಡು ದರ WhatsApp ಚಾನೆಲ್‌ಗೆ ಸೇರಿ — ಪ್ರತಿ ದಿನ ಕರ್ನಾಟಕದ ದರ ನೇರವಾಗಿ ಸಿಗುತ್ತೆ.</div>
+      <div class="slot">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು<br>ಫೋನ್ 7975045560<br>ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್ · ಫೇಸ್‌ಬುಕ್ @malenadu.dara</div>
+      <div class="disc">ದರಗಳು Coffee Board of India ಪ್ರಕಟಿಸಿದ Daily Coffee Market Report ನಿಂದ. ಮಾಹಿತಿಗಾಗಿ ಮಾತ್ರ — ಮಾರಾಟದ ಸಲಹೆ ಅಲ್ಲ.</div>
+    </div>
+  </div>
+  <div class="ftr">
+    <!-- CONTACT SLOT: KN_CONTACT / EN_CONTACT in make_cards.py, on every card -->
+    <div class="ct">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು · 7975045560</div>
+    <div class="pg">3 / 3</div>
+  </div>
+</section>
+</body>
+</html>
