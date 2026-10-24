@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 210mm 440mm; margin: 0; }
+body { font-family:'NotoKan', sans-serif; font-size:10pt; line-height:1.7; color:#1c1c1c; margin:0; }
+
+.masthead { background:#0F6E56; padding:13mm 13mm 11mm 13mm; display:flex; align-items:center; gap:5mm; }
+.logo { width:22mm; height:22mm; flex-shrink:0; }
+.mname { color:#E1F5EE; font-size:22pt; font-weight:700; line-height:1.15; }
+.msub { color:#9FE1CB; font-size:10.5pt; margin-top:1.5mm; }
+.mdate { color:#E1F5EE; font-size:11pt; font-weight:700; border:1px solid #3E8E76; border-radius:20px;
+         padding:2mm 5mm; white-space:nowrap; text-align:center; }
+.mdate span { display:block; color:#9FE1CB; font-size:8.5pt; font-weight:400; }
+
+.wrap { padding:8mm 13mm 8mm 13mm; }
+
+/* price strip */
+.ptitle { font-size:12pt; font-weight:700; color:#0F6E56; margin:0 0 1mm 0; }
+.pdate { font-size:9pt; color:#6B6B6B; margin-bottom:3mm; }
+table.price { width:100%; border-collapse:collapse; margin-bottom:4mm; }
+table.price th { background:#0F6E56; color:#E1F5EE; font-size:9.5pt; font-weight:700;
+                 text-align:left; padding:2.5mm 3mm; }
+table.price th.r, table.price td.r { text-align:right; }
+table.price td { padding:2.8mm 3mm; border-bottom:0.4mm solid #E4EDE9; font-size:11pt; }
+table.price tr:last-child td { border-bottom:none; }
+table.price .grade { font-weight:700; color:#1c1c1c; }
+table.price .rate { font-weight:700; font-size:12pt; white-space:nowrap; }
+table.price .subhd td { font-size:9pt; color:#6B6B6B; font-weight:400; background:#F6F9F8; border-bottom:0.4mm solid #E4EDE9; }
+table.price .pr td { padding:2mm 3mm; }
+table.price .pr .grade { font-size:10.5pt; }
+table.price .pr .rate { font-size:11pt; }
+.dn { color:#B4231F; font-weight:700; white-space:nowrap; }
+.up { color:#0F6E56; font-weight:700; white-space:nowrap; }
+.flat { color:#7A7A7A; white-space:nowrap; }
+td .pct { display:block; font-size:0.72em; font-weight:400; opacity:.85; }
+
+.world { background:#EEF5F2; border-left:3px solid #0F6E56; padding:3.5mm 4mm; margin-bottom:6mm; font-size:10pt; }
+.world b { color:#0F6E56; }
+
+.item { border-left:3px solid #C7DED6; padding-left:5mm; margin-bottom:5mm; }
+.ihead { font-size:12pt; font-weight:700; color:#0F6E56; margin-bottom:1.5mm; line-height:1.35; }
+.item p { margin:0 0 1.5mm 0; }
+.imeta { font-size:8.5pt; color:#6B6B6B; }
+
+.footband { background:#0F6E56; padding:6mm 13mm; display:flex; justify-content:space-between; align-items:center; gap:6mm; }
+.fname { color:#E1F5EE; font-size:12pt; font-weight:700; }
+.fdate { color:#9FE1CB; font-size:10pt; margin-top:1mm; }
+.fcontact { color:#C9EDE0; font-size:9.5pt; margin-top:2mm; line-height:1.5; }
+.joincard { background:#FFFFFF; border-radius:4px; padding:3mm; display:flex; align-items:center; gap:3.5mm; }
+.qr { width:44mm; height:44mm; display:block; image-rendering:pixelated; }
+.jointxt { font-size:9pt; color:#0B5744; line-height:1.5; max-width:52mm; }
+.jointxt b { font-size:10pt; color:#0F6E56; }
+.fnote { background:#0B5744; color:#9FE1CB; font-size:8.5pt; padding:3.5mm 13mm 4.5mm 13mm; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="32" fill="#E1F5EE"/>
+    <g transform="translate(32,32) scale(0.84) translate(-32,-32)">
+      <path d="M6 46 L20 30 L30 38 L46 16 L58 26" fill="none" stroke="#0F6E56" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="46" cy="16" r="6" fill="#BA7517"/>
+    </g>
+  </svg>
+  <div style="flex:1;">
+    <div class="mname">ಮಲೆನಾಡು ದರ</div>
+    <div class="msub">ರಾತ್ರಿ ಮಾರ್ಕೆಟ್ ಕ್ಲೋಸ್</div>
+  </div>
+  <div class="mdate"><span>ದಿನಾಂಕ</span>24 ಅಕ್ಟೋಬರ್ 2026</div>
+</div>
+
+<div class="wrap">
+
+<div class="ptitle">ಕಳೆದ ರಾತ್ರಿಯ ಮಾರ್ಕೆಟ್ ಕ್ಲೋಸ್</div>
+<div class="pdate">23.10.2026ರ ಸೆಷನ್ ಕ್ಲೋಸ್</div>
+
+<table class="price">
+  <tr><th>ಮಾರ್ಕೆಟ್</th><th class="r">ಕ್ಲೋಸ್</th><th class="r">ಬದಲಾವಣೆ</th></tr>
+  <tr><td class="grade">ರೊಬಸ್ಟಾ — ICE ಲಂಡನ್ ($/ಟನ್)</td><td class="r rate">3,228</td><td class="r dn">▼ 60<span class="pct">-1.82%</span></td></tr>
+  <tr><td class="grade">ಅರೇಬಿಕಾ — ICE ನ್ಯೂಯಾರ್ಕ್ (¢/ಪೌಂಡ್)</td><td class="r rate">307.45</td><td class="r dn">▼ 5.00<span class="pct">-1.60%</span></td></tr>
+  <tr class="subhd"><td colspan="3">ಕರಿಮೆಣಸು — IPSTA ವೆಬ್‌ಸೈಟ್ ಇಂದೂ ಸರ್ವರ್ ಎರರ್ (HTTP 500) ಕೊಟ್ಟಿದೆ, ಹೊಸ ವರದಿ ಸಿಕ್ಕಿಲ್ಲ</td></tr>
+</table>
+
+<div class="world">
+<b>ಮೂಲ:</b> ರೊಬಸ್ಟಾ, ಅರೇಬಿಕಾ ಎರಡೂ TradingView ಸ್ಕ್ಯಾನರ್‌ನ 23.10.2026ರ ಕ್ಲೋಸ್ (ICEEUR:RC1!, ICEUS:KC1!). ಅರೇಬಿಕಾಗೆ Yahoo ಸೆಟಲ್ಡ್ ಡೈಲಿ ಬಾರ್ (KC=F, ಡಿಸೆಂಬರ್ '26) ಕೂಡ ಹತ್ರಾನೇ ಇರೋ ಸಂಖ್ಯೆ ತೋರಿಸ್ತಿದೆ ($306.00, -2.06%) — ಎರಡೂ ಮೂಲ ಒಪ್ಪಿಗೆಯಲ್ಲಿವೆ. ಕರಿಮೆಣಸು: IPSTA ವೆಬ್‌ಸೈಟ್ ಇಂದೂ ಸರ್ವರ್ ಎರರ್ (HTTP 500) ಕೊಡ್ತಿದೆ — ಹಾಗಾಗಿ ಈ ಕಾರ್ಡ್‌ನಲ್ಲಿ ಮೆಣಸಿನ ದರ ಇಲ್ಲ. ಹೊಸ ವರದಿ ಸಿಕ್ಕ ಕೂಡ್ಲೇ ಮುಂದಿನ ಕಾರ್ಡ್‌ನಲ್ಲಿ ಹಾಕ್ತೀವಿ.
+</div>
+
+<div class="item">
+  <div class="ihead">ರೊಬಸ್ಟಾ: ನವೆಂಬರ್ ಕಾಂಟ್ರಾಕ್ಟ್‌ನಲ್ಲಿ ಲಾಂಗ್ ಪೊಸಿಷನ್ ಮೇಲೆ ಒತ್ತಡ ಮುಂದುವರ್ದಿದೆ</div>
+  <p>ಮಂಗಳವಾರ (20 ಅಕ್ಟೋಬರ್), ಬುಧವಾರ (21 ಅಕ್ಟೋಬರ್) ಎರಡೂ StoneX ರಿಪೋರ್ಟ್‌ಗಳ ಪ್ರಕಾರ ರೊಬಸ್ಟಾ $3,500 ದಾಟೋ ಪ್ರಯತ್ನ ಎಡವಿ, ಸೆಲ್ಲರ್ಸ್ ಕಂಟ್ರೋಲ್‌ನಲ್ಲಿ ಇದ್ದು ಕ್ಲೋಸ್ ಕೆಳಗೇ ಆಗ್ತಿದೆ. ನವೆಂಬರ್ ಕಾಂಟ್ರಾಕ್ಟ್‌ನ ಓಪನ್ ಇಂಟರೆಸ್ಟ್ 19,631 ಲಾಟ್ — StoneX ಹೇಳೋ ಪ್ರಕಾರ ಇದು ಜಾಸ್ತಿ, ಲಾಂಗ್ ಪೊಸಿಷನ್ ಮೇಲೆ ಇನ್ನೂ ಒತ್ತಡ ಹಾಕ್ತಿದೆ. ಶುಕ್ರವಾರದ (23 ಅಕ್ಟೋಬರ್) ಈ ಕಾರ್ಡ್‌ನ ಕ್ಲೋಸ್ — $3,228, 1.82% ಕೆಳಗೆ — ಅದೇ ಸಾಲಿನಲ್ಲಿ ಮುಂದುವರ್ದಿದೆ; ಶುಕ್ರವಾರದ ಸೆಷನ್‌ಗೆ ಇನ್ನೂ ಪ್ರತ್ಯೇಕ ರಿಪೋರ್ಟ್ ಬಂದಿಲ್ಲ.</p>
+  <div class="imeta">ಮೂಲ: StoneX ಡೈಲಿ ಕಾಫಿ ರಿಪೋರ್ಟ್ (20, 21 ಅಕ್ಟೋಬರ್).</div>
+</div>
+
+<div class="item">
+  <div class="ihead">ಅರೇಬಿಕಾ: ವಾರದ ಮಧ್ಯ ರಾಲಿ ಶುಕ್ರವಾರ ಸ್ವಲ್ಪ ವಾಪಸ್ ಹೋಗಿದೆ</div>
+  <p>ಅರೇಬಿಕಾ ICEಯ ಸರ್ಟಿಫೈಡ್ ಸ್ಟಾಕ್ ಸುಮಾರು 27 ವರ್ಷದಲ್ಲೇ ಅತಿ ಕಮ್ಮಿ ಮಟ್ಟಕ್ಕೆ ಬಂದಿದ್ದರಿಂದ, ಶಾರ್ಟ್ ಕವರಿಂಗ್ ಜೋರಾಗಿ, 19 ಅಕ್ಟೋಬರ್‌ಗೆ ಒಂದು ತಿಂಗಳ ಜಾಸ್ತಿ ಮಟ್ಟ 315.70 ಸೆಂಟ್‌ಗೆ ಹೋಗಿತ್ತು. NRT ಅನಾಲಿಸ್ಟ್ ವಿಸೆಂಟೆ ಜೊಟ್ಟಿ ಹೇಳೋ ಪ್ರಕಾರ ಇದಕ್ಕೆ ಕಾರಣ ಶಾರ್ಟ್ ಕವರಿಂಗ್, ಎಲ್ ನಿನೊದಿಂದ ಫಸಲು ನಷ್ಟ ಆಗ್ತದೆ ಅಂತ ಇನ್ನೂ ಯಾರೂ ಖಾತ್ರಿ ಕೊಟ್ಟಿಲ್ಲ. ಆದ್ರೆ ಬ್ರೆಜಿಲ್‌ನ Conab ಏಜೆನ್ಸಿ 2026ರ ಫಸಲು 66.2 ಮಿಲಿಯನ್ ಚೀಲಕ್ಕೆ (ಕಳೆದ ವರ್ಷಕ್ಕಿಂತ 17.2% ಜಾಸ್ತಿ) ಹೋಗ್ತದೆ ಅಂತ ಅಂದಾಜು ಮಾಡಿದ್ದು, ಮಾರ್ಕೆಟ್‌ಗೆ ಹೆಚ್ಚಿಗೆ ಬೆಳೆ ಬರೋ ಸುದ್ದಿ ಬೆಲೆ ಮೇಲೆ ಒತ್ತಡ ಹಾಕ್ತಿದೆ. ಶುಕ್ರವಾರದ ಈ ಕಾರ್ಡ್‌ನ ಕ್ಲೋಸ್ — 307.45 ಸೆಂಟ್, 1.60% ಕೆಳಗೆ — ಅಂದ್ರೆ ವಾರದ ಮಧ್ಯದ ರಾಲಿಯ ಸ್ವಲ್ಪ ಭಾಗ ವಾಪಸ್ ಹೋಗಿದೆ; ಅದೇ ದಿನದ ಕಾರಣ ಇನ್ನೂ ಯಾವ ರಿಪೋರ್ಟ್ ಹೇಳಿಲ್ಲ.</p>
+  <div class="imeta">ಮೂಲ: Inheritance Coffee ಜರ್ನಲ್ (ICE ಸ್ಟಾಕ್, ಅಕ್ಟೋಬರ್ 19 ಕ್ಲೋಸ್); Conab ಬ್ರೆಜಿಲ್ 2026 ಫಸಲು ಅಂದಾಜು (Nasdaq ವರದಿಯಲ್ಲಿ ಉಲ್ಲೇಖ).</div>
+</div>
+
+</div>
+
+<div class="footband">
+  <div>
+    <div class="fname">ಮಲೆನಾಡು ದರ</div>
+    <div class="fdate">24 ಅಕ್ಟೋಬರ್ 2026</div>
+    <div class="fcontact">ವಿದ್ವಾನ್ ಗೌಡ · ಆಲ್ದೂರು, ಚಿಕ್ಕಮಗಳೂರು<br>ಫೋನ್ 7975045560<br>ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್ · ಫೇಸ್‌ಬುಕ್ @malenadu.dara</div>
+  </div>
+  <div class="joincard">
+    <img class="qr" src="channel-qr.png">
+    <div class="jointxt"><b>ಮಲೆನಾಡು ದರ</b><br>WhatsApp ಚಾನೆಲ್ — ಸ್ಕ್ಯಾನ್ ಮಾಡಿ, ದಿನಾ ದರ ಸಿಗುತ್ತೆ.</div>
+  </div>
+</div>
+<div class="fnote">ದರಗಳು ICE ಎಕ್ಸ್‌ಚೇಂಜ್ (TradingView, Yahoo Finance) ಮತ್ತು IPSTA ಮೂಲದಿಂದ. ಇದು ಮಾಹಿತಿಗಾಗಿ ಮಾತ್ರ — ಮಾರಾಟದ ಸಲಹೆ ಅಲ್ಲ. ಪ್ರತಿ ಸುದ್ದಿಯ ಮೂಲ ಅದರ ಕೆಳಗೆ ಕೊಟ್ಟಿದೆ.</div>
+
+</body>
+</html>
