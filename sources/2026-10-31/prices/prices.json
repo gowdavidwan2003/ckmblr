@@ -1,0 +1,46 @@
+{
+  "edition_date": "2026-10-31",
+  "fetched_at": "2026-10-31T00:15:03.975321+00:00",
+  "markets": {
+    "robusta": {
+      "symbol": "ICEEUR:RC1!",
+      "close": 3204,
+      "change_pct": 0.88,
+      "change_abs": 28,
+      "open": 3184,
+      "high": 3220,
+      "low": 3171,
+      "unit": "USD per tonne",
+      "contract": "Robusta Coffee Futures",
+      "as_of": "2026-10-30T20:26:04+00:00",
+      "source": "TradingView scanner (ICEEUR:RC1!)"
+    },
+    "arabica": {
+      "symbol": "ICEUS:KC1!",
+      "close": 287.15,
+      "change_pct": 0.6,
+      "change_abs": 1.7,
+      "open": 288,
+      "high": 291.5,
+      "low": 283.3,
+      "unit": "US cents per lb",
+      "contract": "Coffee C Futures",
+      "as_of": "2026-10-30T17:29:58+00:00",
+      "source": "TradingView scanner (ICEUS:KC1!)",
+      "pre_settle": "Timestamped 17:29 UTC on 2026-10-30, before that session's ~17:30 UTC settle -- an intraday print, not a close. Do not put it on a card as a closing price.",
+      "cross_check": {
+        "symbol": "KC=F",
+        "close": 287.15,
+        "change_abs": 1.7,
+        "change_pct": 0.6,
+        "unit": "US cents per lb",
+        "contract": "Coffee Dec 26",
+        "as_of": "2026-10-30",
+        "source": "Yahoo Finance daily bar (KC=F)"
+      }
+    }
+  },
+  "errors": {
+    "pepper": "HTTP Error 500: Internal Server Error"
+  }
+}
