@@ -1,0 +1,45 @@
+{
+  "edition_date": "2026-11-24",
+  "fetched_at": "2026-11-24T00:11:49.814633+00:00",
+  "markets": {
+    "robusta": {
+      "symbol": "ICEEUR:RC1!",
+      "close": 2854,
+      "change_pct": -0.94,
+      "change_abs": -27,
+      "open": 2869,
+      "high": 2910,
+      "low": 2825,
+      "unit": "USD per tonne",
+      "contract": "Robusta Coffee Futures",
+      "as_of": "2026-11-23T20:25:57+00:00",
+      "source": "TradingView scanner (ICEEUR:RC1!)"
+    },
+    "arabica": {
+      "symbol": "ICEUS:KC1!",
+      "close": 267.35,
+      "change_pct": -0.43,
+      "change_abs": -1.15,
+      "open": 268.5,
+      "high": 275.45,
+      "low": 265.55,
+      "unit": "US cents per lb",
+      "contract": "Coffee C Futures",
+      "as_of": "2026-11-23T18:29:58+00:00",
+      "source": "TradingView scanner (ICEUS:KC1!)",
+      "cross_check": {
+        "symbol": "KC=F",
+        "close": 267.35,
+        "change_abs": -7.5,
+        "change_pct": -2.73,
+        "unit": "US cents per lb",
+        "contract": "Coffee Dec 26",
+        "as_of": "2026-11-23",
+        "source": "Yahoo Finance daily bar (KC=F)"
+      }
+    }
+  },
+  "errors": {
+    "pepper": "HTTP Error 500: Internal Server Error"
+  }
+}
