@@ -1,0 +1,46 @@
+{
+  "edition_date": "2026-11-27",
+  "fetched_at": "2026-11-27T00:11:51.892845+00:00",
+  "markets": {
+    "robusta": {
+      "symbol": "ICEEUR:RC1!",
+      "close": 2857,
+      "change_pct": 2.11,
+      "change_abs": 59,
+      "open": 2804,
+      "high": 2885,
+      "low": 2791,
+      "unit": "USD per tonne",
+      "contract": "Robusta Coffee Futures",
+      "as_of": "2026-11-26T21:01:28+00:00",
+      "source": "TradingView scanner (ICEEUR:RC1!)"
+    },
+    "arabica": {
+      "symbol": "ICEUS:KC1!",
+      "close": 270,
+      "change_pct": 2.82,
+      "change_abs": 7.4,
+      "open": 260,
+      "high": 271.85,
+      "low": 258.65,
+      "unit": "US cents per lb",
+      "contract": "Coffee C Futures",
+      "as_of": "2026-11-25T19:42:07+00:00",
+      "source": "TradingView scanner (ICEUS:KC1!)",
+      "cross_check": {
+        "symbol": "KC=F",
+        "close": 275.65,
+        "change_abs": 7.1,
+        "change_pct": 2.64,
+        "unit": "US cents per lb",
+        "contract": "Coffee Dec 26",
+        "as_of": "2026-11-25",
+        "source": "Yahoo Finance daily bar (KC=F)"
+      },
+      "disagreement": "TradingView 270 vs Yahoo 275.65 (2.1% apart) -- likely different contract months, or the scanner quote is stale. Check before this goes on a card."
+    }
+  },
+  "errors": {
+    "pepper": "<urlopen error [Errno 104] Connection reset by peer>"
+  }
+}
